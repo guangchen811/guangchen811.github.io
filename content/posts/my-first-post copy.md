@@ -2,6 +2,7 @@
 title: "My First Post"
 date: 2022-04-09T19:26:27+08:00
 draft: true
+math: true
 tags:
 - 尘
 - d
@@ -9,13 +10,16 @@ tags:
 categories:
 - abc
 ---
+" 1 
+' " 1"'
 
-<p>$$
-\mathbb{E}(X) = \int x d F(x) = \left{ \begin{aligned} \sum_x x f(x) ; &amp; \text{ if } X \text{ is discrete}
-\ \int x f(x) dx ; &amp; \text{ if } X \text{ is continuous }
-\end{aligned} \right.
-$$</p>
-<p>Inline math $ \frac{1}{2} $</p>
+---
+
+...
+
+<div>$$frac$$</div>
+
+<p>$$\frac{1}{2}$$</p>
 
 # 一级标题
 ## 二级标题

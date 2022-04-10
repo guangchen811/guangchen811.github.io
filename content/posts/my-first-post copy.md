@@ -12,6 +12,6 @@ categories:
 ---
 
 
-what is the meaning of $\Epsilon$ and $alpha$?
+what is the meaning of $\epsilon$ and $\alpha$?
 
 $$E = mc^2$$

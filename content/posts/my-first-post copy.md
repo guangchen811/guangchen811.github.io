@@ -10,7 +10,12 @@ categories:
 - abc
 ---
 
-Another $\epsilon$ is meaning
+<p>$$
+\mathbb{E}(X) = \int x d F(x) = \left{ \begin{aligned} \sum_x x f(x) ; &amp; \text{ if } X \text{ is discrete}
+\ \int x f(x) dx ; &amp; \text{ if } X \text{ is continuous }
+\end{aligned} \right.
+$$</p>
+<p>Inline math $ \frac{1}{2} $</p>
 
 # 一级标题
 ## 二级标题

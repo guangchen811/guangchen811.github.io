@@ -17,7 +17,8 @@
       
       <guid>https://guangchen811.github.io/posts/my-first-post-copy/</guid>
       <description>Section A some thing
-Section B another things</description>
+Section B another things
+ a &amp;rsquo; a &amp;rsquo;&amp;rsquo; b a a `  </description>
     </item>
     
   </channel>

@@ -12,19 +12,20 @@
     <lastBuildDate>Sat, 09 Apr 2022 19:26:27 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/categories/abc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
+      <link>https://guangchen811.github.io/posts/my-first-post-copy-2/</link>
+      <pubDate>Sat, 09 Apr 2022 19:26:27 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/posts/my-first-post-copy-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
       <link>https://guangchen811.github.io/posts/my-first-post-copy/</link>
       <pubDate>Sat, 09 Apr 2022 19:26:27 +0800</pubDate>
       
       <guid>https://guangchen811.github.io/posts/my-first-post-copy/</guid>
-      <description>&amp;quot; 1 &amp;rsquo; &amp;quot; 1&amp;quot;&#39;
- &amp;hellip;
-$$frac$$ $$\frac{1}{2}$$
-一级标题 二级标题 三级标题 四级标题 五级标题 六级标题 斜体文本 斜体文本 粗体文本 粗体文本 粗斜体文本 粗斜体文本
-$(document).ready(function () { alert(&amp;#39;RUNOOB&amp;#39;); }); 这是一个链接 菜鸟教程
- 最外层
- 第一层嵌套
- 第二层嵌套
-   </description>
+      <description></description>
     </item>
     
   </channel>

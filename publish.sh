@@ -1,4 +1,4 @@
 hugo -d docs/ -D
 git add .
-git commit -m "publish"
+git commit -m "$1"
 git push

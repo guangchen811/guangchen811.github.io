@@ -16,7 +16,7 @@
       <pubDate>Sat, 09 Apr 2022 19:26:27 +0800</pubDate>
       
       <guid>https://guangchen811.github.io/posts/leetcode/addtwonumbers/</guid>
-      <description>class Solution: def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&amp;gt; Optional[ListNode]: dummyHead = ListNode(val=0) p = l1 q = l2 curr = dummyHead carry = 0 while(p != None or q != None): if p != None: x = p.val else: x = 0 if q != None: y = q.val else: y = 0 sum = carry + x + y carry = sum // 10 curr.next = ListNode(val=sum % 10) curr = curr.</description>
+      <description>Leetcode No.2</description>
     </item>
     
     <item>

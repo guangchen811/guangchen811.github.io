@@ -38,7 +38,7 @@ Just like how we would sum two numbers on a piece of paper, we begin by summing 
 >>
 >> Create a new node with teh digit value of ($sum\mod{10}$) and set it to current node's next, then advance current node to next.
 >>
->> Advance both `p` and `q`.
+>> Advance both $p$ and $q$.
 >
 > Check if $carry=1$, if so append a new node with digit 1 to the returning list.
 > 
@@ -80,3 +80,8 @@ class Solution:
             curr.next = ListNode(carry)
         return dummyHead.next
 ```
+
+Complexity Analysis
+- Time complexity: $O(\max{(m,n)})$. Assume that $m$ and $n$ represents the length of $l1$ and $l2$ respectively, the algorithm above iterates at most $\max{(m,n)}$ times.
+
+- Space complexity: $O(\max{(m,n)})$. The length of the new list is at most $\max{(m,n)}+1$.

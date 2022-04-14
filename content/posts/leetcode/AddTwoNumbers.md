@@ -2,7 +2,7 @@
 title: "Add Two Numbers"
 date: 2022-04-09T19:26:27+08:00
 draft: false
-summary: Leetcode No.2
+summary: No.2
 ismath: true
 tags:
 - Linked List
@@ -20,7 +20,7 @@ Keep track of the carry using a variable and simulate digits-by-digits sum start
 ## Algorithm
 Just like how we would sum two numbers on a piece of paper, we begin by summing the least-significant digits, which is the head of $l1$ and $l2$. Since each digit is in the range of 0...9, summing two digits may "overflow". For example $5+7=12$. In this case, we set the current digit to 2 and bring over the $carry=1$ to the next iteration. $carry$ must be either $0$ or $1$ because the largest possible sum of two digits (including the carry) is $9+9+1=19$.
 
-## Pseudocode
+### Pseudocode
 > Initialize current node to dummy head of the returning list.
 >
 > Initialize $carry$ to 0.
@@ -45,7 +45,7 @@ Just like how we would sum two numbers on a piece of paper, we begin by summing 
 > Return dummy head's next node.
 
 
-## Code
+### Code
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -81,7 +81,7 @@ class Solution:
         return dummyHead.next
 ```
 
-## Complexity Analysis
+### Complexity Analysis
 - Time complexity: $O(\max{(m,n)})$. Assume that $m$ and $n$ represents the length of $l1$ and $l2$ respectively, the algorithm above iterates at most $\max{(m,n)}$ times.
 
 - Space complexity: $O(\max{(m,n)})$. The length of the new list is at most $\max{(m,n)}+1$.

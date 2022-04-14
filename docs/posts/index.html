@@ -158,6 +158,18 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Add two Numbers<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>class Solution: def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&gt; Optional[ListNode]: dummyHead = ListNode(val=0) p = l1 q = l2 curr = dummyHead carry = 0 while(p != None or q != None): if p != None: x = p.val else: x = 0 if q != None: y = q.val else: y = 0 sum = carry &#43; x &#43; y carry = sum // 10 curr.next = ListNode(val=sum % 10) curr = curr....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-09 19:26:27 +0800 CST'>April 9, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Hao Chen</footer>
+  <a class="entry-link" aria-label="post link to Add two Numbers" href="https://guangchen811.github.io/posts/leetcode/addtwonumbers/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>another post<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
     </h2>
   </header>

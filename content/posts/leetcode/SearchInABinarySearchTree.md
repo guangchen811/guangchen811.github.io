@@ -31,9 +31,13 @@ When the node is equal to the value, we just need to return it. Otherwise, we ju
 >
 >> If root is null or root's value is equal to target value, return the root.
 >>
->> Otherwises, if root's value is bigger than target value, visit root's left child.
+>> Otherwises, if root's value is bigger than target value.
 >>
->> Otherwises, visit root's right child.
+>>> visit root's left child.
+>>
+>> Otherwises
+>>
+>>> visit root's right child.
 
 ### Code
 

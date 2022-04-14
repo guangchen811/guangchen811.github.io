@@ -100,7 +100,7 @@
   "keywords": [
     "Tree", "BST"
   ],
-  "articleBody": "Problem You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node’s value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nIntuition There are only two possibilities when we searching a node:\n node is equal to the value node is not equal to the value  Algorithm When the node is equal to the value, we just need to return it. Otherwise, we just need to visit its left or right child recursively.\nPseudocode  visit root node.\n If root is null or root’s value is equal to target value, return the root.\nOtherwises, if root’s value is bigger than target value, visit root’s left child.\nOtherwises, visit root’s right child.\n  Code # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def searchBST(self, root: Optional[TreeNode], val: int) - Optional[TreeNode]: if (root == None or root.val == val): return root elif root.val  val: return self.searchBST(root.right, val) else: return self.searchBST(root.left, val) Complexity Analysis  Time complexity: $O(\\log{n})$ Space complexity: $O(1)$  ",
+  "articleBody": "Problem You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node’s value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nIntuition There are only two possibilities when we searching a node:\n node is equal to the value node is not equal to the value  Algorithm When the node is equal to the value, we just need to return it. Otherwise, we just need to visit its left or right child recursively.\nPseudocode  visit root node.\n If root is null or root’s value is equal to target value, return the root.\nOtherwises, if root’s value is bigger than target value.\n visit root’s left child.\n Otherwises\n visit root’s right child.\n   Code # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def searchBST(self, root: Optional[TreeNode], val: int) - Optional[TreeNode]: if (root == None or root.val == val): return root elif root.val  val: return self.searchBST(root.right, val) else: return self.searchBST(root.left, val) Complexity Analysis  Time complexity: $O(\\log{n})$ Space complexity: $O(1)$  ",
   "wordCount" : "201",
   "inLanguage": "en",
   "datePublished": "2022-04-09T19:26:27+08:00",
@@ -248,8 +248,14 @@
 <p>visit root node.</p>
 <blockquote>
 <p>If root is null or root&rsquo;s value is equal to target value, return the root.</p>
-<p>Otherwises, if root&rsquo;s value is bigger than target value, visit root&rsquo;s left child.</p>
-<p>Otherwises, visit root&rsquo;s right child.</p>
+<p>Otherwises, if root&rsquo;s value is bigger than target value.</p>
+<blockquote>
+<p>visit root&rsquo;s left child.</p>
+</blockquote>
+<p>Otherwises</p>
+<blockquote>
+<p>visit root&rsquo;s right child.</p>
+</blockquote>
 </blockquote>
 </blockquote>
 <h3 id="code">Code<a hidden class="anchor" aria-hidden="true" href="#code">#</a></h3>

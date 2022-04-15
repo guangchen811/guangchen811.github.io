@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tree on Hao&#39;Log</title>
-    <link>https://guangchen811.github.io/tags/tree/</link>
-    <description>Recent content in Tree on Hao&#39;Log</description>
+    <title>Easy on Hao&#39;Log</title>
+    <link>https://guangchen811.github.io/tags/easy/</link>
+    <description>Recent content in Easy on Hao&#39;Log</description>
     <image>
       <url>https://guangchen811.github.io/papermod-cover.png</url>
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 10 Apr 2022 19:26:27 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/tags/tree/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2022 19:26:27 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/tags/easy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Search in a Binary Seaerch Tree</title>
       <link>https://guangchen811.github.io/posts/leetcode/searchinabinarysearchtree/</link>
@@ -17,6 +17,15 @@
       
       <guid>https://guangchen811.github.io/posts/leetcode/searchinabinarysearchtree/</guid>
       <description>No.700</description>
+    </item>
+    
+    <item>
+      <title>Add Two Numbers</title>
+      <link>https://guangchen811.github.io/posts/leetcode/addtwonumbers/</link>
+      <pubDate>Sat, 09 Apr 2022 19:26:27 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/posts/leetcode/addtwonumbers/</guid>
+      <description>No.2</description>
     </item>
     
   </channel>

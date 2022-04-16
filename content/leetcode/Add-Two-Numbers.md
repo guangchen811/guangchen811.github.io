@@ -84,6 +84,6 @@ class Solution:
 ```
 
 ### Complexity Analysis
-- Time complexity: $O(\max{(m,n)})$. Assume that $m$ and $n$ represents the length of $l1$ and $l2$ respectively, the algorithm above iterates at most $\max{(m,n)}$ times.
+- Time Complexity: $O(\max{(m,n)})$. Assume that $m$ and $n$ represents the length of $l1$ and $l2$ respectively, the algorithm above iterates at most $\max{(m,n)}$ times.
 
-- Space complexity: $O(\max{(m,n)})$. The length of the new list is at most $\max{(m,n)}+1$.
+- Space Complexity: $O(\max{(m,n)})$. The length of the new list is at most $\max{(m,n)}+1$.

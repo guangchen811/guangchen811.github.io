@@ -1,12 +1,13 @@
 ---
 title: "Count Number of Nice Subarrays"
 date: 2022-04-16T12:00:38+08:00
-draft: true
+draft: false
 summary: No.1248
 ismath: true
 tags:
 - sliding window
 - hash map
+- Medium
 categories:
 - Leetcode Notes
 ---
@@ -29,13 +30,13 @@ In fact, it's not necessary to build `cur_odd` explicitly. A hash map can make t
 >
 > Initial answer as 0.
 >
-> for each number in numbers
+> For each number in numbers.
 >
 >> If the number is a odd
 >>
 >>> Let cur_odd add one.
 >>
->> Else, if current odd numbers - k in the map
+>> Else, if current odd numbers - k in the map.
 >>
 >>> Let the answer add `map[current odd numbers - k]`
 >> Else, if current odd numbers not in the map.

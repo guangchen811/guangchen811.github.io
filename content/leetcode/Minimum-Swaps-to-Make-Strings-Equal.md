@@ -61,5 +61,5 @@ class Solution:
 
 ### Complexity Analysis
 
-- Time complexity: $O(n)$.
-- Space complexity: $O(1)$.
+- Time Complexity: $O(n)$.
+- Space Complexity: $O(1)$.

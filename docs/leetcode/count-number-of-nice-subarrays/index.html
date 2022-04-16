@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Count Number of Nice Subarrays | Hao&#39;Log</title>
-<meta name="keywords" content="sliding window, hash map">
+<meta name="keywords" content="sliding window, hash map, Medium">
 <meta name="description" content="No.1248">
 <meta name="author" content="Hao Chen">
 <link rel="canonical" href="https://guangchen811.github.io/leetcode/count-number-of-nice-subarrays/">
@@ -98,9 +98,9 @@
   "name": "Count Number of Nice Subarrays",
   "description": "No.1248",
   "keywords": [
-    "sliding window", "hash map"
+    "sliding window", "hash map", "Medium"
   ],
-  "articleBody": "Description Given an array of integers nums and an integer k. A continuous subarray is called nice if there are k odd numbers on it.\nReturn the number of nice sub-arrays.\nIntuition We can replace odds with 1 and evens with o, and then generate a list cur_odd. cur_odd[i] is equal to the number of odds until i. Now, we just need to count the number of pairs in cur_odd which difference is equal to k.\nAlgorithm In fact, it’s not necessary to build cur_odd explicitly. A hash map can make things easier.\nPseudocode  Initial a map as {0:1}.\nInitial current odd numbers as 0.\nInitial answer as 0.\nfor each number in numbers\n If the number is a odd\n Let cur_odd add one.\n Else, if current odd numbers - k in the map\n Let the answer add map[current odd numbers - k] Else, if current odd numbers not in the map.\n  Set map[current odd numbers] as 0.\n Let map[current odd numbers] add one.\n return the answer.\n Code class Solution: def numberOfSubarrays(self, nums: List[int], k: int) - int: mp = {0:1} cur_odd = 0 ans = 0 for num in nums: if num % 2 == 1: cur_odd += 1 if cur_odd-k in mp: ans += mp[cur_odd-k] if not cur_odd in mp: mp[cur_odd] = 0 mp[cur_odd] += 1 return ans Complexity Analysis  Time Complexity: $O(n)$ Space Complexity: $O(n)$  ",
+  "articleBody": "Description Given an array of integers nums and an integer k. A continuous subarray is called nice if there are k odd numbers on it.\nReturn the number of nice sub-arrays.\nIntuition We can replace odds with 1 and evens with o, and then generate a list cur_odd. cur_odd[i] is equal to the number of odds until i. Now, we just need to count the number of pairs in cur_odd which difference is equal to k.\nAlgorithm In fact, it’s not necessary to build cur_odd explicitly. A hash map can make things easier.\nPseudocode  Initial a map as {0:1}.\nInitial current odd numbers as 0.\nInitial answer as 0.\nFor each number in numbers.\n If the number is a odd\n Let cur_odd add one.\n Else, if current odd numbers - k in the map.\n Let the answer add map[current odd numbers - k] Else, if current odd numbers not in the map.\n  Set map[current odd numbers] as 0.\n Let map[current odd numbers] add one.\n return the answer.\n Code class Solution: def numberOfSubarrays(self, nums: List[int], k: int) - int: mp = {0:1} cur_odd = 0 ans = 0 for num in nums: if num % 2 == 1: cur_odd += 1 if cur_odd-k in mp: ans += mp[cur_odd-k] if not cur_odd in mp: mp[cur_odd] = 0 mp[cur_odd] += 1 return ans Complexity Analysis  Time Complexity: $O(n)$ Space Complexity: $O(n)$  ",
   "wordCount" : "228",
   "inLanguage": "en",
   "datePublished": "2022-04-16T12:00:38+08:00",
@@ -199,7 +199,7 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://guangchen811.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://guangchen811.github.io/leetcode/">Leetcodes</a></div>
     <h1 class="post-title">
-      Count Number of Nice Subarrays<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+      Count Number of Nice Subarrays
     </h1>
     <div class="post-meta"><span title='2022-04-16 12:00:38 +0800 CST'>April 16, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Hao Chen
 
@@ -244,13 +244,13 @@
 <p>Initial a map as <code>{0:1}</code>.</p>
 <p>Initial current odd numbers as 0.</p>
 <p>Initial answer as 0.</p>
-<p>for each number in numbers</p>
+<p>For each number in numbers.</p>
 <blockquote>
 <p>If the number is a odd</p>
 <blockquote>
 <p>Let cur_odd add one.</p>
 </blockquote>
-<p>Else, if current odd numbers - k in the map</p>
+<p>Else, if current odd numbers - k in the map.</p>
 <blockquote>
 <p>Let the answer add <code>map[current odd numbers - k]</code>
 Else, if current odd numbers not in the map.</p>
@@ -290,6 +290,7 @@ Else, if current odd numbers not in the map.</p>
     <ul class="post-tags">
       <li><a href="https://guangchen811.github.io/tags/sliding-window/">sliding window</a></li>
       <li><a href="https://guangchen811.github.io/tags/hash-map/">hash map</a></li>
+      <li><a href="https://guangchen811.github.io/tags/medium/">Medium</a></li>
     </ul>
 <nav class="paginav">
   <a class="next" href="https://guangchen811.github.io/leetcode/minimum-swaps-to-make-strings-equal/">
@@ -302,7 +303,7 @@ Else, if current odd numbers not in the map.</p>
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share Count Number of Nice Subarrays on twitter"
-        href="https://twitter.com/intent/tweet/?text=Count%20Number%20of%20Nice%20Subarrays&amp;url=https%3a%2f%2fguangchen811.github.io%2fleetcode%2fcount-number-of-nice-subarrays%2f&amp;hashtags=slidingwindow%2chashmap">
+        href="https://twitter.com/intent/tweet/?text=Count%20Number%20of%20Nice%20Subarrays&amp;url=https%3a%2f%2fguangchen811.github.io%2fleetcode%2fcount-number-of-nice-subarrays%2f&amp;hashtags=slidingwindow%2chashmap%2cMedium">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

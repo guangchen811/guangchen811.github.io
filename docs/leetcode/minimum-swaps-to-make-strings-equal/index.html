@@ -100,7 +100,7 @@
   "keywords": [
     "Medium"
   ],
-  "articleBody": "Description You are given two strings s1 and s2 of equal length consisting of letters \"x\" and \"y\" only. Your task is to make these two strings equal to each other. You can swap any two characters that belong to different strings, which means: swap s1[i] and s2[j].\nReturn the minimum number of swaps required to make s1 and s2 equal, or return -1 if it is impossible to do so.\nIntuition Given a index i, there are totally 4 possiblilities of s1[i] and s2[i]: x-x,y-y,x-yandy-x. x-x and y-y have been matched, we just need to process two other situations.\nAlgorithm Assum there are a pairs of x-y and b pairs of y-x. For 2 pairs of x-y or y-x, we can swap 1 steps to make them matching: \"xx\"|\"yy\"$\\rightarrow$\"xy\"|\"xy\". For one x-y and one y-x, we need 2 steps: \"xy\"|\"yx\"$\\rightarrow$\"xx\"|\"yy\"$\\rightarrow$\"xy\"|\"xy\".\nSo, if a and b are both even. We just need $\\frac{a+b}{2}$ steps without other process.\nIf one of a and b is even and the other is odd, we can’t make it match any way.\nIf their are both odd, we need $\\frac{a+b-2}{2}+2=\\frac{a+b}{2}+1$ steps.\nPseudocode  Read s1 and s2 to get a and b.\nIf only one of a and b is even, return -1.\nElse if both a and b are even, return $\\frac{a+b}{2}$.\nElse return $\\frac{a+b}{2}+1$\n Code class Solution: def minimumSwap(self, s1: str, s2: str) - int: a = 0 b = 0 for i in range(len(s1)): if s1[i] == 'x' and s2[i] == 'y': a += 1 elif s1[i] == 'y' and s2[i] == 'x': b += 1 if a%2==0 and b%2==0: return int((a+b)/2) elif a%2==1 and b%2==1: return int((a+b)/2+1) else: return -1 Complexity Analysis  Time complexity: $O(n)$. Space complexity: $O(1)$.  ",
+  "articleBody": "Description You are given two strings s1 and s2 of equal length consisting of letters \"x\" and \"y\" only. Your task is to make these two strings equal to each other. You can swap any two characters that belong to different strings, which means: swap s1[i] and s2[j].\nReturn the minimum number of swaps required to make s1 and s2 equal, or return -1 if it is impossible to do so.\nIntuition Given a index i, there are totally 4 possiblilities of s1[i] and s2[i]: x-x,y-y,x-yandy-x. x-x and y-y have been matched, we just need to process two other situations.\nAlgorithm Assum there are a pairs of x-y and b pairs of y-x. For 2 pairs of x-y or y-x, we can swap 1 steps to make them matching: \"xx\"|\"yy\"$\\rightarrow$\"xy\"|\"xy\". For one x-y and one y-x, we need 2 steps: \"xy\"|\"yx\"$\\rightarrow$\"xx\"|\"yy\"$\\rightarrow$\"xy\"|\"xy\".\nSo, if a and b are both even. We just need $\\frac{a+b}{2}$ steps without other process.\nIf one of a and b is even and the other is odd, we can’t make it match any way.\nIf their are both odd, we need $\\frac{a+b-2}{2}+2=\\frac{a+b}{2}+1$ steps.\nPseudocode  Read s1 and s2 to get a and b.\nIf only one of a and b is even, return -1.\nElse if both a and b are even, return $\\frac{a+b}{2}$.\nElse return $\\frac{a+b}{2}+1$\n Code class Solution: def minimumSwap(self, s1: str, s2: str) - int: a = 0 b = 0 for i in range(len(s1)): if s1[i] == 'x' and s2[i] == 'y': a += 1 elif s1[i] == 'y' and s2[i] == 'x': b += 1 if a%2==0 and b%2==0: return int((a+b)/2) elif a%2==1 and b%2==1: return int((a+b)/2+1) else: return -1 Complexity Analysis  Time Complexity: $O(n)$. Space Complexity: $O(1)$.  ",
   "wordCount" : "286",
   "inLanguage": "en",
   "datePublished": "2022-04-15T23:10:09+08:00",
@@ -267,8 +267,8 @@
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </span></span></code></pre></div><h3 id="complexity-analysis">Complexity Analysis<a hidden class="anchor" aria-hidden="true" href="#complexity-analysis">#</a></h3>
 <ul>
-<li>Time complexity: $O(n)$.</li>
-<li>Space complexity: $O(1)$.</li>
+<li>Time Complexity: $O(n)$.</li>
+<li>Space Complexity: $O(1)$.</li>
 </ul>
 
 

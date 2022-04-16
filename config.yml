@@ -38,8 +38,8 @@ languages:
                 - name: Categories
                   url: categories/
                   weight: 2
-                - name: Posts
-                  url: posts
+                - name: Leetcode Notes
+                  url: leetcode/
                   weight: 1
 
 outputs:

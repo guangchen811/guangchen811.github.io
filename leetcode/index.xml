@@ -9,13 +9,22 @@
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 15 Apr 2022 23:10:09 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Apr 2022 12:00:38 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Count Number of Nice Subarrays</title>
+      <link>https://guangchen811.github.io/leetcode/count-number-of-nice-subarrays/</link>
+      <pubDate>Sat, 16 Apr 2022 12:00:38 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/leetcode/count-number-of-nice-subarrays/</guid>
+      <description>No.1248</description>
+    </item>
+    
     <item>
       <title>Minimum Swaps to Make Strings Equal</title>
-      <link>https://guangchen811.github.io/leetcode/minimumswapstomakestringsequal/</link>
+      <link>https://guangchen811.github.io/leetcode/minimum-swaps-to-make-strings-equal/</link>
       <pubDate>Fri, 15 Apr 2022 23:10:09 +0800</pubDate>
       
-      <guid>https://guangchen811.github.io/leetcode/minimumswapstomakestringsequal/</guid>
+      <guid>https://guangchen811.github.io/leetcode/minimum-swaps-to-make-strings-equal/</guid>
       <description>No.1247</description>
     </item>
     
@@ -30,10 +39,10 @@
     
     <item>
       <title>Add Two Numbers</title>
-      <link>https://guangchen811.github.io/leetcode/addtwonumbers/</link>
+      <link>https://guangchen811.github.io/leetcode/add-two-numbers/</link>
       <pubDate>Sat, 09 Apr 2022 19:26:27 +0800</pubDate>
       
-      <guid>https://guangchen811.github.io/leetcode/addtwonumbers/</guid>
+      <guid>https://guangchen811.github.io/leetcode/add-two-numbers/</guid>
       <description>No.2</description>
     </item>
     

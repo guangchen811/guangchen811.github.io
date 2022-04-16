@@ -29,5 +29,5 @@ categories:
 ```
 
 ### Complexity Analysis
-- Time Complexity: 
-- Space Complexity:
+- Time Complexity: $O()$
+- Space Complexity: $O()$

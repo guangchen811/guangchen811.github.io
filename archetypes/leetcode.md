@@ -3,7 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
 summary: No.
-math: true
+ismath: true
 tags:
 -
 categories:
@@ -29,3 +29,5 @@ categories:
 ```
 
 ### Complexity Analysis
+- Time Complexity: 
+- Space Complexity:

@@ -60,5 +60,5 @@ class Solution:
 ```
 
 ### Complexity Analysis
-- Time complexity: $O(\log{n})$
-- Space complexity: $O(1)$
+- Time Complexity: $O(\log{n})$
+- Space Complexity: $O(1)$

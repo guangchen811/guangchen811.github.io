@@ -5,8 +5,8 @@ draft: false
 summary: No.1248
 ismath: true
 tags:
-- sliding window
-- hash map
+- Prefix Sum
+- Hash Map
 - Medium
 categories:
 - Leetcode Notes

@@ -6,9 +6,9 @@ summary: No.538
 ismath: true
 tags:
 - BST
-- recursion
+- Recursion
 - Medium
-- dfs
+- DFS
 categories:
 - Leetcode Notes
 ---

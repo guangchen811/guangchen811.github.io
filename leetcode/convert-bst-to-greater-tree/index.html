@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Convert BST to Greater Tree | Hao&#39;Log</title>
-<meta name="keywords" content="BST, recursion, Medium, dfs">
+<meta name="keywords" content="BST, Recursion, Medium, DFS">
 <meta name="description" content="No.538">
 <meta name="author" content="Hao Chen">
 <link rel="canonical" href="https://guangchen811.github.io/leetcode/convert-bst-to-greater-tree/">
@@ -98,7 +98,7 @@
   "name": "Convert BST to Greater Tree",
   "description": "No.538",
   "keywords": [
-    "BST", "recursion", "Medium", "dfs"
+    "BST", "Recursion", "Medium", "DFS"
   ],
   "articleBody": "Description Given the root of a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus the sum of all keys greater than the original key in BST.\nIntuition Visit nodes according to the value from largest to smallest. Maintain a global variable SUM.\nAlgorithm Pseudocode  Initial a global variable SUM.\nVisit root node using the follow function:\n  If root is Null, return.\nvisit root.right.\nSUM += root.val.\nroot.val = SUM.\nvisit root.left.\n Code # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def convertBST(self, root: Optional[TreeNode]) - Optional[TreeNode]: self.SUM = 0 self.visit(root) return root def visit(self, root): if root == None: return self.visit(root.right) self.SUM += root.val root.val = self.SUM self.visit(root.left) Complexity Analysis  Time Complexity: $O(n)$ Space Complexity: $O(1)$  ",
   "wordCount" : "155",
@@ -280,11 +280,16 @@
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="https://guangchen811.github.io/tags/bst/">BST</a></li>
-      <li><a href="https://guangchen811.github.io/tags/recursion/">recursion</a></li>
+      <li><a href="https://guangchen811.github.io/tags/recursion/">Recursion</a></li>
       <li><a href="https://guangchen811.github.io/tags/medium/">Medium</a></li>
-      <li><a href="https://guangchen811.github.io/tags/dfs/">dfs</a></li>
+      <li><a href="https://guangchen811.github.io/tags/dfs/">DFS</a></li>
     </ul>
 <nav class="paginav">
+  <a class="prev" href="https://guangchen811.github.io/leetcode/increasing-order-search-tree/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>Increasing Order Search Tree</span>
+  </a>
   <a class="next" href="https://guangchen811.github.io/leetcode/count-number-of-nice-subarrays/">
     <span class="title">Next Page »</span>
     <br>
@@ -295,7 +300,7 @@
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share Convert BST to Greater Tree on twitter"
-        href="https://twitter.com/intent/tweet/?text=Convert%20BST%20to%20Greater%20Tree&amp;url=https%3a%2f%2fguangchen811.github.io%2fleetcode%2fconvert-bst-to-greater-tree%2f&amp;hashtags=BST%2crecursion%2cMedium%2cdfs">
+        href="https://twitter.com/intent/tweet/?text=Convert%20BST%20to%20Greater%20Tree&amp;url=https%3a%2f%2fguangchen811.github.io%2fleetcode%2fconvert-bst-to-greater-tree%2f&amp;hashtags=BST%2cRecursion%2cMedium%2cDFS">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

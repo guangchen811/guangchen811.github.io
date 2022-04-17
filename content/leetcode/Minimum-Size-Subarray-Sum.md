@@ -1,8 +1,8 @@
 ---
 title: "Minimum Size Subarray Sum"
 date: 2022-04-17T19:39:20+08:00
-draft: true
-summary: No.
+draft: false
+summary: No.209
 ismath: true
 tags:
 - 2 pointers
@@ -14,14 +14,9 @@ categories:
 Given an array of positive integers `nums` and a positive integer `target` return the minimal legth of a **contiguous subarray**  of which the sum is greater than or equal to `target`. If there is no such subarray, return `0` instead.
 
 ## Intuition
-
+We could keep 2 pointer, one for the start and the other for the end of current subarray, and make optimal moves so as to keep the sum greater than `s` as well as maintain the lowest size possible.
 
 ## Algorithm
-
-
-### Pseudocode
-
-
 
 ### Code
 ```cpp
@@ -45,5 +40,5 @@ public:
 ```
 
 ### Complexity Analysis
-- Time Complexity: $O()$
-- Space Complexity: $O()$
+- Time Complexity: $O(n)$
+- Space Complexity: $O(1)$

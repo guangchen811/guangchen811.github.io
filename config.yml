@@ -68,7 +68,7 @@ params:
     images: ["papermod-cover.png"]
 
     profileMode:
-        enabled: false
+        enabled: true
         title: Welcome to my blog!
         subtitle: Hi there, this is Hao. I'm trying to record things I've learned. It can't be better if my blogs are useful for you!
         imageUrl: "https://media-exp1.licdn.com/dms/image/C5603AQEag4_Acyw9YA/profile-displayphoto-shrink_200_200/0/1644312942698?e=1654732800&v=beta&t=VDtQQs9p1CR3qngxSvRLmZynn7-KxrY4NwRbjOk8sEk"
@@ -76,10 +76,21 @@ params:
         # imageWidth: 120
         # imageHeight: 120
         buttons:
-            - name: Archives
+            - name: Archive
               url: archives
+              weight: 5
+            - name: Search
+              url: search/
+              weight: 4
             - name: Tags
-              url: tags
+              url: tags/
+              weight: 3
+            - name: Categories
+              url: categories/
+              weight: 2
+            - name: Leetcode Notes
+              url: leetcode/
+              weight: 1
 
     # homeInfoParams:
     #     Title: "PaperMod"

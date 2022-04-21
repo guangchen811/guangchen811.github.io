@@ -10,6 +10,7 @@ categories:
 ---
 
 Source: [tutorials point](https://www.tutorialspoint.com/cplusplus/index.htm)
+
 Useful Links: [www.cplusplus.com](https://www.cplusplus.com/)
 
 **C++** is a middle-level programming language developed by Bjarne Stroustrup starting in 1979 at Bell Labs. **C++** runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX. This **C++** tutorial adopts a simple and practical approach to describe the concepts of **C++** for beginners to advanded software engineers.

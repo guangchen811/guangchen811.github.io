@@ -206,3 +206,79 @@ is the same as
 ```cpp
 x = y; y = y + 1; add(x, y);
 ```
+
+## C++ Identifiers
+
+A C++ identifier is a name used to identify a variable, function, class, module, or any other user-defined item. An identifier starts with a letter A to Z or a to z or an undersocre (_) followed by zero or more letters, underscores, and digits(0 to 9).
+
+C++ does not allow punctuation characters such as @, $, and % within identifiers. C++ is a case-sensitive programming language. Thus, **Manpower** and **manpower** are two different Identifiers in C++.
+
+Here are some examples of acceptable identifiers
+
+```sh
+mohd        zara        abc     move_name       a_123
+myname50    _temp       j       a23b9           retVal
+```
+
+## C++ Keywords
+
+The following list shows the reserved words in C++. THese reserved words may not be used as constant or variable or any other identifier names.
+
+
+| | |
+| - | - | - | - |
+| asm | eles | new | this |
+| auto | enum | operator | throw |
+| bool | explicit | private | true |
+| break | export | protected | try |
+| case | extern | public | typedef |
+| catch | false | register | typeid |
+| char | float | reinterpret_cast | typename|
+| class | for | return | union |
+| const | friend | short | unsigned |
+| const_cast | goto | signed | using |
+| continue | if | sizeof | virtual |
+| default | inlline | static | void |
+| delete | int | static_cast | volatile |
+| do | long | struct | wchar_t |
+| double | mutable | switch | while |
+| dynamic_cast | namespace | template | |
+
+# C++ Data Types
+
+While writing program in any language, you need to use various variables to store various information. Variables are nothing but reserved memory locations to store values. This means that when you create a variable you reserver some space in memory.
+
+You may like to store information of various data types like character, wide character, ineger, floating point, double floating point, boolean etc. Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory.
+
+## Primitive Built-in Types
+
+C++ offers the programmer a rich assortment of built-in as well as user defined data types. Following table lists down seven basic C++ data types
+
+| Type | Keyword |
+| -- | -- |
+| Boolean | bool |
+| Character | char |
+| Integer | int |
+| Floating point | float |
+|Double floating point | double |
+| Valueless | void |
+| Wide character | wchar_t |
+
+Serveral of the basic types can be modified using one of more of these type modifiers
+
+- signed
+- unsigned
+- short
+- long
+
+The following table shows the variable type, how much memory it takes to store the value in memory, and what is maximum and minimum value which can be stored in such type of variables.
+
+| Type | Typical Bit Width | Typical Range |
+| - | - | - |
+| char | 1 byte | -127 to 127 or 0 to 255 |
+| unsigned char | 1 byte | 0 to 255 |
+| signed char | 1 byte | -127 to 127 |
+| int | 4 bytes | -2147483648 to 2147483647 |
+| unsigned int | 4 bytes | 0 to 4294967295 |
+| signed int | 4 bytes | -2147483648 to 2147483647 |
+| short int | 2 bytes | -32768 to 32767 |

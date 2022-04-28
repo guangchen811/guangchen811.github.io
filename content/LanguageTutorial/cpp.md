@@ -1,7 +1,7 @@
 ---
 title: "C++ Tutorial"
 date: 2022-04-18T22:26:46+08:00
-draft: True
+draft: true
 summary: 
 tags:
 - cpp
@@ -149,3 +149,60 @@ Let us look at the various parts of the above program
 - The next line **cout << "Hello World";** causes the message "Hello World" to be displayed on the screen.
 
 - The next line **return 0;** terminates main() function and causes it to return the value 0 to the calling process.
+
+## Compile and Execute C++ Program
+
+We can save, compile and run the program by the steps given below.
+
+- Open a text editor and add the code as above.
+
+- Save the file as: hello.cpp
+
+- Open a command prompt and got o the directory where you saved the file.
+
+- Type 'g++ hello.cpp' and press enter to compile your code. If there are no errors in your code, the command prompt will take you to the next line and would generate a.out executable file.
+
+- Now, type './a.out' to run your program.
+
+- You will be able to see 'Hello World' printed on the window.
+
+```sh
+$ g++ hello.cpp
+$ ./a.out
+Hello World
+```
+
+## Semicolons and Blocks in C++
+
+In C++, the semicolon is a statement terminator. That is, each individual statement must be ended with a semicolon. It indicates the end of one logical entity.
+
+For example, following are three different staements
+
+```cpp
+x = y;
+y = y + 1;
+add(x, y);
+```
+
+A block is a set of logically connected statements that are surrounded by opening and closing braces. For example
+
+```cpp
+{
+    cout << "Hello World"; // prints Hello World
+    return 0;
+}
+```
+
+C++ does not recognize the end of the lines as a terminator. For this reason, it does not matter where you put a statement in a line. For example
+
+```cpp
+x = y;
+y = y + 1;
+add(x, y);
+```
+
+is the same as 
+
+```cpp
+x = y; y = y + 1; add(x, y);
+```

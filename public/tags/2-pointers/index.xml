@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>2 pointers on Hao&#39;Log</title>
+    <link>https://guangchen811.github.io/tags/2-pointers/</link>
+    <description>Recent content in 2 pointers on Hao&#39;Log</description>
+    <image>
+      <url>https://guangchen811.github.io/papermod-cover.png</url>
+      <link>https://guangchen811.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 17 Apr 2022 19:39:20 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/tags/2-pointers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Minimum Size Subarray Sum</title>
+      <link>https://guangchen811.github.io/leetcode/minimum-size-subarray-sum/</link>
+      <pubDate>Sun, 17 Apr 2022 19:39:20 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/leetcode/minimum-size-subarray-sum/</guid>
+      <description>No.209</description>
+    </item>
+    
+  </channel>
+</rss>

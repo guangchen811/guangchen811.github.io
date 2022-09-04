@@ -9,7 +9,16 @@
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Sep 2022 16:04:22 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Sep 2022 16:55:50 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Own GNN Layer</title>
+      <link>https://guangchen811.github.io/posts/my-own-gnn-layer/</link>
+      <pubDate>Sun, 04 Sep 2022 16:55:50 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/posts/my-own-gnn-layer/</guid>
+      <description>Dgl offical document about customizing GNN layers is here</description>
+    </item>
+    
     <item>
       <title>Namespace and scope</title>
       <link>https://guangchen811.github.io/python/namespace/</link>

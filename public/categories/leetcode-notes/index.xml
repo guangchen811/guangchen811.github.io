@@ -9,7 +9,16 @@
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 17 Apr 2022 19:39:20 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/categories/leetcode-notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 23:53:26 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/categories/leetcode-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Erect the Fence</title>
+      <link>https://guangchen811.github.io/leetcode/erect-the-fence/</link>
+      <pubDate>Sat, 23 Apr 2022 23:53:26 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/leetcode/erect-the-fence/</guid>
+      <description>No.587</description>
+    </item>
+    
     <item>
       <title>Minimum Size Subarray Sum</title>
       <link>https://guangchen811.github.io/leetcode/minimum-size-subarray-sum/</link>

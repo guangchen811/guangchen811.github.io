@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>bash on Hao&#39;Log</title>
+    <link>https://guangchen811.github.io/tags/bash/</link>
+    <description>Recent content in bash on Hao&#39;Log</description>
+    <image>
+      <url>https://guangchen811.github.io/papermod-cover.png</url>
+      <link>https://guangchen811.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 09 Sep 2022 23:10:16 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oh My Bash</title>
+      <link>https://guangchen811.github.io/install/oh-my-bash/</link>
+      <pubDate>Fri, 09 Sep 2022 23:10:16 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/install/oh-my-bash/</guid>
+      <description>After using oh-my-zsh on my macbook for a few days, I feel the original bash theme not elegant enough. Thus, I start searching something like oh-my-zsh for bash, then I found oh my bash.
+Oh My Bash is an open source, community-driven framework for managing your bash configuration. Let&amp;rsquo;s get started.
+Oh My Bash is installed by running one of the following commands in your terminal.
+via curl bash -c &amp;#34;$(curl -fsSL https://raw.</description>
+    </item>
+    
+  </channel>
+</rss>

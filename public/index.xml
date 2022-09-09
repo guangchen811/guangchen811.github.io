@@ -16,7 +16,8 @@
       <pubDate>Sun, 04 Sep 2022 16:55:50 +0800</pubDate>
       
       <guid>https://guangchen811.github.io/posts/my-own-gnn-layer/</guid>
-      <description>Dgl offical document about customizing GNN layers is here</description>
+      <description>DGL offical document about customizing GNN layers is here
+DGL provides many message passingfunctions for uses to customize their own GNN layers.</description>
     </item>
     
     <item>
@@ -46,6 +47,27 @@ What is namespace and scope？ A namespace is a mapping from names to objects. E
       
       <guid>https://guangchen811.github.io/mle/answerhuyenquestions/</guid>
       <description>Answers of questionis in Machine Learning Interviews Book written by Chip Huyen</description>
+    </item>
+    
+    <item>
+      <title>Erect the Fence</title>
+      <link>https://guangchen811.github.io/leetcode/erect-the-fence/</link>
+      <pubDate>Sat, 23 Apr 2022 23:53:26 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/leetcode/erect-the-fence/</guid>
+      <description>No.587</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; Tutorial</title>
+      <link>https://guangchen811.github.io/languagetutorial/cpp/</link>
+      <pubDate>Mon, 18 Apr 2022 22:26:46 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/languagetutorial/cpp/</guid>
+      <description>Source: tutorials point
+Useful Links: www.cplusplus.com
+C++ is a middle-level programming language developed by Bjarne Stroustrup starting in 1979 at Bell Labs. C++ runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX. This C++ tutorial adopts a simple and practical approach to describe the concepts of C++ for beginners to advanded software engineers.
+Why to Learn C++ C++ is a MUST for students and working professionals to become a great Software Engineer.</description>
     </item>
     
     <item>

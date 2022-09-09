@@ -16,7 +16,8 @@
       <pubDate>Sun, 04 Sep 2022 16:55:50 +0800</pubDate>
       
       <guid>https://guangchen811.github.io/posts/my-own-gnn-layer/</guid>
-      <description>Dgl offical document about customizing GNN layers is here</description>
+      <description>DGL offical document about customizing GNN layers is here
+DGL provides many message passingfunctions for uses to customize their own GNN layers.</description>
     </item>
     
     <item>

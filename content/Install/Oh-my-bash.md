@@ -29,4 +29,10 @@ cp /root/.oh-my-bash/templates/bashrc.osh-template /root/.bashrc
 mv -f /root/.bashrc.omb-temp /root/.bashrc
 ```
 
-After the above command, you can see the basic oh-my-bash theme on your terminal. the default theme is `font`. you can change the variable `OSH_THEME` in the file `~/.bashrc`. All the theme can be found in [this link](https://github.com/ohmybash/oh-my-bash/wiki/Themes). I'd like to use `bakke` right now.
+After the above command, you can see the basic oh-my-bash theme on your terminal.
+
+![initial theme](/images/hello_ohmybash.png)
+
+the default theme is `font`. you can change the variable `OSH_THEME` in the file `~/.bashrc`. All the theme can be found in [this link](https://github.com/ohmybash/oh-my-bash/wiki/Themes). I'd like to use `bakke` right now.
+
+![bakke theme](/images/bakke.png)

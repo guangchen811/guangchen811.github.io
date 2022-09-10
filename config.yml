@@ -3,6 +3,8 @@ title: Hao'Log
 paginate: 5
 theme: PaperMod
 
+
+
 enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
@@ -38,9 +40,9 @@ languages:
                 - name: Categories
                   url: categories/
                   weight: 2
-                - name: Leetcode Notes
-                  url: leetcode/
-                  weight: 1
+                # - name: Leetcode Notes
+                #   url: leetcode/
+                #   weight: 1
 
 outputs:
     home:
@@ -53,7 +55,6 @@ params:
     # description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
     author: Hao Chen
     # author: ["Me", "You"] # multiple authors
-
     defaultTheme: auto
     # disableThemeToggle: true
     ShowShareButtons: true
@@ -88,7 +89,7 @@ params:
             - name: Categories
               url: categories/
               weight: 2
-
+    ShowAllPagesInArchive: true
     # homeInfoParams:
     #     Title: "PaperMod"
     #     Content: >

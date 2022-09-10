@@ -1,5 +1,6 @@
 ---
 title: "C++ Tutorial"
+type: post
 date: 2022-04-18T22:26:46+08:00
 draft: true
 summary: 

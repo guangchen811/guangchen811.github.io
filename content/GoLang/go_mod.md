@@ -85,7 +85,7 @@ go get -d example.com/mod@master
 go list -m -json example.com/mod@abcd1234
 ```
 
-### Major version suffixes
+### 主版本后缀
 从主版本2开始，模块路径必须有一个主版本号前缀如`/v2`来匹配主版本号。例如，一个模块可以将v1.0.0存在`example.com/mod`路径下，那么它必须在`example.com/mod/v2`路径存储其v2.0.0版本.
 
 主版本号后缀需要实现导入[兼容性原则](https://research.swtch.com/vgo-import)：
@@ -95,3 +95,50 @@ go list -m -json example.com/mod@abcd1234
 
 主要版本v0或v1不允许使用主要版本后缀。无需在v0和v1之间更改模块路径，因为v0版本不稳定，并且没有兼容性保证。此外，对于大多数模块，v1与最后一个v0版本向后兼容；v1版本是对兼容性的承诺，而不是与v0相比不兼容的更改。
 
+特别的是，从`gopkg.in/`开始的模块必须有主版本后缀，即使是`v0`和`v1`. 后缀必须以`.`或者`-`开始.
+
+主版本后缀使得一个模块的多个主版本可以共存在同一次build中. 这在解决[钻石依赖问题](https://research.swtch.com/vgo-import#dependency_story)时是必要的. 通常，如果传递依赖项需要两个不同版本的模块，则将使用更高的版本. 然而，如果两个版本不兼容，那么两个版本都不能满足所有客户端. 因为不兼容的版本一定有着不同的版本号，因此其对应的模块路径也不同. 这就解决了冲突：具有不同后缀的模块会被视为单独的模块，即便对于其模块根目录的同一子目录中的软件包，这两个模块也是不同的.
+
+许多Go项目在迁移成模块之前（可能是由于go module还没有被推出）在没有使用主要版本后缀的情况下发布了v2或更高版本的版本. 这些版本会带有`+incompatible`标签. 更多信息参见[非模块仓库的兼容性](https://go.dev/ref/mod#non-module-compat)
+
+### 将包解析成模块
+
+go命令使用[包路径](#术语表)来加载一个具体的包时需要确定哪个模块提供了这个包.
+
+go命令会从[构建列表](#术语表)中搜索包对应的路径中包含的模块. 例如，如果引入了包`example.com/a/b`，而`example.com/a`在构建列表之中，go命令会检查`example.com/a`的目录`b`中是否包含这个包. 目录中必须至少包含一个以`.go`作为后缀的文件. [构建依赖](https://go.dev/pkg/go/build/#hdr-Build_Constraints)不被用于该目的. 如果构建列表中的确存在一个模块提供了这个包就会应用这个模块. 如果没有模块提供这个包或者两个/多个模块提供了这个包，go命令会报错. `-mod=mod`命令行flag会尝试寻找新的提供丢失包的模块，并更新`go.mod`和`go.sum`.`go get`和`go mod tidy`会自动这样做.
+
+当go命令在包路径中查找新的模块时，他会检查`GOPROXY`环境变量（一个由逗号分割的代理URL地址列表或是关键词`direct`或`off`).代理URL指明go命令需要使用GOPROXY协议连接一个模块代理。 `direct`指明go命令应该直接连接一个版本控制系统. `off`指明不需要尝试通信. `GOPRIVATE`和`GONOPROXY`可以用于控制这些行为.
+
+对于GOPROXY列表中的每个条目，go命令请求可能提供软件包的每个模块路径的最新版本（即软件包路径的每个前缀）。对于每个成功请求的模块路径，go命令将以最新版本下载模块，并检查模块是否包含请求的软件包。如果一个或多个模块包含请求的软件包，则使用路径最长的模块。如果找到一个或多个模块，但没有一个模块包含请求的软件包，则会报告错误。如果没有找到模块，go命令将尝试GOPROXY列表中的下一个条目。如果没有留下任何条目，则会报告错误。
+
+例如，假设go命令在寻找名为`golang.org/x/net/html`的软件包，而`GOPROXY`被设定为`https://copr.example.com,https://proxy.golang.org`. go命令会尝试如下请求:
+
+- 对`https://corp.example.com/(并列):
+    - 请求最新版本的`golang.org/x/net/html`
+    - 请求最新版本的`golang.org/x/net`
+    - 请求最新版本的`golang.org/x`
+    - 请求最新版本的`golang.org`
+- 如果上述请求404或410，对`https://proxy.golang.org/`：
+    - 请求最新版本的`golang.org/x/net/html`
+    - 请求最新版本的`golang.org/x/net`
+    - 请求最新版本的`golang.org/x`
+    - 请求最新版本的`golang.org`
+
+在合适的模块被找到之后，go命令会在主模块`go.mod`文件中添加一个新的包含模块路径和版本的requirement.这确保了将来加载相同的软件包时，同一模块将在同一版本中使用. 如果已解决的软件包不是由主模块中的软件包导入的，则新需求将有一个`//`间接注释.
+
+### 最小版本选择
+
+
+### 术语表
+
+- 包路径: 唯一标识一个包的路径. 包路径由模块路径和模块中的子目录拼接而成. 例如`"golang.org/x/net/html"`在`"golang.org/x/net"`模块中的`"html"`子路径中. 包路径是引用路径的同义词
+
+- 引用路径：用于在Go源文件中引用一个包的字符串. 是包路径的同义词.
+
+- 构建列表(build list): 包含模块版本信息的表，会被用于`go build`, `go list`或`go test`中. 构建列表遵循[最小版本选择(minimal version selection)](#术语表)，由主模块的go.mod文件和传递必需模块中的go.mod文件确定. 构建列表包含[module graph](#术语表)中需要的所有模块的各个版本，而非与哪一个特定go命令相关。
+
+- 模块图(module graph)：模块依赖关系对应的有向图，位于[主模块](#术语表); 图中的每一条边都是`go.mod`文件中`require`语句说明的版本(或go.mod文件中的`replace`和`exclude`语句).
+
+- 主模块(main module)：go命令被调用的模块. 主模块被当前目录或当前目录的父目录中的`go.mod`文件定义. 参见[模块、包和版本](#模块、包和版本).
+
+- 最小版本选择(minimal version selection, MVS)：用于确定所有在构建中需要的模块版本的算法. 具体参见[最小版本选择章节](#最小版本选择).

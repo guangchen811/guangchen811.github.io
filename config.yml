@@ -22,7 +22,7 @@ languages:
     en:
         homeInfoParams:
             Title: "Welcome to my blog! \U0001F44B"
-            Content: Hi there, this is Hao. I'm trying to record things I've learned. It can't be better if my blogs are useful for you!
+            Content: Hi there, this is Hao.  I am currently documenting my acquired knowledge. It can't be better if my blogs are useful for you!
         languageName: "en"
         weight: 1
         menu:

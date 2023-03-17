@@ -1,7 +1,7 @@
 ---
 title: "AnswerHuyenQuestions"
 date: 2022-07-22T13:25:18+08:00
-draft: False
+draft: true
 summary: Answers of questionis in Machine Learning Interviews Book written by Chip Huyen
 ismath: true
 tags:

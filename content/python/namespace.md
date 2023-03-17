@@ -1,7 +1,7 @@
 ---
 title: "Namespace and scope"
 date: 2022-09-04T16:04:22+08:00
-draft: False
+draft: true
 tags:
     - python
     - namespace

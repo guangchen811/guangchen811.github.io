@@ -1,7 +1,7 @@
 ---
 title: "Oh My Bash"
 date: 2022-09-09T23:10:16+08:00
-draft: false
+draft: true
 tags: 
 - bash
 ---

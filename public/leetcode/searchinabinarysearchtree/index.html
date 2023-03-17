@@ -11,7 +11,7 @@
 <meta name="author" content="Hao Chen">
 <link rel="canonical" href="https://guangchen811.github.io/leetcode/searchinabinarysearchtree/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.b95bacdc39e37a332a9f883b1e78be4abc1fdca2bc1f2641f55e3cd3dabd4d61.js" integrity="sha256-uVus3DnjejMqn4g7Hni&#43;Srwf3KK8HyZB9V4809q9TWE="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://guangchen811.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://guangchen811.github.io/favicon-16x16.png">
@@ -56,7 +56,18 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Search in a Binary Seaerch Tree" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R12XP6LSRD"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-R12XP6LSRD', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Search in a Binary Seaerch Tree" />
 <meta property="og:description" content="No.700" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guangchen811.github.io/leetcode/searchinabinarysearchtree/" /><meta property="og:image" content="https://guangchen811.github.io/papermod-cover.png"/><meta property="article:section" content="leetcode" />
@@ -100,7 +111,7 @@
   "keywords": [
     "Tree", "BST", "Easy"
   ],
-  "articleBody": "Description You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node’s value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nIntuition There are only two possibilities when we searching a node:\n node is equal to the value node is not equal to the value  Algorithm When the node is equal to the value, we just need to return it. Otherwise, we just need to visit its left or right child recursively.\nPseudocode  visit root node.\n If root is null or root’s value is equal to target value, return the root.\nOtherwises, if root’s value is bigger than target value.\n visit root’s left child.\n Otherwises\n visit root’s right child.\n   Code # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def searchBST(self, root: Optional[TreeNode], val: int) - Optional[TreeNode]: if (root == None or root.val == val): return root elif root.val  val: return self.searchBST(root.right, val) else: return self.searchBST(root.left, val) Complexity Analysis  Time Complexity: $O(\\log{n})$ Space Complexity: $O(1)$  ",
+  "articleBody": "Description You are given the root of a binary search tree (BST) and an integer val.\nFind the node in the BST that the node’s value equals val and return the subtree rooted with that node. If such a node does not exist, return null.\nIntuition There are only two possibilities when we searching a node:\nnode is equal to the value node is not equal to the value Algorithm When the node is equal to the value, we just need to return it. Otherwise, we just need to visit its left or right child recursively.\nPseudocode visit root node.\nIf root is null or root’s value is equal to target value, return the root.\nOtherwises, if root’s value is bigger than target value.\nvisit root’s left child.\nOtherwises\nvisit root’s right child.\nCode # Definition for a binary tree node. # class TreeNode: # def __init__(self, val=0, left=None, right=None): # self.val = val # self.left = left # self.right = right class Solution: def searchBST(self, root: Optional[TreeNode], val: int) -\u003e Optional[TreeNode]: if (root == None or root.val == val): return root elif root.val \u003c val: return self.searchBST(root.right, val) else: return self.searchBST(root.left, val) Complexity Analysis Time Complexity: $O(\\log{n})$ Space Complexity: $O(1)$ ",
   "wordCount" : "201",
   "inLanguage": "en",
   "datePublished": "2022-04-10T19:26:27+08:00",
@@ -165,11 +176,6 @@
             </span>
         </div>
         <ul id="menu">
-            <li>
-                <a href="https://guangchen811.github.io/leetcode/" title="Leetcode Notes">
-                    <span>Leetcode Notes</span>
-                </a>
-            </li>
             <li>
                 <a href="https://guangchen811.github.io/categories/" title="Categories">
                     <span>Categories</span>
@@ -352,7 +358,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://guangchen811.github.io/">Hao&#39;Log</a></span>
+    <span>&copy; 2023 <a href="https://guangchen811.github.io/">Hao&#39;Log</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
@@ -482,7 +488,7 @@
     },
   };
 </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://polyfill.io/v3/polyfill.js?features=es5,es6,es7&flags=gated"></script>
 <script
   id="MathJax-script"
   async

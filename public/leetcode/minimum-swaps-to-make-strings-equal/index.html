@@ -11,7 +11,7 @@
 <meta name="author" content="Hao Chen">
 <link rel="canonical" href="https://guangchen811.github.io/leetcode/minimum-swaps-to-make-strings-equal/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.b95bacdc39e37a332a9f883b1e78be4abc1fdca2bc1f2641f55e3cd3dabd4d61.js" integrity="sha256-uVus3DnjejMqn4g7Hni&#43;Srwf3KK8HyZB9V4809q9TWE="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://guangchen811.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://guangchen811.github.io/favicon-16x16.png">
@@ -56,7 +56,18 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Minimum Swaps to Make Strings Equal" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R12XP6LSRD"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-R12XP6LSRD', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Minimum Swaps to Make Strings Equal" />
 <meta property="og:description" content="No.1247" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guangchen811.github.io/leetcode/minimum-swaps-to-make-strings-equal/" /><meta property="og:image" content="https://guangchen811.github.io/papermod-cover.png"/><meta property="article:section" content="leetcode" />
@@ -100,7 +111,7 @@
   "keywords": [
     "Medium"
   ],
-  "articleBody": "Description You are given two strings s1 and s2 of equal length consisting of letters \"x\" and \"y\" only. Your task is to make these two strings equal to each other. You can swap any two characters that belong to different strings, which means: swap s1[i] and s2[j].\nReturn the minimum number of swaps required to make s1 and s2 equal, or return -1 if it is impossible to do so.\nIntuition Given a index i, there are totally 4 possiblilities of s1[i] and s2[i]: x-x,y-y,x-yandy-x. x-x and y-y have been matched, we just need to process two other situations.\nAlgorithm Assum there are a pairs of x-y and b pairs of y-x. For 2 pairs of x-y or y-x, we can swap 1 steps to make them matching: \"xx\"|\"yy\"$\\rightarrow$\"xy\"|\"xy\". For one x-y and one y-x, we need 2 steps: \"xy\"|\"yx\"$\\rightarrow$\"xx\"|\"yy\"$\\rightarrow$\"xy\"|\"xy\".\nSo, if a and b are both even. We just need $\\frac{a+b}{2}$ steps without other process.\nIf one of a and b is even and the other is odd, we can’t make it match any way.\nIf their are both odd, we need $\\frac{a+b-2}{2}+2=\\frac{a+b}{2}+1$ steps.\nPseudocode  Read s1 and s2 to get a and b.\nIf only one of a and b is even, return -1.\nElse if both a and b are even, return $\\frac{a+b}{2}$.\nElse return $\\frac{a+b}{2}+1$\n Code class Solution: def minimumSwap(self, s1: str, s2: str) - int: a = 0 b = 0 for i in range(len(s1)): if s1[i] == 'x' and s2[i] == 'y': a += 1 elif s1[i] == 'y' and s2[i] == 'x': b += 1 if a%2==0 and b%2==0: return int((a+b)/2) elif a%2==1 and b%2==1: return int((a+b)/2+1) else: return -1 Complexity Analysis  Time Complexity: $O(n)$. Space Complexity: $O(1)$.  ",
+  "articleBody": "Description You are given two strings s1 and s2 of equal length consisting of letters \"x\" and \"y\" only. Your task is to make these two strings equal to each other. You can swap any two characters that belong to different strings, which means: swap s1[i] and s2[j].\nReturn the minimum number of swaps required to make s1 and s2 equal, or return -1 if it is impossible to do so.\nIntuition Given a index i, there are totally 4 possiblilities of s1[i] and s2[i]: x-x,y-y,x-yandy-x. x-x and y-y have been matched, we just need to process two other situations.\nAlgorithm Assum there are a pairs of x-y and b pairs of y-x. For 2 pairs of x-y or y-x, we can swap 1 steps to make them matching: \"xx\"|\"yy\"$\\rightarrow$\"xy\"|\"xy\". For one x-y and one y-x, we need 2 steps: \"xy\"|\"yx\"$\\rightarrow$\"xx\"|\"yy\"$\\rightarrow$\"xy\"|\"xy\".\nSo, if a and b are both even. We just need $\\frac{a+b}{2}$ steps without other process.\nIf one of a and b is even and the other is odd, we can’t make it match any way.\nIf their are both odd, we need $\\frac{a+b-2}{2}+2=\\frac{a+b}{2}+1$ steps.\nPseudocode Read s1 and s2 to get a and b.\nIf only one of a and b is even, return -1.\nElse if both a and b are even, return $\\frac{a+b}{2}$.\nElse return $\\frac{a+b}{2}+1$\nCode class Solution: def minimumSwap(self, s1: str, s2: str) -\u003e int: a = 0 b = 0 for i in range(len(s1)): if s1[i] == 'x' and s2[i] == 'y': a += 1 elif s1[i] == 'y' and s2[i] == 'x': b += 1 if a%2==0 and b%2==0: return int((a+b)/2) elif a%2==1 and b%2==1: return int((a+b)/2+1) else: return -1 Complexity Analysis Time Complexity: $O(n)$. Space Complexity: $O(1)$. ",
   "wordCount" : "286",
   "inLanguage": "en",
   "datePublished": "2022-04-15T23:10:09+08:00",
@@ -165,11 +176,6 @@
             </span>
         </div>
         <ul id="menu">
-            <li>
-                <a href="https://guangchen811.github.io/leetcode/" title="Leetcode Notes">
-                    <span>Leetcode Notes</span>
-                </a>
-            </li>
             <li>
                 <a href="https://guangchen811.github.io/categories/" title="Categories">
                     <span>Categories</span>
@@ -342,7 +348,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://guangchen811.github.io/">Hao&#39;Log</a></span>
+    <span>&copy; 2023 <a href="https://guangchen811.github.io/">Hao&#39;Log</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
@@ -472,7 +478,7 @@
     },
   };
 </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://polyfill.io/v3/polyfill.js?features=es5,es6,es7&flags=gated"></script>
 <script
   id="MathJax-script"
   async

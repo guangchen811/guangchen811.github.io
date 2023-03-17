@@ -11,7 +11,7 @@
 <meta name="author" content="Hao Chen">
 <link rel="canonical" href="https://guangchen811.github.io/leetcode/minimum-size-subarray-sum/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.b95bacdc39e37a332a9f883b1e78be4abc1fdca2bc1f2641f55e3cd3dabd4d61.js" integrity="sha256-uVus3DnjejMqn4g7Hni&#43;Srwf3KK8HyZB9V4809q9TWE="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://guangchen811.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://guangchen811.github.io/favicon-16x16.png">
@@ -56,7 +56,18 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Minimum Size Subarray Sum" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R12XP6LSRD"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-R12XP6LSRD', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Minimum Size Subarray Sum" />
 <meta property="og:description" content="No.209" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guangchen811.github.io/leetcode/minimum-size-subarray-sum/" /><meta property="og:image" content="https://guangchen811.github.io/papermod-cover.png"/><meta property="article:section" content="leetcode" />
@@ -100,7 +111,7 @@
   "keywords": [
     "2 pointers"
   ],
-  "articleBody": "Description Given an array of positive integers nums and a positive integer target return the minimal legth of a contiguous subarray of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.\nIntuition We could keep 2 pointer, one for the start and the other for the end of current subarray, and make optimal moves so as to keep the sum greater than s as well as maintain the lowest size possible.\nAlgorithm Code class Solution { public: int minSubArrayLen(int target, vectorint\u0026 nums) { int n = nums.size(); int ans = INT_MAX; int left = 0; int sum = 0; for (int i = 0; i  n; i++) { sum += nums[i]; while (sum = target) { ans = min(ans, i + 1 -left); sum -= nums[left++]; } } return (ans != INT_MAX) ? ans : 0; } }; Complexity Analysis  Time Complexity: $O(n)$ Space Complexity: $O(1)$  ",
+  "articleBody": "Description Given an array of positive integers nums and a positive integer target return the minimal legth of a contiguous subarray of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.\nIntuition We could keep 2 pointer, one for the start and the other for the end of current subarray, and make optimal moves so as to keep the sum greater than s as well as maintain the lowest size possible.\nAlgorithm Code class Solution { public: int minSubArrayLen(int target, vector\u003cint\u003e\u0026 nums) { int n = nums.size(); int ans = INT_MAX; int left = 0; int sum = 0; for (int i = 0; i \u003c n; i++) { sum += nums[i]; while (sum \u003e= target) { ans = min(ans, i + 1 -left); sum -= nums[left++]; } } return (ans != INT_MAX) ? ans : 0; } }; Complexity Analysis Time Complexity: $O(n)$ Space Complexity: $O(1)$ ",
   "wordCount" : "157",
   "inLanguage": "en",
   "datePublished": "2022-04-17T19:39:20+08:00",
@@ -165,11 +176,6 @@
             </span>
         </div>
         <ul id="menu">
-            <li>
-                <a href="https://guangchen811.github.io/leetcode/" title="Leetcode Notes">
-                    <span>Leetcode Notes</span>
-                </a>
-            </li>
             <li>
                 <a href="https://guangchen811.github.io/categories/" title="Categories">
                     <span>Categories</span>
@@ -330,7 +336,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://guangchen811.github.io/">Hao&#39;Log</a></span>
+    <span>&copy; 2023 <a href="https://guangchen811.github.io/">Hao&#39;Log</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
@@ -460,7 +466,7 @@
     },
   };
 </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://polyfill.io/v3/polyfill.js?features=es5,es6,es7&flags=gated"></script>
 <script
   id="MathJax-script"
   async

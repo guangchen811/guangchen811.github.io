@@ -11,7 +11,7 @@
 <meta name="author" content="Hao Chen">
 <link rel="canonical" href="https://guangchen811.github.io/leetcode/erect-the-fence/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.b95bacdc39e37a332a9f883b1e78be4abc1fdca2bc1f2641f55e3cd3dabd4d61.js" integrity="sha256-uVus3DnjejMqn4g7Hni&#43;Srwf3KK8HyZB9V4809q9TWE="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://guangchen811.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://guangchen811.github.io/favicon-16x16.png">
@@ -56,7 +56,18 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Erect the Fence" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R12XP6LSRD"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-R12XP6LSRD', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Erect the Fence" />
 <meta property="og:description" content="No.587" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guangchen811.github.io/leetcode/erect-the-fence/" /><meta property="og:image" content="https://guangchen811.github.io/papermod-cover.png"/><meta property="article:section" content="leetcode" />
@@ -98,9 +109,9 @@
   "name": "Erect the Fence",
   "description": "No.587",
   "keywords": [
-    "Convex Hull", ""
+    "Convex Hull",  null 
   ],
-  "articleBody": "Description You are given an array trees where trees [i] = [xi, yi] represents the location of a tree in the garden.\nYou are asked to fence the entire garden using the minimum length of rope as it is expensive. The garden is well fenced only if all the trees are enclosed.\nReturn the coordinates of trees that are exactly located on the fence perimeter.\nFor example: Input: points = [[1,1],[2,2],[2,0],[2,4],[3,3],[4,2]] Output: [[1,1],[2,0],[3,3],[2,4],[4,2]] Intuition This problem is a typical Convex Hull Algorithm. There are many common Algorithm to solve this kind of problem. Let’s describe Jarvis Algorithm, Graham Algorithm, Andrew Algorithm at here.\nAlgorithm Jarvis Algorithm The idea of Jarvis Algorithm is simple. We begin as the node which must on the contex hull, for example, the leftmost point $A_1$. Then we choose $A_2$ to ensure all nodes are on the left(right) side of the link $\\vec{AB}$. Repat the process to find $A_3, A_4, A_5,\\cdots$.\nCode class Solution { public: int cross(vectorint \u0026 p, vectorint \u0026 q, vectorint \u0026 r) { return (q[0] - p[0]) * (r[1] - q[1]) - (q[1] - p[1]) * (r[0] - q[0]); } vectorvectorint outerTrees(vectorvectorint\u0026 trees) { int n = trees.size(); if (n  4) { return trees; } int leftMost = 0; for (int i = 0; i  n; i++) { if (trees[i][0]  trees[leftMost][0]) { leftMost = i; } } vectorvectorint res; vectorbool visit(n, false); int p = leftMost; do { int q = (p + 1) % n; for (int r = 0; r  n; r++) { /* If r is on the right of pq，q = r */ if (cross(trees[p], trees[q], trees[r])  0) { q = r; } } /* Is there a node i, to make p 、q 、i on a line. */ for (int i = 0; i  n; i++) { if (visit[i] || i == p || i == q) { continue; } if (cross(trees[p], trees[q], trees[i]) == 0) { res.emplace_back(trees[i]); visit[i] = true; } } if (!visit[q]) { res.emplace_back(trees[q]); visit[q] = true; } p = q; } while (p != leftMost); return res; } }; Complexity Analysis  Time Complexity: $O(n^2)$ Space Complexity: $O(n)$  ",
+  "articleBody": "Description You are given an array trees where trees [i] = [xi, yi] represents the location of a tree in the garden.\nYou are asked to fence the entire garden using the minimum length of rope as it is expensive. The garden is well fenced only if all the trees are enclosed.\nReturn the coordinates of trees that are exactly located on the fence perimeter.\nFor example: Input: points = [[1,1],[2,2],[2,0],[2,4],[3,3],[4,2]] Output: [[1,1],[2,0],[3,3],[2,4],[4,2]] Intuition This problem is a typical Convex Hull Algorithm. There are many common Algorithm to solve this kind of problem. Let’s describe Jarvis Algorithm, Graham Algorithm, Andrew Algorithm at here.\nAlgorithm Jarvis Algorithm The idea of Jarvis Algorithm is simple. We begin as the node which must on the contex hull, for example, the leftmost point $A_1$. Then we choose $A_2$ to ensure all nodes are on the left(right) side of the link $\\vec{AB}$. Repat the process to find $A_3, A_4, A_5,\\cdots$.\nCode class Solution { public: int cross(vector\u003cint\u003e \u0026 p, vector\u003cint\u003e \u0026 q, vector\u003cint\u003e \u0026 r) { return (q[0] - p[0]) * (r[1] - q[1]) - (q[1] - p[1]) * (r[0] - q[0]); } vector\u003cvector\u003cint\u003e\u003e outerTrees(vector\u003cvector\u003cint\u003e\u003e\u0026 trees) { int n = trees.size(); if (n \u003c 4) { return trees; } int leftMost = 0; for (int i = 0; i \u003c n; i++) { if (trees[i][0] \u003c trees[leftMost][0]) { leftMost = i; } } vector\u003cvector\u003cint\u003e\u003e res; vector\u003cbool\u003e visit(n, false); int p = leftMost; do { int q = (p + 1) % n; for (int r = 0; r \u003c n; r++) { /* If r is on the right of pq，q = r */ if (cross(trees[p], trees[q], trees[r]) \u003c 0) { q = r; } } /* Is there a node i, to make p 、q 、i on a line. */ for (int i = 0; i \u003c n; i++) { if (visit[i] || i == p || i == q) { continue; } if (cross(trees[p], trees[q], trees[i]) == 0) { res.emplace_back(trees[i]); visit[i] = true; } } if (!visit[q]) { res.emplace_back(trees[q]); visit[q] = true; } p = q; } while (p != leftMost); return res; } }; Complexity Analysis Time Complexity: $O(n^2)$ Space Complexity: $O(n)$ ",
   "wordCount" : "360",
   "inLanguage": "en",
   "datePublished": "2022-04-23T23:53:26+08:00",
@@ -166,11 +177,6 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://guangchen811.github.io/leetcode/" title="Leetcode Notes">
-                    <span>Leetcode Notes</span>
-                </a>
-            </li>
-            <li>
                 <a href="https://guangchen811.github.io/categories/" title="Categories">
                     <span>Categories</span>
                 </a>
@@ -199,7 +205,7 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://guangchen811.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://guangchen811.github.io/leetcode/">Leetcodes</a></div>
     <h1 class="post-title">
-      Erect the Fence<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+      Erect the Fence
     </h1>
     <div class="post-meta"><span title='2022-04-23 23:53:26 +0800 CST'>April 23, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Hao Chen
 
@@ -370,7 +376,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://guangchen811.github.io/">Hao&#39;Log</a></span>
+    <span>&copy; 2023 <a href="https://guangchen811.github.io/">Hao&#39;Log</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
@@ -500,7 +506,7 @@
     },
   };
 </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://polyfill.io/v3/polyfill.js?features=es5,es6,es7&flags=gated"></script>
 <script
   id="MathJax-script"
   async

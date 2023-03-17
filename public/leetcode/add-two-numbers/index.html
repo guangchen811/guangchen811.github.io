@@ -11,7 +11,7 @@
 <meta name="author" content="Hao Chen">
 <link rel="canonical" href="https://guangchen811.github.io/leetcode/add-two-numbers/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js" integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.b95bacdc39e37a332a9f883b1e78be4abc1fdca2bc1f2641f55e3cd3dabd4d61.js" integrity="sha256-uVus3DnjejMqn4g7Hni&#43;Srwf3KK8HyZB9V4809q9TWE="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://guangchen811.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://guangchen811.github.io/favicon-16x16.png">
@@ -56,7 +56,18 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Add Two Numbers" />
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R12XP6LSRD"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-R12XP6LSRD', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Add Two Numbers" />
 <meta property="og:description" content="No.2" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://guangchen811.github.io/leetcode/add-two-numbers/" /><meta property="og:image" content="https://guangchen811.github.io/papermod-cover.png"/><meta property="article:section" content="leetcode" />
@@ -100,7 +111,7 @@
   "keywords": [
     "Linked List", "Easy"
   ],
-  "articleBody": "Description You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.\nYou may assume the two numbers do not contain any leading zero, except the number 0 itself.\nIntuition Keep track of the carry using a variable and simulate digits-by-digits sum starting from the head of list, which contains the least-significant digit.\nAlgorithm Just like how we would sum two numbers on a piece of paper, we begin by summing the least-significant digits, which is the head of $l1$ and $l2$. Since each digit is in the range of 0…9, summing two digits may “overflow”. For example $5+7=12$. In this case, we set the current digit to 2 and bring over the $carry=1$ to the next iteration. $carry$ must be either $0$ or $1$ because the largest possible sum of two digits (including the carry) is $9+9+1=19$.\nPseudocode  Initialize current node to dummy head of the returning list.\nInitialize $carry$ to 0.\nInitialize $p$ and $q$ to head of $l1$ and $l2$ respectively. Loop through lists $l1$ and $l2$ until you reach both ends.\n Set $x$ to node $p$’s value. If $p$ has reached the end of $l1$, set to 0.\nSet $y$ to node $q$’s value. If $q$ has reached the end of $l2$, set to 0.\nSet $sum=x+y+carry$.\nUpdate $carry = sum/10$\nCreate a new node with teh digit value of ($sum\\mod{10}$) and set it to current node’s next, then advance current node to next.\nAdvance both $p$ and $q$.\n Check if $carry=1$, if so append a new node with digit 1 to the returning list.\nReturn dummy head’s next node.\n Code # Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.val = val # self.next = next class Solution: def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) - Optional[ListNode]: dummyHead = ListNode(val=0) p = l1 q = l2 curr = dummyHead carry = 0 while(p != None or q != None): if p != None: x = p.val else: x = 0 if q != None: y = q.val else: y = 0 sum = carry + x + y carry = sum // 10 curr.next = ListNode(val=sum % 10) curr = curr.next if(p != None): p = p.next if(q != None): q = q.next if (carry  0): curr.next = ListNode(carry) return dummyHead.next Complexity Analysis   Time Complexity: $O(\\max{(m,n)})$. Assume that $m$ and $n$ represents the length of $l1$ and $l2$ respectively, the algorithm above iterates at most $\\max{(m,n)}$ times.\n  Space Complexity: $O(\\max{(m,n)})$. The length of the new list is at most $\\max{(m,n)}+1$.\n  ",
+  "articleBody": "Description You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.\nYou may assume the two numbers do not contain any leading zero, except the number 0 itself.\nIntuition Keep track of the carry using a variable and simulate digits-by-digits sum starting from the head of list, which contains the least-significant digit.\nAlgorithm Just like how we would sum two numbers on a piece of paper, we begin by summing the least-significant digits, which is the head of $l1$ and $l2$. Since each digit is in the range of 0…9, summing two digits may “overflow”. For example $5+7=12$. In this case, we set the current digit to 2 and bring over the $carry=1$ to the next iteration. $carry$ must be either $0$ or $1$ because the largest possible sum of two digits (including the carry) is $9+9+1=19$.\nPseudocode Initialize current node to dummy head of the returning list.\nInitialize $carry$ to 0.\nInitialize $p$ and $q$ to head of $l1$ and $l2$ respectively. Loop through lists $l1$ and $l2$ until you reach both ends.\nSet $x$ to node $p$’s value. If $p$ has reached the end of $l1$, set to 0.\nSet $y$ to node $q$’s value. If $q$ has reached the end of $l2$, set to 0.\nSet $sum=x+y+carry$.\nUpdate $carry = sum/10$\nCreate a new node with teh digit value of ($sum\\mod{10}$) and set it to current node’s next, then advance current node to next.\nAdvance both $p$ and $q$.\nCheck if $carry=1$, if so append a new node with digit 1 to the returning list.\nReturn dummy head’s next node.\nCode # Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.val = val # self.next = next class Solution: def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -\u003e Optional[ListNode]: dummyHead = ListNode(val=0) p = l1 q = l2 curr = dummyHead carry = 0 while(p != None or q != None): if p != None: x = p.val else: x = 0 if q != None: y = q.val else: y = 0 sum = carry + x + y carry = sum // 10 curr.next = ListNode(val=sum % 10) curr = curr.next if(p != None): p = p.next if(q != None): q = q.next if (carry \u003e 0): curr.next = ListNode(carry) return dummyHead.next Complexity Analysis Time Complexity: $O(\\max{(m,n)})$. Assume that $m$ and $n$ represents the length of $l1$ and $l2$ respectively, the algorithm above iterates at most $\\max{(m,n)}$ times.\nSpace Complexity: $O(\\max{(m,n)})$. The length of the new list is at most $\\max{(m,n)}+1$.\n",
   "wordCount" : "448",
   "inLanguage": "en",
   "datePublished": "2022-04-09T19:26:27+08:00",
@@ -165,11 +176,6 @@
             </span>
         </div>
         <ul id="menu">
-            <li>
-                <a href="https://guangchen811.github.io/leetcode/" title="Leetcode Notes">
-                    <span>Leetcode Notes</span>
-                </a>
-            </li>
             <li>
                 <a href="https://guangchen811.github.io/categories/" title="Categories">
                     <span>Categories</span>
@@ -366,7 +372,7 @@ Loop through lists $l1$ and $l2$ until you reach both ends.</p>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://guangchen811.github.io/">Hao&#39;Log</a></span>
+    <span>&copy; 2023 <a href="https://guangchen811.github.io/">Hao&#39;Log</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
@@ -496,7 +502,7 @@ Loop through lists $l1$ and $l2$ until you reach both ends.</p>
     },
   };
 </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://polyfill.io/v3/polyfill.js?features=es5,es6,es7&flags=gated"></script>
 <script
   id="MathJax-script"
   async

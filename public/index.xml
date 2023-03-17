@@ -9,46 +9,7 @@
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Sep 2022 16:55:50 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My Own GNN Layer</title>
-      <link>https://guangchen811.github.io/posts/my-own-gnn-layer/</link>
-      <pubDate>Sun, 04 Sep 2022 16:55:50 +0800</pubDate>
-      
-      <guid>https://guangchen811.github.io/posts/my-own-gnn-layer/</guid>
-      <description>DGL offical document about customizing GNN layers is here
-DGL provides many message passingfunctions for uses to customize their own GNN layers.</description>
-    </item>
-    
-    <item>
-      <title>Namespace and scope</title>
-      <link>https://guangchen811.github.io/python/namespace/</link>
-      <pubDate>Sun, 04 Sep 2022 16:04:22 +0800</pubDate>
-      
-      <guid>https://guangchen811.github.io/python/namespace/</guid>
-      <description>This is python offical document that explain the difference between Scope and Namespace.
-My summary after reading the document is as follows.
-What is namespace and scope？ A namespace is a mapping from names to objects. Examples of namespaces are: the set of built-in names(containing functions usch as abs(), and built-in exception names); the global names in a module; and the localnames in a function invocation. In a sense the set of attributes of an object aloso form a namespace.</description>
-    </item>
-    
-    <item>
-      <title>Go Modules Reference中文翻译</title>
-      <link>https://guangchen811.github.io/golang/go_mod/</link>
-      <pubDate>Sat, 03 Sep 2022 16:20:27 +0800</pubDate>
-      
-      <guid>https://guangchen811.github.io/golang/go_mod/</guid>
-      <description>No.2</description>
-    </item>
-    
-    <item>
-      <title>AnswerHuyenQuestions</title>
-      <link>https://guangchen811.github.io/mle/answerhuyenquestions/</link>
-      <pubDate>Fri, 22 Jul 2022 13:25:18 +0800</pubDate>
-      
-      <guid>https://guangchen811.github.io/mle/answerhuyenquestions/</guid>
-      <description>Answers of questionis in Machine Learning Interviews Book written by Chip Huyen</description>
-    </item>
-    
+    <lastBuildDate>Sat, 23 Apr 2022 23:53:26 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Erect the Fence</title>
       <link>https://guangchen811.github.io/leetcode/erect-the-fence/</link>
@@ -56,18 +17,6 @@ What is namespace and scope？ A namespace is a mapping from names to objects. E
       
       <guid>https://guangchen811.github.io/leetcode/erect-the-fence/</guid>
       <description>No.587</description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43; Tutorial</title>
-      <link>https://guangchen811.github.io/languagetutorial/cpp/</link>
-      <pubDate>Mon, 18 Apr 2022 22:26:46 +0800</pubDate>
-      
-      <guid>https://guangchen811.github.io/languagetutorial/cpp/</guid>
-      <description>Source: tutorials point
-Useful Links: www.cplusplus.com
-C++ is a middle-level programming language developed by Bjarne Stroustrup starting in 1979 at Bell Labs. C++ runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX. This C++ tutorial adopts a simple and practical approach to describe the concepts of C++ for beginners to advanded software engineers.
-Why to Learn C++ C++ is a MUST for students and working professionals to become a great Software Engineer.</description>
     </item>
     
     <item>

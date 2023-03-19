@@ -9,7 +9,25 @@
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 23 Apr 2022 23:53:26 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://guangchen811.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oh My Posh</title>
+      <link>https://guangchen811.github.io/tags/oh-my-posh/</link>
+      <pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://guangchen811.github.io/tags/oh-my-posh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerShell</title>
+      <link>https://guangchen811.github.io/tags/powershell/</link>
+      <pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://guangchen811.github.io/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Convex Hull</title>
       <link>https://guangchen811.github.io/tags/convex-hull/</link>

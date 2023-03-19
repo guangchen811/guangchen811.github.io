@@ -1,35 +1,45 @@
 ---
 title: "Prompt_comparation"
 date: 2023-03-17T15:03:57+08:00
-draft: true
+draft: false
 ---
 
-Large language models (LLMs) have become increasingly popular and accessible to people without technical expertise. This has brought about a significant change not only in the AI industry but also in other fields of work. It is therefore essential to conduct a comprehensive comparison of different types of LLMs.
+Large language models (LLMs) have become increasingly popular and accessible to people without technical expertise. This has brought about a significant change not only in the AI industry but also in other fields of work. However, faced with so many different LLMs, how do we choose different LLMs to maximize their help to our work and life? For example, when we want to polish an article, should we open a ChatGPT dialog box, or should we transfer it to Notion for processing by Notion AI?
 
 In this blog, I will compare the following LLMs: ChatGPT, GPT4, New Bing, and Notion AI. Besides, Baidu have release their large multi-modal model, Wenxin Yiyan. I'll add the comparision with Wenxin Yiyan after get the access to it. I hope this blog can help you select the right LLM to assist your work and life. 
 
 ## Brief Introduction to Each LLM
 ### ChatGPT & GPT4
 
-[ChatGPT](https://openai.com/blog/chatgpt): A model that is trained to follow an instruction in a prompt and provide a detailed response. It is a sibling model to [InstructGPT](https://openai.com/blog/instruction-following/).
-[GPT4](https://openai.com/research/gpt-4): A large multimodal model that accepts image and text inputs, and emits text outputs. It exhibits human-level performance on various professional and academic benchmarks, although it is less capable than humans in many real-world scenarios.
+[ChatGPT](https://openai.com/blog/chatgpt): A model that is trained to follow an instruction in a prompt and provide a detailed response. It is a sibling model to [InstructGPT](https://openai.com/blog/instruction-following/). There are two versions of ChatGPT being tested here (Default and Legacy). Default is a version optimized by OpenAI for ChatGPT Plus users for faster response time. Legacy is the version that OpenAI made available to ChatGPT Plus users before the release of GPT-4. Default version has better consistency compared to Legacy version. 
+
+[GPT-4](https://openai.com/research/gpt-4): A large multimodal model that accepts image and text inputs, and emits text outputs. It exhibits human-level performance on various professional and academic benchmarks, although it is less capable than humans in many real-world scenarios. Here, we only test its ability on language-related tasks.
+
+The following flowchart illustrates their general working principle. They achieves multi-turn dialogue by taking historical information and new questions as inputs together.
+
 <div align="center">
     <img src="/images/LLM/gpt_workflow.png" alt="Image 1" height=300>
-    <figcaption align="center">Subcaption 1</figcaption>
+    <figcaption align="center">Overall working principle of ChatGPT series models. </figcaption>
     </div>
 
 ### New Bing
-[New Bing](https://www.bing.com/new): A search engine enhanced by [GPT4](https://blogs.bing.com/search/march_2023/Confirmed-the-new-Bing-runs-on-OpenAI%E2%80%99s-GPT-4). Bing searches for relevant content across the web and then summarizes what it finds to generate a helpful response. It also cites its sources, so you're able to see links to the web content it references.
+[New Bing](https://www.bing.com/new): A search engine enhanced by [GPT-4](https://blogs.bing.com/search/march_2023/Confirmed-the-new-Bing-runs-on-OpenAI%E2%80%99s-GPT-4). Bing searches for relevant content across the web and then summarizes what it finds to generate a helpful response. It also cites its sources, so you're able to see links to the web content it references.
+
+As shown in the flowchart below, New Bing summarizes user input into search keywords and uses a search engine to perform a search. Afterwards, it compiles the search responses and the user's question together as input to formulate its response.
+
 <div align="center">
     <img src="/images/LLM/Bing_workflow.png" alt="Image 1" height=300>
-    <figcaption align="center">Subcaption 1</figcaption>
+    <figcaption align="center">Overall working principle of New Bing.</figcaption>
 </div>
 
 ### Notion AI
 [Notion AI](https://www.notion.so/product/ai): A connected assistant that helps you think bigger, work faster, and augments your creativity, right inside the functional workspace you’re already familiar with. Compared with other LLMs, Notion AI is integrated in notion pages, which are more focused on content-related questions. Thus, if your day-to-day involves reading docs, writing content, or taking notes, Notion AI can make you more efficient.
+
+If there is text available on the corresponding page, Notion AI will use the selected text in Notion Pages (or all of the text if none is selected) as a part of the model input, in order to obtain a contextually relevant response.
+
 <div align="center">
     <img src="/images/LLM/notionAI_workflow.png" alt="Image 1" height=300>
-    <figcaption align="center">Subcaption 1</figcaption>
+    <figcaption align="center">Overall working principle of Notion AI.</figcaption>
 </div>
 
 ## Which Prompts and Why These Prompts
@@ -37,17 +47,22 @@ In this blog, I will compare the following LLMs: ChatGPT, GPT4, New Bing, and No
 To compare the performance of these LLMs, I will use a set of prompts that encompass a variety of use cases. The selected prompts will test each model's ability to handle different types of tasks, including factual information, creative writing, problem-solving, and more.
 
 - General knowledge question: "What is photosynthesis?"
-- Creative writing: "Write a short story about a talking tree."
-- Problem-solving: "How can I reduce my electricity bill?"
-- Technical explanation: "Explain the concept of blockchain technology."
-- Opinions and recommendations: "What are the best strategies for effective time management?"
-- Debug: "Please help me find the bug in this code."
-- Text adjustment: "Add a number at the beginning of each paragraph in the following content. Replace all "。" with "." and bold all sentences with more than ten words."
-- These prompts were chosen because they represent a diverse range of tasks and require different levels of understanding, creativity, and problem-solving skills. By using these prompts, we can gain insights into each LLM's strengths and weaknesses.
+- Resolving technical issues: "Please provide me with the easiest method to set up a visually appealing terminal on a Mac. The steps should be detailed and feasible."
+- Programming assistance: "Please help me find the bug in this code."
+- Text adjustment: "Add a number at the beginning of each paragraph in the following content. Replace all `"` with `'`. If a sentence starts with 'a', please replace it with an uppercase letter. Otherwise, keep it unchanged. Bold all sentences with more than ten words."
+- Literature collection and organization: "Providing important literature in the development process of generative diffusion model."
+- Real-time capability: "What is today's date and day of the week? How is the weather?"
+These prompts were chosen because they represent a diverse range of tasks and require different levels of understanding, creativity, and problem-solving skills. By using these prompts, we can gain insights into each LLM's strengths and weaknesses.
+
 
 ## LLM Comparison Results
 
-### Prompt 1: What is photosynthesis?
+### Prompt 1
+<small>
+
+> What is photosynthesis?
+
+</small>
 <details><summary>ChatGPT (Default)</summary>
 
 <small>
@@ -116,7 +131,12 @@ To compare the performance of these LLMs, I will use a set of prompts that encom
 
 </details>
 
-### Prompt 2: Please provide me with the easiest method to set up a visually appealing terminal on a Mac. The steps should be detailed and feasible.
+### Prompt 2
+<small>
+
+> Please provide me with the easiest method to set up a visually appealing terminal on a Mac. The steps should be detailed and feasible.
+
+</small>
 
 <details><summary>ChatGPT (Default)</summary>
 <small>
@@ -268,12 +288,29 @@ To compare the performance of these LLMs, I will use a set of prompts that encom
 
 </details>
 
-### Prompt 3: Write a short story about a talking tree.
+### Prompt 3
+<small>
+
+> Add a number at the beginning of each paragraph in the following content. Replace all `"` with `'`. If a sentence starts with 'a', please replace it with an lowercase letter. Otherwise, keep it unchanged. Bold all sentences with more than ten words.
+> Here is the content: 
+> 
+> ```
+> Amidst the whirlwind of technological advancements, ChatGPT has revolutionized the way people communicate and access information. "Always available, always accurate," the AI-powered tool offers unparalleled assistance, transcending language barriers and cultural differences.
+> 
+> As a result, users can quickly and efficiently find answers to questions and solve problems that once seemed insurmountable.
+> 
+> ```
+> Now, please show me the modified content.
+
+</small>
+
 <details><summary>ChatGPT (Default)</summary>
 
 <small>
 
-> 
+> 1. Amidst the whirlwind of technological advancements, ChatGPT has revolutionized the way people communicate and access information. 'Always available, always accurate,' the AI-powered tool offers unparalleled assistance, transcending language barriers and cultural differences.
+>
+> 2. As a result, users can quickly and efficiently find answers to questions and solve problems that once seemed insurmountable.
 
 </small>
 
@@ -283,6 +320,10 @@ To compare the performance of these LLMs, I will use a set of prompts that encom
 
 <small>
 
+> 1. Amidst the whirlwind of technological advancements, **ChatGPT has revolutionized the way people communicate and access information.** "Always available, always accurate," the AI-powered tool offers unparalleled assistance, transcending language barriers and cultural differences.
+> 
+> 2. **As a result, users can quickly and efficiently find answers to questions and solve problems that once seemed insurmountable.**
+
 </small>
 
 </details>
@@ -291,7 +332,9 @@ To compare the performance of these LLMs, I will use a set of prompts that encom
 
 <small>
 
+> 1. **Amidst the whirlwind of technological advancements, ChatGPT has revolutionized the way people communicate and access information.** 'Always available, always accurate,' the AI-powered tool offers unparalleled assistance, transcending language barriers and cultural differences.
 > 
+> 2. **As a result, users can quickly and efficiently find answers to questions and solve problems that once seemed insurmountable.**
 
 </small>
 
@@ -301,7 +344,11 @@ To compare the performance of these LLMs, I will use a set of prompts that encom
 
 <small>
 
+> Here is the modified content:
 > 
+> 1. **Amidst the whirlwind of technological advancements, ChatGPT has revolutionized the way people communicate and access information.** 'Always available, always accurate,' the AI-powered tool offers unparalleled assistance, transcending language barriers and cultural differences.
+>
+> 2. As a result, users can quickly and efficiently find answers to questions and solve problems that once seemed insurmountable.
 
 </small>
 
@@ -311,7 +358,182 @@ To compare the performance of these LLMs, I will use a set of prompts that encom
 
 <small>
 
+> 1. Amidst the whirlwind of technological advancements, ChatGPT has revolutionized the way people communicate and access information. **'Always available, always accurate,'** the AI-powered tool offers unparalleled assistance, transcending language barriers and cultural differences.
+>
+> 2. **As a result, users can quickly and efficiently find answers to questions and solve problems that once seemed insurmountable.**
+
+</small>
+
+</details>
+
+### Prompt 4
+
+<small>
+
+> Providing important literature in the development process of generative diffusion model.
+
+</small>
+
+<details><summary>ChatGPT (Default)</summary>
+
+<small>
+
+> The Generative Diffusion Model (GDM) is a recent deep learning approach that has been shown to achieve state-of-the-art results in image generation, audio synthesis, and text generation. In the development of GDM, several important literature have contributed to its advancement. Below are some of the important literature that can be helpful in the development process of GDM:
 > 
+> "Improved Variational Inference with Inverse Autoregressive Flow" by Diederik P. Kingma et al. (2016): This paper introduces a technique called Inverse Autoregressive Flow (IAF) that can be used to improve the performance of variational autoencoders (VAEs), which are a key component of GDM. IAF provides a more flexible way of modeling the posterior distribution of the latent variables in VAEs, which can improve their performance in complex generative tasks.
+>
+> "Density Estimation Using Real NVP" by Laurent Dinh et al. (2017): This paper introduces a technique called Real Non-Volume Preserving (Real NVP) flows, which is a type of normalizing flow that can be used to model complex high-dimensional probability distributions. Real NVP is an important building block of GDM, as it provides a way of modeling the complex dynamics of the diffusion process that is used in GDM.
+>
+> "Generative Models and Model Criticism via Optimized Maximum Mean Discrepancy" by Dougal Maclaurin et al. (2015): This paper introduces a technique called Maximum Mean Discrepancy (MMD), which is a way of comparing probability distributions based on their mean embeddings. MMD is an important tool in the evaluation of generative models, as it provides a way of quantifying the quality of the generated samples.
+>
+> "Improved Techniques for Training GANs" by Tim Salimans et al. (2016): This paper introduces several techniques for training Generative Adversarial Networks (GANs), which are another type of generative model that is closely related to GDM. Many of the techniques introduced in this paper, such as minibatch discrimination and virtual batch normalization, can be applied to GDM to improve its performance.
+>
+>"Denoising Diffusion Probabilistic Models" by Jonathan Ho et al. (2020): This paper introduces a technique called Denoising Diffusion Probabilistic Models (DDPM), which is a variant of GDM that is designed to improve the quality of the generated samples. DDPM adds a denoising step to the diffusion process used in GDM, which can lead to higher quality samples and faster convergence.
+>
+> These are just a few examples of the important literature that can be useful in the development of GDM. There are many other papers and techniques that can be helpful as well, depending on the specific application and requirements of the model.
+
+</small>
+
+</details>
+
+<details><summary>ChatGPT (Legacy)</summary>
+
+<small>
+
+> The development of generative diffusion models has been an active area of research in recent years, and there have been several important papers in this field. Here are some of the most influential papers in the development of generative diffusion models:
+> 
+> Variational Inference for Diffusion Processes (2018), by Johannes Johansson, Fredrik Lindsten, and Thomas B. Schön
+> 
+> Neural SDEs (2019), by Yingzhen Li, Jian Guo, and Yves-Alexandre de Montjoye
+> 
+> Scaling Limits of Diffusion-Type Models for Generative Learning (2019), by Hanjun Dai, Bo Dai, and Le Song
+> 
+> Generative Diffusion Models (2020), by Yao Liu, Jiaming Song, Stefano Ermon, and Le Song
+> 
+> Diffusion Generative Adversarial Networks (2021), by Wei-Cheng Chang, Bo Dai, and Le Song
+> 
+> These papers provide a foundation for the development of generative diffusion models and demonstrate the effectiveness of these models in various applications, including generative learning, generative adversarial networks, and variational inference. These papers have helped to advance the field of generative diffusion models and have inspired many other researchers to pursue further work in this area.
+
+</small>
+
+</details>
+
+<details><summary>GPT-4</summary>
+
+<small>
+
+> Generative diffusion models have advanced significantly in recent years, and their development is rooted in a number of important papers and literature in the field. Here are some key publications that have contributed to the development of generative diffusion models:
+> 
+> Denosing Score Matching and the SDEs (Song, J., Zhao, S., & Ermon, S., 2021): This paper introduces a training principle called denoising score matching (DSM) for generative models, which learns score functions of the data distribution by training on pairs of noisy and clean data points. The paper also provides a connection between DSM and stochastic differential equations (SDEs), which paved the way for generative diffusion models.
+> 
+> Score-Based Generative Modeling through Stochastic Differential Equations (Song, J., Zhou, Y., Zhao, S., & Ermon, S., 2021): This paper extends the idea of denoising score matching and SDEs and provides a framework for score-based generative modeling with SDEs, which is the foundation of generative diffusion models.
+> 
+> NCSN++: Analyzing and Improving Neural Conditional Score Networks (Denoising Diffusion Probabilistic Models) (Song, J., Zhao, S., & Ermon, S., 2021): This paper investigates the properties of denoising score networks and provides several techniques for improving their performance, including architectural changes and multi-scale training.
+> 
+> Improved Denoising Diffusion Probabilistic Models (Dhariwal, P., & Nichol, A., 2021): This paper introduces several advancements for denoising diffusion probabilistic models, such as improved training techniques and better hyperparameters that result in state-of-the-art performance on image synthesis tasks.
+> 
+> On the Connection Between Denosing Score Matching and Contrastive Divergence (Grathwohl, W., Song, J., Zhao, S., & Ermon, S., 2021): This work explores the connections between denoising score matching (DSM) and contrastive divergence (CD), which is another popular approach for training energy-based models. The paper shows that DSM can be interpreted as a special case of CD with a particular choice of noise distribution.
+> 
+> These publications, among others, have played a pivotal role in the development and understanding of generative diffusion models. As the field continues to progress, further advancements are likely to emerge from both foundational research and practical applications.
+
+</small>
+
+</details>
+
+<details><summary>New Bing</summary>
+
+<small>
+
+> Hello, this is Bing. I can help you find some literature on generative diffusion model. Generative diffusion model is a powerful new type of deep generative model that has achieved record-breaking performance in many applications, such as image synthesis, video generation, and molecule design [[1]](https://arxiv.org/abs/2209.00796). Some important papers on this topic are:
+>
+> A Survey on Generative Diffusion Model [[2]](https://arxiv.org/abs/2209.02646), which provides a comprehensive overview of the methods and applications of generative diffusion model.
+> Diffusion Models: A Comprehensive Survey of Methods and Applications [[1]](https://arxiv.org/abs/2209.00796), which categorizes the research on diffusion models into three key areas: efficient sampling, improved likelihood estimation, and conditional generation.
+> Variational Diffusion Models [[3]](https://arxiv.org/abs/2107.00630), which introduces a family of diffusion-based generative models that obtain state-of-the-art likelihoods on standard image density estimation benchmarks.
+> I hope this helps you with your research.😊
+>
+> For more information: [arxiv.org](https://arxiv.org/abs/2209.00796) [arxiv.org](https://arxiv.org/abs/2209.02646) [arxiv.org](https://arxiv.org/abs/2107.00630)
+
+</small>
+
+</details>
+
+<details><summary>Notion AI</summary>
+
+<small>
+
+> In order to enhance the development process of generative diffusion model, it is important to consider the following literature:
+> 
+> - "Causal Inference in Statistics: An Overview" by Judea Pearl
+> - "Counterfactual Fairness" by Matt Kusner et al.
+> - "The Do-Calculus Revisited" by Jonas Peters et al.
+> 
+> These resources provide valuable insights and methodologies for understanding causal relationships and making predictions based on causal inference. By incorporating these concepts into the generative diffusion model, we can improve the accuracy and effectiveness of the model in predicting outcomes and understanding the underlying causal mechanisms.
+> 
+> It is important to note that causal inference is a complex and evolving field, and continued research and development is necessary to fully leverage its potential in data science and machine learning.
+
+</small>
+
+</details>
+
+### Prompt 5
+
+<small>
+
+> What is today's date and day of the week? How is the weather?
+
+</small>
+
+<details><summary>ChatGPT (Default)</summary>
+
+<small>
+
+> Today's date is March 19th, 2023. It is a Sunday.
+> 
+> As an AI language model, I do not have direct access to the current weather conditions. However, I can suggest that you check a weather website or app for the most up-to-date weather information in your location.
+
+</small>
+
+</details>
+
+<details><summary>ChatGPT (Legacy)</summary>
+
+<small>
+
+> Today's date is March 19th, 2023. The day of the week is Saturday. As an AI language model, I don't have the ability to access real-time information about the weather. But you can check a weather website or app for the most up-to-date information.
+
+</small>
+
+</details>
+
+<details><summary>GPT-4</summary>
+
+<small>
+
+> Today's date is March 19, 2023, and it is a Sunday. As an AI language model, I do not have real-time information or the ability to access current weather conditions. Please check a local weather source or a weather website for up-to-date information on the weather in your area.
+
+</small>
+
+</details>
+
+<details><summary>New Bing</summary>
+
+<small>
+
+> Hello, this is Bing. I can help you find out today’s date and day of the week. According to [[1]](https://www.calendardate.com/todays.htm), today’s date is **Friday March 17, 2023**. It is the **77th** day of the year, the **11th** week of the year, and the **3rd** month of the year. It is also a leap year and daylight saving time is in effect.
+> 
+> To answer your second question, I need to know your location or zip code so I can search for the weather information. Can you please tell me where you are?
+>
+> For more information: [calendardate.com](https://www.calendardate.com/todays.htm) [timeanddate.com](https://www.timeanddate.com/) [rapidtables.com](https://www.rapidtables.com/tools/todays-date.html)
+
+</small>
+
+</details>
+
+<details><summary>Notion AI</summary>
+
+<small>
+
+> Today is {insert date} and it is {insert day of the week}. As for the weather, it is {insert current weather condition}.
 
 </small>
 

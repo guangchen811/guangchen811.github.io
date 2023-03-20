@@ -46,7 +46,7 @@ If there is text available on the corresponding page, Notion AI will use the sel
 
 ## Which Prompts and Why These Prompts
 
-To compare the performance of these LLMs, I will use a set of prompts that encompass a variety of use cases. The selected prompts will test each model's ability to handle different types of tasks.
+In order to compare the performance of these LLMs, a diverse set of prompts will be used that covers a variety of use cases. These prompts have been carefully chosen to encompass different areas that the models excel in, which makes it easier to identify the specific scenarios where each model performs well or struggles. This approach will provide valuable insights into the strengths and weaknesses of each LLM and enable a comprehensive evaluation of their performance.
 
 - General knowledge question: "What is photosynthesis?"
 - Resolving technical issues: "Please provide me with the easiest method to set up a visually appealing terminal on a Mac. The steps should be detailed and feasible."
@@ -509,7 +509,9 @@ Apart from GPT-4, none of the other models fully met the peculiar requirements I
 
 <small>
 
-Due to the assistance of search engines, New Bing can provide the latest and most authentic reference documents. However, the GPT series models can only provide documents up to September 2021, and only the articles provided by GPT-4 are most relevant to the requirements. In comparison, the articles provided by Notion AI completely deviate from my needs.
+New Bing can provide the latest and most authentic reference documents with the assistance of search engines. However, the GPT series models are limited to documents up to September 2021, and only articles provided by GPT-4 are most relevant to specific requirements. On the other hand, the articles provided by Notion AI may not be suitable for specific needs, deviating from the intended purpose.
+
+It's worth noting that both the GPT series models and Notion AI have been known to generate fake articles and links at times, which can result in potential inaccuracies and misinformation.
 
 </small>
 
@@ -596,7 +598,7 @@ Based on the above experiments, we can summarize the capabilities of various LLM
 | ChatGPT (Legacy)  | Simpler explanation         | Conversational, informative | Partially met               | Up to Sep 2021    | Moderate           | Partially met        |
 | GPT-4             | Comprehensive, detailed     | Conversational, informative | Fully met                   | Up to Sep 2021    | Good               | Partially met        |
 | New Bing          | Brief summary               | Search-oriented             | Partially met               | Latest & authentic| Excellent          | Fully met            |
-| Notion AI         | General description         | Conversational, less detailed | Partially met           | Irrelevant        | Poor               | Not met              |
+| Notion AI         | General description         | Conversational, less detailed | Partially met           | cut-off time unknown, not real-time        | Poor               | Not met              |
 
 Once again, it should be emphasized that the capabilities mentioned here are only representative parts of the overall capabilities of LLMs. The purpose of this article is not to list all their possible applications, but to make readers aware that different LLMs have their respective strengths and work in different ways.
 
@@ -611,8 +613,4 @@ Once again, it should be emphasized that the capabilities mentioned here are onl
 
 ## Conclusion
 
-Overall, ChatGPT and GPT-4 performed exceptionally well across all tasks, showcasing their versatility and effectiveness in various use cases. New Bing is a reliable choice for information retrieval and summarization, but it may not be the best option for creative or opinion-based tasks. Notion AI, while offering valuable assistance within its platform, may not be the most suitable choice for more in-depth or technical inquiries.
-
-Ultimately, the choice of LLM will depend on your specific needs and preferences. If you're looking for an all-rounder with strong performance in diverse tasks, ChatGPT and GPT-4 are excellent choices. For focused research and summarization, New Bing is a reliable option. If you're already a Notion user and need assistance within the platform, Notion AI can help improve your productivity.
-
-Apart from the inherent abilities of LLMs, there are various applications designed based on these abilities, such as New Bing and Notion AI, which have brought convenience to people's lives in different ways. However, there are still many needs for specific product designs, such as personalized products that can capture a user's interaction history to better understand their needs and preferences for more efficient conversations. Nonetheless, such products must address privacy concerns. It is hoped that similar products will be developed to solve these issues and made available to everyone.
+ChatGPT and GPT-4 proved to be highly effective across all tasks, highlighting their adaptability and efficiency in various scenarios. While ChatGPT is a robust tool on its own, its integration with various applications is crucial to fully harness its potential in specific domains and to expedite tasks. For information retrieval and summarization, New Bing is a dependable choice. Notion AI provides valuable assistance within its platform by automating tedious tasks, offering inspiration for new ideas, and suggesting revisions. 

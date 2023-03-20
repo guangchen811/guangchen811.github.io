@@ -1,7 +1,9 @@
 ---
 title: "Choosing the Right LLM: A Comparison of ChatGPT, GPT-4, New Bing, and Notion AI for Different Scenarios"
-date: 2023-03-17T15:03:57+08:00
+date: 2023-03-20
 draft: false
+tags: 
+- LLMs
 ---
 
 Large language models (LLMs) have become increasingly popular and accessible to people without technical expertise. This has brought about a significant change not only in the AI industry but also in other fields of work. However, faced with so many different LLMs, how do we choose different LLMs to maximize their help to our work and life? For example, when we want to polish an article, should we open a ChatGPT dialog box, or should we transfer it to Notion for processing by Notion AI?

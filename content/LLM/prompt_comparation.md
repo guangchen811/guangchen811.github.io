@@ -8,7 +8,7 @@ tags:
 
 Large language models (LLMs) have become increasingly popular and accessible to people without technical expertise. This has brought about a significant change not only in the AI industry but also in other fields of work. However, faced with so many different LLMs, how do we choose the proper one to maximize their help to our work and life? For example, when we want to polish an article, should we open a ChatGPT dialog box, or should we transfer it to Notion for processing by Notion AI?
 
-In this blog, I will compare the following LLMs: ChatGPT, GPT-4, New Bing, and Notion AI. Besides, Baidu have release their large multi-modal model, Wenxin Yiyan. I'll add the comparision with Wenxin Yiyan after get the access to it. I hope this blog can help you select the right LLM to assist your work and life. If you are not interested in the specific experiments, please directly refer to the [takeaways](#takeaways).
+In this blog, I will compare the following LLMs: ChatGPT, GPT-4, New Bing, and Notion AI. Besides, Baidu have release their large multi-modal model, Wenxin Yiyan. I'll add the comparision with Wenxin Yiyan after get the access to it. I hope this blog can help you select the right LLM to assist your work and life. If you're not interested in the details of the experiments, here are the key [takeaways](#takeaways).
 
 ## Brief Introduction to Each LLM
 ### ChatGPT & GPT-4

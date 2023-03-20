@@ -9,11 +9,11 @@
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 Mar 2023 15:03:57 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Choosing the Right LLM: A Comparison of ChatGPT, GPT-4, New Bing, and Notion AI for Different Scenarios</title>
       <link>https://guangchen811.github.io/llm/prompt_comparation/</link>
-      <pubDate>Fri, 17 Mar 2023 15:03:57 +0800</pubDate>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://guangchen811.github.io/llm/prompt_comparation/</guid>
       <description>Large language models (LLMs) have become increasingly popular and accessible to people without technical expertise. This has brought about a significant change not only in the AI industry but also in other fields of work. However, faced with so many different LLMs, how do we choose different LLMs to maximize their help to our work and life? For example, when we want to polish an article, should we open a ChatGPT dialog box, or should we transfer it to Notion for processing by Notion AI?</description>
@@ -27,6 +27,18 @@
       <guid>https://guangchen811.github.io/install/oh-my-posh/</guid>
       <description>If you&amp;rsquo;re a Windows user and looking for a way to customize your PowerShell prompt, then Oh My Posh might be just what you need. Oh My Posh is an open-source, community-driven framework for managing your PowerShell prompt configuration. In this tutorial, we will go through the steps to install and configure Oh My Posh.
 Prerequisites Windows 10 or above PowerShell 5 or above .NET Framework 4.7.2 or above Git Installation Open PowerShell with administrative privileges.</description>
+    </item>
+    
+    <item>
+      <title>Oh My Bash</title>
+      <link>https://guangchen811.github.io/install/oh-my-bash/</link>
+      <pubDate>Fri, 09 Sep 2022 23:10:16 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/install/oh-my-bash/</guid>
+      <description>After using oh-my-zsh on my macbook for a few days, I feel the original bash theme not elegant enough. Thus, I start searching something like oh-my-zsh for bash, then I found oh my bash.
+Oh My Bash is an open source, community-driven framework for managing your bash configuration. Let&amp;rsquo;s get started.
+Oh My Bash is installed by running one of the following commands in your terminal.
+via curl bash -c &amp;#34;$(curl -fsSL https://raw.</description>
     </item>
     
     <item>

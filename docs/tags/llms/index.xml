@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>LLMs on Hao&#39;Log</title>
-    <link>https://guangchen811.github.io/llm/</link>
+    <link>https://guangchen811.github.io/tags/llms/</link>
     <description>Recent content in LLMs on Hao&#39;Log</description>
     <image>
       <url>https://guangchen811.github.io/papermod-cover.png</url>
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://guangchen811.github.io/llm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://guangchen811.github.io/tags/llms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Choosing the Right LLM: A Comparison of ChatGPT, GPT-4, New Bing, and Notion AI for Different Scenarios</title>
       <link>https://guangchen811.github.io/llm/prompt_comparation/</link>

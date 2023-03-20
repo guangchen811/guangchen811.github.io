@@ -62,8 +62,9 @@ These prompts were chosen because they represent a diverse range of tasks and re
 ### General knowledge question
 <small>
 
-> Prompt: What is photosynthesis?
-
+#### Prompt
+> What is photosynthesis?
+#### Responses (click to unfold)
 </small>
 <details><summary>ChatGPT (Default)</summary>
 
@@ -144,8 +145,9 @@ The responses from ChatGPT (Default) and GPT-4 provide comprehensive explanation
 ### Resolving technical issues
 <small>
 
+#### Prompt
 > Please provide me with the easiest method to set up a visually appealing terminal on a Mac. The steps should be detailed and feasible.
-
+#### Responses (click to unfold)
 </small>
 
 <details><summary>ChatGPT (Default)</summary>
@@ -309,6 +311,7 @@ The responses from ChatGPT (Default) and GPT-4 provide comprehensive explanation
 ### Text adjustment
 <small>
 
+#### Prompt
 > Add a number at the beginning of each paragraph in the following content. Replace all `"` with `'`. If a sentence starts with 'a', please replace it with an lowercase letter. Otherwise, keep it unchanged. Bold all sentences with more than ten words.
 > Here is the content: 
 > 
@@ -319,7 +322,7 @@ The responses from ChatGPT (Default) and GPT-4 provide comprehensive explanation
 > 
 > ```
 > Now, please show me the modified content.
-
+#### Responses (click to unfold)
 </small>
 
 <details><summary>ChatGPT (Default)</summary>
@@ -396,8 +399,9 @@ Apart from GPT-4, none of the other models fully met the peculiar requirements I
 
 <small>
 
+#### Prompt
 > Providing important literature in the development process of generative diffusion model.
-
+#### Responses (click to unfold)
 </small>
 
 <details><summary>ChatGPT (Default)</summary>
@@ -513,8 +517,9 @@ Due to the assistance of search engines, New Bing can provide the latest and mos
 
 <small>
 
+#### Prompt
 > What is today's date and day of the week? How is the weather?
-
+#### Responses (click to unfold)
 </small>
 
 <details><summary>ChatGPT (Default)</summary>

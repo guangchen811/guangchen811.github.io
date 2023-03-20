@@ -1,15 +1,15 @@
 ---
-title: "Prompt_comparation"
+title: "Choosing the Right LLM: A Comparison of ChatGPT, GPT-4, New Bing, and Notion AI for Different Scenarios"
 date: 2023-03-17T15:03:57+08:00
 draft: false
 ---
 
 Large language models (LLMs) have become increasingly popular and accessible to people without technical expertise. This has brought about a significant change not only in the AI industry but also in other fields of work. However, faced with so many different LLMs, how do we choose different LLMs to maximize their help to our work and life? For example, when we want to polish an article, should we open a ChatGPT dialog box, or should we transfer it to Notion for processing by Notion AI?
 
-In this blog, I will compare the following LLMs: ChatGPT, GPT4, New Bing, and Notion AI. Besides, Baidu have release their large multi-modal model, Wenxin Yiyan. I'll add the comparision with Wenxin Yiyan after get the access to it. I hope this blog can help you select the right LLM to assist your work and life. 
+In this blog, I will compare the following LLMs: ChatGPT, GPT-4, New Bing, and Notion AI. Besides, Baidu have release their large multi-modal model, Wenxin Yiyan. I'll add the comparision with Wenxin Yiyan after get the access to it. I hope this blog can help you select the right LLM to assist your work and life. If you are not interested in the specific experiments, please directly refer to the [takeaways](#takeaways).
 
 ## Brief Introduction to Each LLM
-### ChatGPT & GPT4
+### ChatGPT & GPT-4
 
 [ChatGPT](https://openai.com/blog/chatgpt): A model that is trained to follow an instruction in a prompt and provide a detailed response. It is a sibling model to [InstructGPT](https://openai.com/blog/instruction-following/). There are two versions of ChatGPT being tested here (Default and Legacy). Default is a version optimized by OpenAI for ChatGPT Plus users for faster response time. Legacy is the version that OpenAI made available to ChatGPT Plus users before the release of GPT-4. Default version has better consistency compared to Legacy version. 
 
@@ -48,19 +48,19 @@ To compare the performance of these LLMs, I will use a set of prompts that encom
 
 - General knowledge question: "What is photosynthesis?"
 - Resolving technical issues: "Please provide me with the easiest method to set up a visually appealing terminal on a Mac. The steps should be detailed and feasible."
-- Programming assistance: "Please help me find the bug in this code."
 - Text adjustment: "Add a number at the beginning of each paragraph in the following content. Replace all `"` with `'`. If a sentence starts with 'a', please replace it with an uppercase letter. Otherwise, keep it unchanged. Bold all sentences with more than ten words."
 - Literature collection and organization: "Providing important literature in the development process of generative diffusion model."
-- Real-time capability: "What is today's date and day of the week? How is the weather?"
+- time-awareness and connectivity: "What is today's date and day of the week? How is the weather?"
 These prompts were chosen because they represent a diverse range of tasks and require different levels of understanding, creativity, and problem-solving skills. By using these prompts, we can gain insights into each LLM's strengths and weaknesses.
 
+> Note: The applications of LLMs are very extensive, and here I only test some representative and general applications. <span style="color: blue;">It is hoped that these tests will inspire practitioners from various industries in choosing appropriate models for their specific needs.</span> 
 
 ## LLM Comparison Results
 
-### Prompt 1
+### General knowledge question
 <small>
 
-> What is photosynthesis?
+> Prompt: What is photosynthesis?
 
 </small>
 <details><summary>ChatGPT (Default)</summary>
@@ -131,7 +131,15 @@ These prompts were chosen because they represent a diverse range of tasks and re
 
 </details>
 
-### Prompt 2
+#### Performance
+
+<small>
+
+The responses from ChatGPT (Default) and GPT-4 provide comprehensive explanations of photosynthesis, including the reactants and products, the role of chlorophyll, the two main stages of photosynthesis, and its significance for life on Earth. ChatGPT (Legacy) provides a simpler explanation of the process and its importance. On the other hand, New Bing's response is brief and summarizes the basic information about photosynthesis. Notion AI's response is the least informative, providing only a general description of the process. Overall, ChatGPT (Default) and GPT-4 provide the most detailed and informative explanations of photosynthesis.
+
+</small>
+
+### Resolving technical issues
 <small>
 
 > Please provide me with the easiest method to set up a visually appealing terminal on a Mac. The steps should be detailed and feasible.
@@ -178,7 +186,7 @@ These prompts were chosen because they represent a diverse range of tasks and re
 > 4. Set up a profile: iTerm2 allows you to create multiple profiles, each with its own set of preferences, color schemes, and fonts. To create a profile, go to "Preferences" > "Profiles" > " + " to create a new profile. You can then set the default color scheme and font for this profile.
 > 
 > 5. Customize your terminal: Finally, you can further customize your terminal by adjusting its appearance and behavior. For example, you can change the background color, transparency, and blur. You can also change the cursor style and appearance, and set up hotkeys for frequently used commands.
-
+> 
 > By following these steps, you can set up a visually appealing terminal on your Mac that is both functional and aesthetically pleasing.
 
 </small>
@@ -288,7 +296,15 @@ These prompts were chosen because they represent a diverse range of tasks and re
 
 </details>
 
-### Prompt 3
+#### Performance
+
+<small>
+
+> Apart from New Bing, all other models provided specific steps for execution. I am confident that with further conversation, each model can provide concrete and actionable steps. New Bing, however, appears to be more inclined towards providing relevant reference documents. Of course, this does not mean that New Bing lacks the relevant capabilities since it is based on GPT-4. However, as a search tool, this may not be its most suitable way of functioning.
+
+</small>
+
+### Text adjustment
 <small>
 
 > Add a number at the beginning of each paragraph in the following content. Replace all `"` with `'`. If a sentence starts with 'a', please replace it with an lowercase letter. Otherwise, keep it unchanged. Bold all sentences with more than ten words.
@@ -366,7 +382,15 @@ These prompts were chosen because they represent a diverse range of tasks and re
 
 </details>
 
-### Prompt 4
+#### Performance
+
+<small>
+
+Apart from GPT-4, none of the other models fully met the peculiar requirements I presented. However, LLMs have shown the potential to replace regular expressions in performing long text matching and replacement tasks.
+
+</small>
+
+### Literature collection and organization
 
 <small>
 
@@ -475,7 +499,15 @@ These prompts were chosen because they represent a diverse range of tasks and re
 
 </details>
 
-### Prompt 5
+#### Performance
+
+<small>
+
+Due to the assistance of search engines, New Bing can provide the latest and most authentic reference documents. However, the GPT series models can only provide documents up to September 2021, and only the articles provided by GPT-4 are most relevant to the requirements. In comparison, the articles provided by Notion AI completely deviate from my needs.
+
+</small>
+
+### Time-awareness and connectivity
 
 <small>
 
@@ -539,12 +571,41 @@ These prompts were chosen because they represent a diverse range of tasks and re
 
 </details>
 
+#### Performance
+
+<small>
+
+Notion AI is unable to retrieve time and network information completely. It is unclear how the GPT series models can identify time (although ChatGPT Legacy version provides time with a one-day deviation). As expected, New Bing knows today's time. After providing location information, New Bing can also naturally obtain weather information. However, other models can only provide websites for obtaining weather information.
+
+</small>
+
+### Comparison and Analysis of Application Scenarios
+
+Based on the above experiments, we can summarize the capabilities of various LLM models as follows.
+
+| Model             | Photosynthesis Explanation  | Interaction Style        | Text Matching & Replacement | Reference Docs    | Reference Accuracy | Time & Network Info |
+| ----------------- | --------------------------- | ------------------------ | --------------------------- | ----------------- | ------------------ | -------------------- |
+| ChatGPT (Default) | Comprehensive, detailed     | Conversational, informative | Partially met               | Up to Sep 2021    | Moderate           | Partially met        |
+| ChatGPT (Legacy)  | Simpler explanation         | Conversational, informative | Partially met               | Up to Sep 2021    | Moderate           | Partially met        |
+| GPT-4             | Comprehensive, detailed     | Conversational, informative | Fully met                   | Up to Sep 2021    | Good               | Partially met        |
+| New Bing          | Brief summary               | Search-oriented             | Partially met               | Latest & authentic| Excellent          | Fully met            |
+| Notion AI         | General description         | Conversational, less detailed | Partially met           | Irrelevant        | Poor               | Not met              |
+
+Once again, it should be emphasized that the capabilities mentioned here are only representative parts of the overall capabilities of LLMs. The purpose of this article is not to list all their possible applications, but to make readers aware that different LLMs have their respective strengths and work in different ways.
+
+## Takeaways{#takeaways}
+
+- When you want to **understand a professional concept**, the **GPT series** can provide you with the most direct and easy-to-understand explanation. When you want to further deepen your understanding, **New Bing** can help you better find related professional literature.
+- When you need to follow **specific steps to solve a problem**, and you **don't necessarily need to understand the underlying principles**, such as installing an operating system as a designer, **GPT series** can provide you with detailed step-by-step instructions.
+- If you need to proofread, perform regular expression replacement, summarize, rewrite or perform other tasks on **long texts**, it is highly recommended to use **GPT-4**.
+- If you need to search for professional literature or other content where **authenticity** is crucial, it is recommended to use **New Bing**.
+- If you need to access **real-time content**, it is recommended to use **New Bing**.
+- If you need to perform **context-based modification**, refinement or make **daily records** based on a piece of your own written text, it is recommended to use **Notion AI**.
+
 ## Conclusion
 
+Overall, ChatGPT and GPT-4 performed exceptionally well across all tasks, showcasing their versatility and effectiveness in various use cases. New Bing is a reliable choice for information retrieval and summarization, but it may not be the best option for creative or opinion-based tasks. Notion AI, while offering valuable assistance within its platform, may not be the most suitable choice for more in-depth or technical inquiries.
 
-Overall, ChatGPT and GPT4 performed exceptionally well across all tasks, showcasing their versatility and effectiveness in various use cases. New Bing is a reliable choice for information retrieval and summarization, but it may not be the best option for creative or opinion-based tasks. Notion AI, while offering valuable assistance within its platform, may not be the most suitable choice for more in-depth or technical inquiries.
+Ultimately, the choice of LLM will depend on your specific needs and preferences. If you're looking for an all-rounder with strong performance in diverse tasks, ChatGPT and GPT-4 are excellent choices. For focused research and summarization, New Bing is a reliable option. If you're already a Notion user and need assistance within the platform, Notion AI can help improve your productivity.
 
-Ultimately, the choice of LLM will depend on your specific needs and preferences. If you're looking for an all-rounder with strong performance in diverse tasks, ChatGPT and GPT4 are excellent choices. For focused research and summarization, New Bing is a reliable option. If you're already a Notion user and need assistance within the platform, Notion AI can help improve your productivity.
-
-Stay tuned for an update on the comparison with Wenxin Yiyan, Baidu's large multi-modal model, once access is granted.
-
+Apart from the inherent abilities of LLMs, there are various applications designed based on these abilities, such as New Bing and Notion AI, which have brought convenience to people's lives in different ways. However, there are still many needs for specific product designs, such as personalized products that can capture a user's interaction history to better understand their needs and preferences for more efficient conversations. Nonetheless, such products must address privacy concerns. It is hoped that similar products will be developed to solve these issues and made available to everyone.

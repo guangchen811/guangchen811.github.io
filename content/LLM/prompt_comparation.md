@@ -607,7 +607,7 @@ Once again, it should be emphasized that the capabilities mentioned here are onl
 - If you need to proofread, perform regular expression replacement, summarize, rewrite or perform other tasks on **long texts**, it is highly recommended to use **GPT-4**.
 - If you need to search for professional literature or other content where **authenticity** is crucial, it is recommended to use **New Bing**.
 - If you need to access **real-time content**, it is recommended to use **New Bing**.
-- If you need to perform **context-based modification**, refinement or make **daily records** based on a piece of your own written text, it is recommended to use **Notion AI**.
+- If you need to perform **context-based** modification, refinement or make **daily records** based on a piece of your own written text, it is recommended to use **Notion AI**.
 
 ## Conclusion
 

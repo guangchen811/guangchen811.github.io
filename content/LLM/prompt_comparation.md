@@ -1,6 +1,6 @@
 ---
 title: "Choosing the Right LLM: A Comparison of ChatGPT, GPT-4, New Bing, and Notion AI for Different Scenarios"
-date: 2023-03-20
+date: 2023-03-20    
 draft: false
 tags: 
 - LLMs
@@ -46,7 +46,7 @@ If there is text available on the corresponding page, Notion AI will use the sel
 
 ## Which Prompts and Why These Prompts
 
-To compare the performance of these LLMs, I will use a set of prompts that encompass a variety of use cases. The selected prompts will test each model's ability to handle different types of tasks, including factual information, creative writing, problem-solving, and more.
+To compare the performance of these LLMs, I will use a set of prompts that encompass a variety of use cases. The selected prompts will test each model's ability to handle different types of tasks.
 
 - General knowledge question: "What is photosynthesis?"
 - Resolving technical issues: "Please provide me with the easiest method to set up a visually appealing terminal on a Mac. The steps should be detailed and feasible."

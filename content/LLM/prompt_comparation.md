@@ -18,7 +18,7 @@ In this blog, I will compare the following LLMs: ChatGPT, GPT-4, New Bing, and N
 The following flowchart illustrates their general working principle. They achieves multi-turn dialogue by taking historical information and new questions as inputs together.
 
 <div align="center">
-    <img src="/images/LLM/gpt_workflow.png" alt="Image 1" height=300>
+    <img src="/images/LLM/gpt_workflow.svg" alt="Image 1" height=300>
     <figcaption align="center">Overall working principle of ChatGPT series models. </figcaption>
     </div>
 
@@ -28,7 +28,7 @@ The following flowchart illustrates their general working principle. They achiev
 As shown in the flowchart below, New Bing summarizes user input into search keywords and uses a search engine to perform a search. Afterwards, it compiles the search responses and the user's question together as input to formulate its response.
 
 <div align="center">
-    <img src="/images/LLM/Bing_workflow.png" alt="Image 1" height=300>
+    <img src="/images/LLM/bing_workflow.svg" alt="Image 1" height=300>
     <figcaption align="center">Overall working principle of New Bing.</figcaption>
 </div>
 
@@ -38,7 +38,7 @@ As shown in the flowchart below, New Bing summarizes user input into search keyw
 If there is text available on the corresponding page, Notion AI will use the selected text in Notion Pages (or all of the text if none is selected) as a part of the model input, in order to obtain a contextually relevant response.
 
 <div align="center">
-    <img src="/images/LLM/notionAI_workflow.png" alt="Image 1" height=300>
+    <img src="/images/LLM/notion_workflow.svg" alt="Image 1" height=300>
     <figcaption align="center">Overall working principle of Notion AI.</figcaption>
 </div>
 

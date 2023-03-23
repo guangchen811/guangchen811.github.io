@@ -27,9 +27,11 @@ languages:
         weight: 1
         menu:
             main:
-                
+                - name: Friendship Links
+                  url: /Friendship/
+                  weight: 6
                 - name: Archives
-                  url: archives
+                  url: archives/
                   weight: 5
                 - name: Search
                   url: search/

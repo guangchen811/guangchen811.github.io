@@ -18,4 +18,4 @@ If you are interested in generative models, especially diffusion models, I highl
 
 - [**Leo's Blog**](https://leoleoasd.me)
 
-Leo is a colleague of mine from my internship at LinkedIn China. He is currently following the latest topics in LLMs and sharing his insights on his blog. I believe it will continue to provide valuable insights in the future.
+Leo is a colleague of mine from my internship at LinkedIn China. He is currently following the latest topics in LLMs and sharing his insights on his blog. I believe he will continue to provide valuable insights in the future.

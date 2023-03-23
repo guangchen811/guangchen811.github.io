@@ -27,8 +27,8 @@ languages:
         weight: 1
         menu:
             main:
-                - name: Friendship Links
-                  url: /Friendship/
+                - name: Recommended Blogs
+                  url: /Recommended/
                   weight: 6
                 - name: Archives
                   url: archives/

@@ -4,7 +4,7 @@
 draft: false
 ---
 
-## Friendship Links
+## Recommended Blogs
 
 - [**Lil'Log**](https://lilianweng.github.io/)
 

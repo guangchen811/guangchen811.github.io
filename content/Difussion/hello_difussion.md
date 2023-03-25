@@ -1,5 +1,5 @@
 ---
-title: "Hello_difussion"
+title: "DDPM"
 date: 2023-02-18T14:06:27+08:00
 draft: true
 ---

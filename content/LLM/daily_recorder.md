@@ -25,3 +25,7 @@ I hope every one can build there own template and share template with each other
 I hope the plugin can contain some test on topic like English learning. GPT can process this test results and save it as user features. This can help GPT know the level of the user and to custermize the responses.
 
 The plugin should provide a user-friendly interface for one-time communication, indicating that the Q&A session is not intended to be treated as a historical record.
+
+can we use LLMs to breaking out of an information bubble. By comparision to recommender systems, LLMs can recommand things not like our search queries.
+
+- Language Models (LLMs) can be used to break out of an information bubble. Unlike traditional recommender systems that rely on users' past behavior to make recommendations, LLMs can generate recommendations based on the context of the user's current query, which may be unrelated to their past behavior or preferences. This means that LLMs can suggest information that the user may not have considered before, helping to broaden their perspective and break out of their information bubble. Additionally, LLMs can be trained on large datasets of diverse sources, which can also help to expose users to a wider range of information and viewpoints.

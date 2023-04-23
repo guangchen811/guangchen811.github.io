@@ -17,7 +17,7 @@
       
       <guid>https://guangchen811.github.io/install/oh-my-posh/</guid>
       <description>If you&amp;rsquo;re a Windows user and looking for a way to customize your PowerShell prompt, then Oh My Posh might be just what you need. Oh My Posh is an open-source, community-driven framework for managing your PowerShell prompt configuration. In this tutorial, we will go through the steps to install and configure Oh My Posh.
-Prerequisites Windows 10 or above PowerShell 5 or above .NET Framework 4.7.2 or above Git Installation Open PowerShell with administrative privileges.</description>
+Prerequisites  Windows 10 or above PowerShell 5 or above .NET Framework 4.7.2 or above Git  Installation  Open PowerShell with administrative privileges.</description>
     </item>
     
   </channel>

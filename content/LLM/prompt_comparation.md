@@ -11,7 +11,7 @@ Large language models (LLMs) have become increasingly popular and accessible to 
 In this blog, I will compare the following LLMs: ChatGPT, GPT-4, New Bing, and Notion AI. Besides, Baidu have release their large multi-modal model, Wenxin Yiyan. I'll add the comparision with Wenxin Yiyan after get the access to it. I hope this blog can help you select the right LLM to assist your work and life. If you're not interested in the details of the experiments, here are the key [takeaways](#takeaways).
 
 ## Brief Introduction to Each LLM
-### ChatGPT and GPT-4
+### ChatGPT & GPT-4
 
 [ChatGPT](https://openai.com/blog/chatgpt): A model that is trained to follow an instruction in a prompt and provide a detailed response. It is a sibling model to [InstructGPT](https://openai.com/blog/instruction-following/). There are two versions of ChatGPT being tested here (Default and Legacy). Default is a version optimized by OpenAI for ChatGPT Plus users for faster response time. Legacy is the version that OpenAI made available to ChatGPT Plus users before the release of GPT-4. Default version has better consistency compared to Legacy version. 
 

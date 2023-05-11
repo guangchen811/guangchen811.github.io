@@ -9,7 +9,16 @@
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[DRAFT]: Language &#43; Knowledge: The Mutual Reinforcement of Large Language Models and Knowledge Graphs</title>
+      <link>https://guangchen811.github.io/llm/kg_and_llm/</link>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://guangchen811.github.io/llm/kg_and_llm/</guid>
+      <description>introduction LLM has show great success in many NLP tasks, including question answering, text generation, and so on. However, LLMs are still far from human-level intelligence. However, the accuaracy, consistency and explainability of LLMs block the application of LLMs in many real-world scenarios. To address these problems, researchers have proposed many methods to improve the mentioned abilities of LLMs. One of the most promising methods is to combine LLMs with knowledge graphs, which is a high-quality structured knowledge source with reasonable explainability.</description>
+    </item>
+    
     <item>
       <title>Choosing the Right LLM: A Comparison of ChatGPT, GPT-4, New Bing, and Notion AI for Different Scenarios</title>
       <link>https://guangchen811.github.io/llm/prompt_comparation/</link>

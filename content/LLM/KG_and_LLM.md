@@ -15,13 +15,17 @@ LLM has show great success in many NLP tasks, including question answering, text
 
 ## Knowledge Graph
 
-In knowledge representation and reasoning, knowledge graph is a knowledge base that uses a graph-structured data model or topology to integrate data. Knowledge graphs are often used to store interlinked descriptions of entities – objects, events, situations or abstract concepts – while also encoding the semantics underlying the used terminology.
+In the domain of knowledge representation and reasoning, a knowledge graph is a type of knowledge base that utilizes a graph-structured data model or topology to integrate data. Knowledge graphs are often utilized to store interconnected descriptions of entities, including objects, events, situations, or abstract concepts, while simultaneously encoding the underlying semantics of the terminology utilized.
 
-The concept of knowledge graph was first proposed by Google in 2012. Google's knowledge graph is a knowledge base used by Google to enhance its search engine's search results with semantic-search information gathered from a wide variety of sources. Knowledge graphs are also used by Amazon, Facebook, Microsoft, and other companies.
+<div align="center">
+    <img src="/images/LLM_KG/google_search_capture.png" alt="google search" height=200>
+    <figcaption align="center">The search results of "Sam Altman" on Google. Some of the search results, like Age and Parents, are from knowledge graph.
+</figcaption>
+</div>
 
-[This blog](https://towardsdatascience.com/a-guide-to-the-knowledge-graphs-bfb5c40272f1) make a good introduction to knowledge graph.
+The concept of a knowledge graph was initially introduced by Google in 2012. Google's knowledge graph functions as a knowledge base to augment their search engine's search results with semantic-search information that is sourced from a diverse range of origins. Knowledge graphs are also employed by corporations such as Amazon, Facebook, and Microsoft, amongst others.
 
-Building a knowledge graph is a very difficult task. The main steps can be summarized in this [repo](https://github.com/husthuke/awesome-knowledge-graph). the main steps can be summarized in the following figure.
+[This blog](https://towardsdatascience.com/a-guide-to-the-knowledge-graphs-bfb5c40272f1) make a good introduction to knowledge graph. Building a knowledge graph is a very difficult task. The main steps can be summarized in this [repo](https://github.com/husthuke/awesome-knowledge-graph). the main steps can be summarized in the following figure.
 
 <div align="center">
     <img src="/images/LLM_KG/KG_building_process.svg" alt="Image 2" height=300>
@@ -31,32 +35,32 @@ Building a knowledge graph is a very difficult task. The main steps can be summa
 
 ## Language Model
 
-Different from Knowledge graph, Large language model using neural network to model knowledge, which is a kind of implicit knowledge. The most famous LLM is GPT series, which is a transformer-based language model. The training process of GPT series is shown in the following figure.
+In contrast to knowledge graphs, large language models (LLMs) utilize neural networks to model knowledge, which is a type of implicit knowledge. One of the most renowned LLMs is the GPT series, which is a transformer-based language model. Figure  illustrates the training process of the GPT series.
 
-As my knowledge, the most important milestones of GPT series are GPT-3, InstructGPT, and ChatGPT. Based on large corpus and unsupervised learning, GPT-3 can generate human-like text. To improve the ability of GPT to follow instructions, InstructGPT is proposed. InstructGPT using supervised learning with human-labelled context which follows the instruction. and RLHF to make the generated text's more preferable. Similar to InstructGPT, ChatGPT is proposed to improve the ability of GPT to chat with human. ChatGPT using similar method as InstructGPT, but the purpose is to make the generated text more like human's chat.
+The GPT series has reached several milestones, with GPT-3, InstructGPT, and ChatGPT being among the most significant. With a large corpus and unsupervised learning, GPT-3 is capable of generating human-like text. To enhance GPT's ability to adhere to instructions, InstructGPT was developed, which employs supervised learning with human-labelled context following the instructions, and uses RLHF to generate text that is more favorable. ChatGPT, on the other hand, was designed to improve GPT's ability to converse with humans. ChatGPT employs a similar approach to InstructGPT, but is intended to produce text that is more like human conversation.
 
 <div align="center">
-    <img src="/images/LLM_KG/gpt_process.svg" alt="Image 1" width=2000>
+    <img src="/images/LLM_KG/gpt_process.svg" alt="gpt_process" width=2000>
     <figcaption align="center"> training process of GPT series.
 </figcaption>
 </div>
 
-Although GPT series has achieved great success in many NLP tasks, it still has many problems. Some of this problems are caused by the training methods themselves which can be hard to solve. 
+While the GPT series has achieved considerable success in numerous NLP tasks, it still experiences several issues that can prove challenging to address. Some of these problems can be attributed to the training methods utilized by the model.
 
-On the one hand, although GPT get a lot benefits from the large corpus, the bias contained by large corpus are also captured which make it suffering from low consistency and risk of telling fake context looks right.
+For instance, while the utilization of a large corpus has benefitted the GPT series, it has also resulted in the acquisition of biases contained in the corpus, leading to the model experiencing low consistency and a higher likelihood of producing fake-looking contexts that may appear correct.
 
-On the other hand, the supervised learning method used by InstructGPT and ChatGPT also cantain bais from labelers' diverse background. The distribution of labelers may affect the general behavior of the model which is hard to detect and solve. A famous case is [Behavior Cloning](https://www.alignmentforum.org/posts/BgoKdAzogxmgkuuAt/behavior-cloning-is-miscalibrated).
+In addition, the supervised learning approach used by InstructGPT and ChatGPT is not immune to bias, as the diverse backgrounds of the labelers may impact the model's general behavior, making it hard to detect and mitigate. A well-known example of such an occurrence is observed in the case of [Behavior Cloning](https://www.alignmentforum.org/posts/BgoKdAzogxmgkuuAt/behavior-cloning-is-miscalibrated).
 
 # combination of LLMs and KGs
 
 ## How can KGs help LLMs?
 
-It's obvious that high-quality knowledge graphs can help LLMs to improve the accuracy, consistency and explainability. But how can we implement this idea? In this section, we will discuss two methods: KGs as training data and KGs as part of prompt.
+It is evident that high-quality knowledge graphs (KGs) can assist LLMs in achieving better accuracy, consistency, and explainability. However, how can this idea be implemented? In this section, we will discuss two methods: KGs as training data and KGs as part of the prompt.
 
-One strightforward method is to use KGs as training data. However, as a language model, GPT series can only use text as input. So we need to convert KGs to text. [This paper](https://arxiv.org/abs/2010.12688) by google proposed a model namely TekGen, which can convert KGs to text. The overall working principle of TekGen is shown in the following figure.
+One straightforward approach is to utilize KGs as training data. However, as a language model, the GPT series can only accept text as input, necessitating the conversion of KGs to text format. Google proposed a model called TekGen in [this paper](https://arxiv.org/abs/2010.12688), which converts KGs to text. The underlying workings of TekGen are depicted in the figure below.
 
 <div align="center">
-    <img src="/images/LLM_KG/graph_to_text.png" alt="Image 3" height=300>
+    <img src="/images/LLM_KG/graph_to_text.png" alt="graph_to_text" height=300>
     <figcaption align="center">Overall training process of TekGen.</figcaption>
 </div>
 

@@ -53,6 +53,8 @@ On the one hand, although GPT get a lot benefits from the large corpus, the bias
 
 On the other hand, the supervised learning method used by InstructGPT and ChatGPT also cantain bais from labelers' diverse background. The distribution of labelers may affect the general behavior of the model which is hard to detect and solve. A famous case is [Behavior Cloning](https://www.alignmentforum.org/posts/BgoKdAzogxmgkuuAt/behavior-cloning-is-miscalibrated).
 
+# combination of LLMs and KGs
+
 ## How can KGs help LLMs?
 
 It's obvious that high-quality knowledge graphs can help LLMs to improve the accuracy, consistency and explainability. But how can we implement this idea? In this section, we will discuss two methods: KGs as training data and KGs as part of prompt.
@@ -93,11 +95,11 @@ For example, [this project](https://github.com/tomhartke/knowledge-graph-from-GP
     <figcaption align="center">The overall working principle of this project.</figcaption>
 </div>
 
-After chatGPT proposed, this technology become more popular. Some [Zero-shot method](https://arxiv.org/abs/2302.10205) claim that Chat-format prompt are more effective than vanilla prompt. The famous package [Langchain](langchain.com) also implement related functions to extract triples from plain text. Based on LangChain, [Kor](https://github.com/eyurtsev/kor) implement a pipeline to extract entities and relations from plain text. All we need to do is to provide concrete descriptions of entities and relations.
+After chatGPT proposed, this technology become more popular. Some [Zero-shot method](https://arxiv.org/abs/2302.10205) claim that Chat-format prompt are more effective than vanilla prompt. The famous package [Langchain](langchain.com) also implement related functions to extract triples from plain text. I'm really amazed by the power of [Prompt Engineering](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/) when I use LangChain and I recommend you to try this package to unlock the power of LLMs. Based on LangChain, [Kor](https://github.com/eyurtsev/kor) implement a pipeline to extract entities and relations from plain text. All we need to do is to provide concrete descriptions of entities and relations.
 
 There are also brief implementations which we can paly with online. [GraphGPT](https://graphgpt.vercel.app/) is a demo which can extract triples from plain text. After providing your OpenAI API key, you can play with it. The following figure shows the result of extracting triples from a sentence.
 
-# summary
+# summarization
 
 KGs and LLMs are two ways to represent knowledge. They have their own advantages and disadvantages. In this article, we discussed how to leverage KGs to help LLMs and how to leverage LLMs to help KGs. Although there are many problems to be solved, I believe that the combination of KGs and LLMs will bring us more surprises in the future.
 

@@ -7,6 +7,29 @@ tags:
 - knowledge graph
 ---
 
+- 知识图谱与大语言模型的基本定义与工作机理
+- 大语言模型如何帮助构建和补全知识图谱
+- 知识图谱对大语言模型的一致性、正确性和可解释性的帮助
+- 如何使用大语言模型构建自己的知识图谱
+
+- introduction to KG and LLM
+  - what are KG and LLM
+    - basic 
+    - basic definition and application of KG
+  - the basic pattern for them to help each other
+  - LLM for KG
+    - KG construction
+    - KG completion
+  - KG for LLM:
+    - as pretraining data
+    - as fine-tuning data
+    - as part of the prompt
+  - discussion
+    - personal data matters. It's necessary to collect your own data.
+    - trend of data quality on the internet
+      - better: only with few human check. the context can be useful.
+      - wrose: so easy for some people to pass wrong or low quality info.
+
 # Introduction
 Combining Knowledge Graphs (KG) and Large Language Models (LLM) has the potential to revolutionize the field of Artificial Intelligence (AI) and Natural Language Processing (NLP). In this blog post, we will explore the benefits of integrating KGs and LLMs, discuss various methods of incorporating KGs into LLMs, and delve into some real-world applications and case studies. This comprehensive overview will provide valuable insights into the future direction of KG and LLM research.
 

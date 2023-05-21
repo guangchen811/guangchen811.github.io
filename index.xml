@@ -16,7 +16,7 @@
       <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://guangchen811.github.io/llm/kg_and_llm/</guid>
-      <description>Large language models (LLMs) has show great success in many NLP tasks, including question answering, text generation, and so on. However, the accuaracy, consistency and explainability of LLMs still block the application of LLMs in many real-world scenarios. To address these problems, researchers have proposed many methods to improve the mentioned abilities of LLMs. One of the most promising methods is to combine LLMs with knowledge graphs (KGs), which is a high-quality structured knowledge source with reasonable explainability.</description>
+      <description>Large language models (LLMs) have shown great success in many NLP tasks, including question answering, text generation, and more. However, the accuracy, consistency, and explainability of LLMs still hinder their application in many real-world scenarios. To address these problems, researchers have proposed numerous methods to enhance these abilities in LLMs. One of the most promising methods involves combining LLMs with knowledge graphs (KGs), a high-quality, structured knowledge source known for its reasonable explainability.</description>
     </item>
     
     <item>

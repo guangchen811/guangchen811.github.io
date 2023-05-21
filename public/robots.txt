@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://guangchen811.github.io/sitemap.xml

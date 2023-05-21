@@ -1,6 +1,6 @@
 ---
-title: "[DRAFT]: Language + Knowledge: The Mutual Reinforcement of Large Language Models and Knowledge Graphs"
-date: 2023-04-23
+title: "Language + Knowledge: The Mutual Reinforcement of Large Language Models and Knowledge Graphs"
+date: 2023-05-21
 draft: false
 tags: 
 - LLMs

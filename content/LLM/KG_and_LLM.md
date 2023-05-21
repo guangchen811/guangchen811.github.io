@@ -7,15 +7,17 @@ tags:
 - knowledge graph
 ---
 
-# introduction
-
-LLM has show great success in many NLP tasks, including question answering, text generation, and so on. However, LLMs are still far from human-level intelligence. However, the accuaracy, consistency and explainability of LLMs block the application of LLMs in many real-world scenarios. To address these problems, researchers have proposed many methods to improve the mentioned abilities of LLMs. One of the most promising methods is to combine LLMs with knowledge graphs, which is a high-quality structured knowledge source with reasonable explainability. On the other hand, LLMs can also be used to improve the quality of knowledge graphs. In this blog, we will introduce the mutual reinforcement of LLMs and knowledge graphs.
+Large language models (LLMs) has show great success in many NLP tasks, including question answering, text generation, and so on. However, the accuaracy, consistency and explainability of LLMs still block the application of LLMs in many real-world scenarios. To address these problems, researchers have proposed many methods to improve the mentioned abilities of LLMs. One of the most promising methods is to combine LLMs with knowledge graphs (KGs), which is a high-quality structured knowledge source with reasonable explainability. On the other hand, LLMs can also be used to improve the quality of knowledge graphs. In this blog, we will discuss the mutual reinforcement of LLMs and KGs.
 
 # Basic Concepts
 
 ## Knowledge Graph
 
-In the domain of knowledge representation and reasoning, a knowledge graph is a type of knowledge base that utilizes a graph-structured data model or topology to integrate data. Knowledge graphs are often utilized to store interconnected descriptions of entities, including objects, events, situations, or abstract concepts, while simultaneously encoding the underlying semantics of the terminology utilized.
+In simple terms, a knowledge graph is a way of organizing and representing information in a structured format. It consists of a collection of interconnected nodes and edges, where each node represents a specific entity or concept, and each edge represents a relationship between those entities or concepts.
+
+Think of a knowledge graph as a visual representation of knowledge, where entities are represented as nodes (also known as vertices) and relationships between entities are represented as edges (also known as links). For example, in a knowledge graph about movies, nodes could represent actors, directors, movies, and genres, while edges could represent relationships such as "acted in," "directed," or "belongs to genre."
+
+The power of a knowledge graph lies in its ability to capture and represent complex relationships between different entities. It allows you to connect the dots between different pieces of information and provides a framework for understanding how things are related.
 
 <div align="center">
     <img src="/images/LLM_KG/google_search_capture.png" alt="google search" height=200>
@@ -23,15 +25,29 @@ In the domain of knowledge representation and reasoning, a knowledge graph is a 
 </figcaption>
 </div>
 
-The concept of a knowledge graph was initially introduced by Google in 2012. Google's knowledge graph functions as a knowledge base to augment their search engine's search results with semantic-search information that is sourced from a diverse range of origins. Knowledge graphs are also employed by corporations such as Amazon, Facebook, and Microsoft, amongst others.
+Knowledge graphs are commonly used in various applications, such as search engines, recommendation systems, and virtual assistants. The concept of a knowledge graph was initially introduced by Google in 2012. Google's knowledge graph functions as a knowledge base to augment their search engine's search results with semantic-search information that is sourced from a diverse range of origins. To know more about the conceptions, advantages and use cases, please check [this blog](https://towardsdatascience.com/a-guide-to-the-knowledge-graphs-bfb5c40272f1). 
 
-[This blog](https://towardsdatascience.com/a-guide-to-the-knowledge-graphs-bfb5c40272f1) make a good introduction to knowledge graph. Building a knowledge graph is a very difficult task. The main steps can be summarized in this [repo](https://github.com/husthuke/awesome-knowledge-graph). the main steps can be summarized in the following figure.
+It's a systemical and dirty process to build a high-quality knowledge, the main steps can be summarized in this [repo](https://github.com/husthuke/awesome-knowledge-graph). To explain more clearly, we will use the following figure to illustrate the process of building a knowledge graph.
 
 <div align="center">
     <img src="/images/LLM_KG/KG_building_process.svg" alt="Image 2" height=300>
     <figcaption align="center">The process of building a knowledge graph is relatively complex and involves multiple stages from data cleaning and pre-processing, to entity and relationship extraction, to knowledge fusion and storage. Building a knowledge graph requires a significant amount of human and material resources, but it greatly improves efficiency and accuracy in knowledge management and data integration.
 </figcaption>
 </div>
+
+As shown in the picture, building a knowledge graph is an intricate process that primarily consists of six stages: Knowledge Collection, Knowledge Integration, Knowledge Storage, Knowledge Computation, and Knowledge Application. It begins with gathering the data, extracting relevant entities and relationships from this data, then integrating the data into a coherent, unified format. This structured data is then stored using appropriate methods for easy retrieval and computational processes. The knowledge graph is finally put into action in applications such as semantic search and question answering. Each of these stages plays a crucial role in the construction of a functional and efficient knowledge graph.
+
+Knowledge Collection is the first step in the process of creating a knowledge graph. This involves a procedure known as Automatic Crawl, a method used for collecting data from various sources like web pages, documents, and databases. The collected data is then processed to extract relevant entities and their relations in a process called Entity Extraction and Relation Extraction. Entities refer to distinct objects, concepts, or individuals like a person, place, event, or an organization, while relations define how these entities interact or are related to each other.
+
+The next phase is Knowledge Integration, which encompasses Entity Linking, Entity Disambiguation, and Entity Alignment. Entity Linking connects entities from the collected data to their corresponding entities in the knowledge graph. Entity Disambiguation, on the other hand, deals with identifying and distinguishing entities with similar or identical names. Entity Alignment is crucial when integrating knowledge from different sources or languages, as it identifies the same real-world entity across different data sources or languages.
+
+Knowledge Storage is the stage where the integrated knowledge is stored for efficient use. This includes ER (Entity-Relationship) Storage, where entities and their relations are stored in a structured manner. Graph Storage involves storing the knowledge graph in a graph database, a storage system optimized for storing and querying graph data. Graph Retrieval and Formal Query are techniques to efficiently fetch the stored data for further processing or answering user queries.
+
+The Knowledge Computation phase involves creating a meaningful representation of the knowledge graph and performing inference tasks. Knowledge Representation involves structuring the knowledge graph in a way that both humans and computers can understand. Knowledge Inference is the process of deducing new knowledge from the existing knowledge graph. Graph Complement is an operation that fills in missing information in the graph by inferring from the available data.
+
+Finally, the Knowledge Application stage puts the knowledge graph into action. Semantic Search uses the knowledge graph to provide more accurate and context-aware search results. Knowledge Question Answering (QA) leverages the knowledge graph to answer queries by understanding the context, entities, and their relations involved in the query. This stage effectively demonstrates the value of a knowledge graph in improving information retrieval and understanding.
+
+In summary, building a knowledge graph is a complex process that involves various stages, each with its specific role and importance. The result is a powerful tool that enhances our ability to search, understand, and infer knowledge.
 
 ## Language Model
 
@@ -49,7 +65,12 @@ While the GPT series has achieved considerable success in numerous NLP tasks, it
 
 For instance, while the utilization of a large corpus has benefitted the GPT series, it has also resulted in the acquisition of biases contained in the corpus, leading to the model experiencing low consistency and a higher likelihood of producing fake-looking contexts that may appear correct.
 
-In addition, the supervised learning approach used by InstructGPT and ChatGPT is not immune to bias, as the diverse backgrounds of the labelers may impact the model's general behavior, making it hard to detect and mitigate. A well-known example of such an occurrence is observed in the case of [Behavior Cloning](https://www.alignmentforum.org/posts/BgoKdAzogxmgkuuAt/behavior-cloning-is-miscalibrated).
+In addition, the supervised learning approach used by InstructGPT and ChatGPT is not immune to bias, as the diverse backgrounds of the labelers may impact the model's general behavior, making it hard to detect and mitigate. A well-known example of such an occurrence is observed in the case of [Behavior Cloning](https://www.alignmentforum.org/posts/BgoKdAzogxmgkuuAt/behavior-cloning-is-miscalibrated). For simplicity, I will use a simple example to illustrate this phenomenon.
+
+<div align="center">
+    <img src="/images/LLM_KG/BC_example.svg" alt="BC_example" height=300>
+    <figcaption align="center">Behavior Cloning</figcaption>
+</div>
 
 # combination of LLMs and KGs
 

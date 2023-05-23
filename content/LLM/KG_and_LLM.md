@@ -49,8 +49,6 @@ Finally, the Knowledge Application stage puts the knowledge graph into action. S
 
 In summary, building a knowledge graph is a complex process involving various stages, each with its specific role and importance. The result is a powerful tool that significantly improves our ability to search for, understand, and infer knowledge.
 
-Large language models (LLMs) have shown great success in many NLP tasks, including question answering, text generation, and so on. However, accuracy, consistency, and explainability of LLMs often hinder their application in many real-world scenarios. To tackle these problems, researchers have proposed numerous methods to enhance these abilities of LLMs. One of the most promising approaches involves the integration of LLMs with knowledge graphs (KGs), a high-quality structured knowledge source with reasonable explainability. Interestingly, LLMs can also contribute to improving the quality of knowledge graphs. In this blog, we will delve into the mutual reinforcement between LLMs and KGs.
-
 ## Language Model
 
 Contrasting knowledge graphs, large language models (LLMs) harness neural networks to model knowledge. The GPT series, a transformer-based language model, is among the most renowned LLMs. Let's delve into the training process of the GPT series.

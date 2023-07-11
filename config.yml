@@ -20,7 +20,7 @@ minify:
 
 languages:
     en:
-        homeInfoParams:
+        params:
             Title: "Welcome to my blog! \U0001F44B"
             Content: Hi there, this is Hao.  I am currently documenting my acquired knowledge. It can't be better if my blogs are useful for you!
         languageName: "en"
@@ -128,8 +128,8 @@ params:
 
     assets:
         favicon: "/images/favicon.png"
-    #     favicon16x16: "<link / abs url>"
-    #     favicon32x32: "<link / abs url>"
+        favicon16x16: "/images/favicon.png"
+        favicon32x32: "/images/favicon.png"
     #     apple_touch_icon: "<link / abs url>"
     #     safari_pinned_tab: "<link / abs url>"
 

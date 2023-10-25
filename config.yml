@@ -42,9 +42,9 @@ languages:
                 - name: Categories
                   url: categories/
                   weight: 2
-                # - name: Leetcode Notes
-                #   url: leetcode/
-                #   weight: 1
+                - name: CV
+                  url: cv/cv
+                  weight: 1
 
 outputs:
     home:

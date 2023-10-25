@@ -33,7 +33,7 @@ languages:
                 - name: Recommended Blogs
                   url: /Recommended/
                   weight: 6
-                - name: Archives
+                - name: Archive
                   url: archives/
                   weight: 5
                 - name: Search

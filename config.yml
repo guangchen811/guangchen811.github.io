@@ -43,7 +43,7 @@ languages:
                   url: categories/
                   weight: 2
                 - name: CV
-                  url: cv/cv
+                  url: cv
                   weight: 1
 
 outputs:

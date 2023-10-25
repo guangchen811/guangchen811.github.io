@@ -126,10 +126,10 @@ via curl bash -c &amp;#34;$(curl -fsSL https://raw.</description>
     
     <item>
       <title>CV</title>
-      <link>https://guangchen811.github.io/cv/cv/</link>
+      <link>https://guangchen811.github.io/cv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://guangchen811.github.io/cv/cv/</guid>
+      <guid>https://guangchen811.github.io/cv/</guid>
       <description>Education B.S. in Applied Physics, Beijing University of Posts and Telecommunications, 2017-2021 M.S. in System Science, Beijing Normal University, 2021-2024 Research Experience Feb. 2022 - May. 2023: Machine Learning Research Intern, LinkedIn Beijing, China. Heterogeneous Knowledge-based Person-Job Fit: Perform data collection, data cleaning, and data analysis with Spark and SQL on LinkedIn&amp;rsquo;s internal database. Literature review on Person-Job Fit and Herogeneous Graph Neural Networks. Design and implement a heterogeneous graph neural network model for Person-Job Fit.</description>
     </item>
     

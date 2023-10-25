@@ -27,6 +27,9 @@ languages:
         weight: 1
         menu:
             main:
+                - name: DescKGC
+                  url: https://guangchen811.github.io/DescKGC/
+                  weight: 7
                 - name: Recommended Blogs
                   url: /Recommended/
                   weight: 6
@@ -36,12 +39,12 @@ languages:
                 - name: Search
                   url: search/
                   weight: 4
-                - name: Tags
-                  url: tags/
-                  weight: 3
-                - name: Categories
-                  url: categories/
-                  weight: 2
+                # - name: Tags
+                #   url: tags/
+                #   weight: 3
+                # - name: Categories
+                #   url: categories/
+                #   weight: 2
                 - name: CV
                   url: cv
                   weight: 1

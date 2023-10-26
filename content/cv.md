@@ -34,8 +34,8 @@ draft: false
 - Made **small** contributions to open source projects, like [Langchain](https://langchain.com/), [SuperAGI](https://github.com/TransformerOptimus/SuperAGI).
 
 # Awards
-- **First Scholarship**, Beijing Normal University, 2022-2023
-- **First Scholarship**, Beijing Normal University, 2021-2022
+- **First-Class Scholarship**, Beijing Normal University, 2022-2023
+- **First-Class Scholarship**, Beijing Normal University, 2021-2022
 
 # Skills
 - **Programming Languages**: Python, SQL, Spark, Cypher, MATLAB, LaTeX

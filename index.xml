@@ -10,7 +10,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Oct 2023 14:00:00 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing DescKGC!</title>
+      <link>https://guangchen811.github.io/desckgc/introduction/</link>
+      <pubDate>Wed, 25 Oct 2023 14:00:00 +0800</pubDate>
+      
+      <guid>https://guangchen811.github.io/desckgc/introduction/</guid>
+      <description>DescKGC is a python package for knowledge graph construction. It is designed to be a flexible and easy-to-use tool for domain-specific knowledge graph construction from domain knowledge or sentific keywords. The key feature which make DescKGC different from other knowledge graph construction tools is that it leverage LLM&amp;rsquo;s ability to generate description for each entity. The description will be used for cross text entity linking.
+For more information, please check out the official github repo and documentation.</description>
+    </item>
+    
     <item>
       <title>Language &#43; Knowledge: The Mutual Reinforcement of Large Language Models and Knowledge Graphs</title>
       <link>https://guangchen811.github.io/llm/kg_and_llm/</link>

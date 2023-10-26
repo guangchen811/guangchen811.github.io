@@ -18,6 +18,8 @@ draft: false
     - A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit
       - Participated in Experiment Design and Implementation.
       - The paper is under review by [ICASSP 2024](https://2024.ieeeicassp.org/ojsp-icassp2024-submissions/).
+    - Skill dependency graph in LinkedIn scenario.
+      - Build a Skill dependency graph with the common sense of LLM.
 - June 2023 - Present: **Research Intern**, [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/), Beijing, China.
     - Question Answer on Heterogeneous Information Network
       - Build a semantic parsing dataset to evaluate LLM's ability to run graph algorithm.
@@ -28,6 +30,7 @@ draft: false
 
 # Open Source Projects
 - Creater and Matainer of [DescKGC](https://guangchen811.github.io/DescKGC/)
+  - A python package for knowledge graph completion which highlight the importance of descriptions of entities.
 - Made **small** contributions to open source projects, like [Langchain](https://langchain.com/), [SuperAGI](https://github.com/TransformerOptimus/SuperAGI).
 
 # Awards

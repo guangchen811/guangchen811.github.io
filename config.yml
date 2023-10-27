@@ -27,24 +27,27 @@ languages:
         weight: 1
         menu:
             main:
+                - name: DescKGC
+                  url: https://guangchen811.github.io/DescKGC/
+                  weight: 7
                 - name: Recommended Blogs
                   url: /Recommended/
                   weight: 6
-                - name: Archives
+                - name: Archive
                   url: archives/
                   weight: 5
                 - name: Search
                   url: search/
                   weight: 4
-                - name: Tags
-                  url: tags/
-                  weight: 3
-                - name: Categories
-                  url: categories/
-                  weight: 2
-                # - name: Leetcode Notes
-                #   url: leetcode/
-                #   weight: 1
+                # - name: Tags
+                #   url: tags/
+                #   weight: 3
+                # - name: Categories
+                #   url: categories/
+                #   weight: 2
+                - name: CV
+                  url: cv
+                  weight: 1
 
 outputs:
     home:

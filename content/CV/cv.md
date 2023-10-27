@@ -24,6 +24,7 @@ draft: true
 
 # Publications
 **Hao Chen**, Lun Du, Yuxuan Lu, Qiang Fu, Xu Chen, Shi Han, Yanbin Kang, Guangming Lu and Zi Li, Heterogeneous knowledge enhanced Person-Job Fit (WSDM 2024)
+Yihan Cao, Xu Chen, Lun Du, **Hao Chen**, Qiang Fu, Shi Han, Yushu Du, Yanbin Kang, Guangming Lu, Zi Li, TAROT: A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit, under review by ICASSP 2024.
 
 # Open Source Projects
 - Creater and Matainer of [DescKGC](https://guangchen811.github.io/DescKGC/)

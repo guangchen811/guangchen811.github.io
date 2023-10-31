@@ -11,7 +11,7 @@ The [PDF Version](/CV/CV.pdf) is also available.
 # Research Experience
 
 - Feb. 2022 - May. 2023: **Machine Learning Research Intern**, [LinkedIn](https://www.linkedin.com/) Beijing, China.
-    - Heterogeneous Knowledge-based Person-Job Fit:
+    - Professional Network Matters: Connections Empower Person-Job Fit
       - Perform data collection, data cleaning, and data analysis with Spark and SQL on LinkedIn's internal database.
       - Literature review on Person-Job Fit and Heterogeneous Graph Neural Networks.
       - Design and implement a heterogeneous graph neural network model for Person-Job Fit.

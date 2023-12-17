@@ -18,7 +18,7 @@ The [PDF Version](/CV/CV.pdf) is also available.
       - The corresponding paper has been **accepted** by [WSDM 2024](https://www.wsdm-conference.org/2024/).
     - A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit
       - Participated in Experiment Design and Implementation.
-      - The paper is under review by [ICASSP 2024](https://2024.ieeeicassp.org/ojsp-icassp2024-submissions/).
+      - The corresponding paper has been **accepted** by [ICASSP 2024](https://2024.ieeeicassp.org/ojsp-icassp2024-submissions/).
     - Skill dependency graph in LinkedIn scenario.
       - Build a Skill dependency graph with the common sense of LLM.
 - June 2023 - Present: **Research Intern**, [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/), Beijing, China.

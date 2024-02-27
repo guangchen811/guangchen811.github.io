@@ -2,10 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://guangchen811.github.io/desckgc/</loc>
-    <lastmod>2023-10-25T14:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://guangchen811.github.io/</loc>
+    <lastmod>2024-02-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://guangchen811.github.io/rustlang/</loc>
+    <lastmod>2024-02-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://guangchen811.github.io/eng/</loc>
+    <lastmod>2023-12-15T14:06:00+08:00</lastmod>
+  </url><url>
+    <loc>https://guangchen811.github.io/desckgc/</loc>
     <lastmod>2023-10-25T14:00:00+08:00</lastmod>
   </url><url>
     <loc>https://guangchen811.github.io/desckgc/introduction/</loc>
@@ -26,6 +32,9 @@
     <loc>https://guangchen811.github.io/tags/</loc>
     <lastmod>2023-05-21T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://guangchen811.github.io/math/</loc>
+    <lastmod>2023-04-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://guangchen811.github.io/llm/prompt_comparation/</loc>
     <lastmod>2023-03-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -41,11 +50,23 @@
     <loc>https://guangchen811.github.io/tags/powershell/</loc>
     <lastmod>2023-03-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://guangchen811.github.io/difussion/</loc>
+    <lastmod>2023-02-18T14:06:27+08:00</lastmod>
+  </url><url>
     <loc>https://guangchen811.github.io/tags/bash/</loc>
     <lastmod>2022-09-09T23:10:16+08:00</lastmod>
   </url><url>
     <loc>https://guangchen811.github.io/install/oh-my-bash/</loc>
     <lastmod>2022-09-09T23:10:16+08:00</lastmod>
+  </url><url>
+    <loc>https://guangchen811.github.io/python/</loc>
+    <lastmod>2022-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://guangchen811.github.io/golang/</loc>
+    <lastmod>2022-09-03T16:20:27+08:00</lastmod>
+  </url><url>
+    <loc>https://guangchen811.github.io/mle/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://guangchen811.github.io/categories/</loc>
     <lastmod>2022-04-23T23:53:26+08:00</lastmod>
@@ -61,6 +82,9 @@
   </url><url>
     <loc>https://guangchen811.github.io/leetcode/</loc>
     <lastmod>2022-04-23T23:53:26+08:00</lastmod>
+  </url><url>
+    <loc>https://guangchen811.github.io/languagetutorial/</loc>
+    <lastmod>2022-04-18T22:26:46+08:00</lastmod>
   </url><url>
     <loc>https://guangchen811.github.io/tags/2-pointers/</loc>
     <lastmod>2022-04-17T19:39:20+08:00</lastmod>

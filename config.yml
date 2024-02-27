@@ -27,27 +27,21 @@ languages:
         weight: 1
         menu:
             main:
-                - name: DescKGC
-                  url: https://guangchen811.github.io/DescKGC/
-                  weight: 7
-                - name: Recommended Blogs
-                  url: /Recommended/
-                  weight: 6
-                - name: Archive
-                  url: archives/
-                  weight: 5
-                - name: Search
-                  url: search/
-                  weight: 4
-                # - name: Tags
-                #   url: tags/
-                #   weight: 3
-                # - name: Categories
-                #   url: categories/
-                #   weight: 2
                 - name: CV
                   url: cv
                   weight: 1
+                - name: Search
+                  url: search/
+                  weight: 4
+                - name: Archive
+                  url: archives/
+                  weight: 5
+                - name: Recommended Blogs
+                  url: /Recommended/
+                  weight: 6
+                - name: DescKGC
+                  url: https://guangchen811.github.io/DescKGC/
+                  weight: 7
 
 outputs:
     home:
@@ -113,6 +107,8 @@ params:
           url: "index.xml"
         - name: linkedin
           url : "https://www.linkedin.com/in/hao-chen-69b175203/"
+        - name: googlescholar
+          url: "https://scholar.google.com/citations?user=8_8CyzcAAAAJ&hl=en"
         # - name: KoFi
         #   url: "https://ko-fi.com/adityatelange"
     # editPost:

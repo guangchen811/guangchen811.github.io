@@ -5,10 +5,12 @@
     <link>https://guangchen811.github.io/recommended/</link>
     <description>Recent content on Hao Chen</description>
     <image>
+      <title>Hao Chen</title>
       <url>https://guangchen811.github.io/papermod-cover.png</url>
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://guangchen811.github.io/recommended/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <atom:link href="https://guangchen811.github.io/recommended/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

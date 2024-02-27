@@ -5,145 +5,117 @@
     <link>https://guangchen811.github.io/</link>
     <description>Recent content on Hao Chen</description>
     <image>
+      <title>Hao Chen</title>
       <url>https://guangchen811.github.io/papermod-cover.png</url>
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Oct 2023 14:00:00 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Oct 2023 14:00:00 +0800</lastBuildDate>
+    <atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introducing DescKGC!</title>
       <link>https://guangchen811.github.io/desckgc/introduction/</link>
       <pubDate>Wed, 25 Oct 2023 14:00:00 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/desckgc/introduction/</guid>
       <description>DescKGC is a python package for knowledge graph construction. It is designed to be a flexible and easy-to-use tool for domain-specific knowledge graph construction from domain knowledge or sentific keywords. The key feature which make DescKGC different from other knowledge graph construction tools is that it leverage LLM&amp;rsquo;s ability to generate description for each entity. The description will be used for cross text entity linking.
 For more information, please check out the official github repo and documentation.</description>
     </item>
-    
     <item>
       <title>Language &#43; Knowledge: The Mutual Reinforcement of Large Language Models and Knowledge Graphs</title>
       <link>https://guangchen811.github.io/llm/kg_and_llm/</link>
       <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://guangchen811.github.io/llm/kg_and_llm/</guid>
       <description>Large language models (LLMs) have shown great success in many NLP tasks, including question answering, text generation, and more. However, the accuracy, consistency, and explainability of LLMs still hinder their application in many real-world scenarios. To address these problems, researchers have proposed numerous methods to enhance these abilities in LLMs. One of the most promising methods involves combining LLMs with knowledge graphs (KGs), a high-quality, structured knowledge source known for its reasonable explainability.</description>
     </item>
-    
     <item>
       <title>Choosing the Right LLM: A Comparison of ChatGPT, GPT-4, New Bing, and Notion AI for Different Scenarios</title>
       <link>https://guangchen811.github.io/llm/prompt_comparation/</link>
       <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://guangchen811.github.io/llm/prompt_comparation/</guid>
       <description>Large language models (LLMs) have become increasingly popular and accessible to people without technical expertise. This has brought about a significant change not only in the AI industry but also in other fields of work. However, faced with so many different LLMs, how do we choose the proper one to maximize their help to our work and life? For example, when we want to polish an article, should we open a ChatGPT dialog box, or should we transfer it to Notion for processing by Notion AI?</description>
     </item>
-    
     <item>
       <title>Oh My Posh</title>
       <link>https://guangchen811.github.io/install/oh-my-posh/</link>
       <pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://guangchen811.github.io/install/oh-my-posh/</guid>
       <description>If you&amp;rsquo;re a Windows user and looking for a way to customize your PowerShell prompt, then Oh My Posh might be just what you need. Oh My Posh is an open-source, community-driven framework for managing your PowerShell prompt configuration. In this tutorial, we will go through the steps to install and configure Oh My Posh.
 Prerequisites Windows 10 or above PowerShell 5 or above .NET Framework 4.7.2 or above Git Installation Open PowerShell with administrative privileges.</description>
     </item>
-    
     <item>
       <title>Oh My Bash</title>
       <link>https://guangchen811.github.io/install/oh-my-bash/</link>
       <pubDate>Fri, 09 Sep 2022 23:10:16 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/install/oh-my-bash/</guid>
       <description>After using oh-my-zsh on my macbook for a few days, I feel the original bash theme not elegant enough. Thus, I start searching something like oh-my-zsh for bash, then I found oh my bash.
 Oh My Bash is an open source, community-driven framework for managing your bash configuration. Let&amp;rsquo;s get started.
 Oh My Bash is installed by running one of the following commands in your terminal.
 via curl bash -c &amp;#34;$(curl -fsSL https://raw.</description>
     </item>
-    
     <item>
       <title>Erect the Fence</title>
       <link>https://guangchen811.github.io/leetcode/erect-the-fence/</link>
       <pubDate>Sat, 23 Apr 2022 23:53:26 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/leetcode/erect-the-fence/</guid>
       <description>No.587</description>
     </item>
-    
     <item>
       <title>Minimum Size Subarray Sum</title>
       <link>https://guangchen811.github.io/leetcode/minimum-size-subarray-sum/</link>
       <pubDate>Sun, 17 Apr 2022 19:39:20 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/leetcode/minimum-size-subarray-sum/</guid>
       <description>No.209</description>
     </item>
-    
     <item>
       <title>Increasing Order Search Tree</title>
       <link>https://guangchen811.github.io/leetcode/increasing-order-search-tree/</link>
       <pubDate>Sun, 17 Apr 2022 15:15:57 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/leetcode/increasing-order-search-tree/</guid>
       <description>No.897</description>
     </item>
-    
     <item>
       <title>Convert BST to Greater Tree</title>
       <link>https://guangchen811.github.io/leetcode/convert-bst-to-greater-tree/</link>
       <pubDate>Sat, 16 Apr 2022 14:43:45 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/leetcode/convert-bst-to-greater-tree/</guid>
       <description>No.538</description>
     </item>
-    
     <item>
       <title>Count Number of Nice Subarrays</title>
       <link>https://guangchen811.github.io/leetcode/count-number-of-nice-subarrays/</link>
       <pubDate>Sat, 16 Apr 2022 12:00:38 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/leetcode/count-number-of-nice-subarrays/</guid>
       <description>No.1248</description>
     </item>
-    
     <item>
       <title>Minimum Swaps to Make Strings Equal</title>
       <link>https://guangchen811.github.io/leetcode/minimum-swaps-to-make-strings-equal/</link>
       <pubDate>Fri, 15 Apr 2022 23:10:09 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/leetcode/minimum-swaps-to-make-strings-equal/</guid>
       <description>No.1247</description>
     </item>
-    
     <item>
       <title>Search in a Binary Seaerch Tree</title>
       <link>https://guangchen811.github.io/leetcode/searchinabinarysearchtree/</link>
       <pubDate>Sun, 10 Apr 2022 19:26:27 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/leetcode/searchinabinarysearchtree/</guid>
       <description>No.700</description>
     </item>
-    
     <item>
       <title>Add Two Numbers</title>
       <link>https://guangchen811.github.io/leetcode/add-two-numbers/</link>
       <pubDate>Sat, 09 Apr 2022 19:26:27 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/leetcode/add-two-numbers/</guid>
       <description>No.2</description>
     </item>
-    
-    
     <item>
       <title>Hao Chen</title>
       <link>https://guangchen811.github.io/cv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://guangchen811.github.io/cv/</guid>
       <description>The PDF Version is also available.
 Education B.S. in Applied Physics, Beijing University of Posts and Telecommunications, 2017-2021 M.S. in System Science, Beijing Normal University, 2021-2024 Research Experience Feb. 2022 - May. 2023: Machine Learning Research Intern, LinkedIn Beijing, China. Professional Network Matters: Connections Empower Person-Job Fit Perform data collection, data cleaning, and data analysis with Spark and SQL on LinkedIn&amp;rsquo;s internal database. Literature review on Person-Job Fit and Heterogeneous Graph Neural Networks.</description>
     </item>
-    
-    
   </channel>
 </rss>

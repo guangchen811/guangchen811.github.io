@@ -5,29 +5,27 @@
     <link>https://guangchen811.github.io/tags/llms/</link>
     <description>Recent content in LLMs on Hao Chen</description>
     <image>
+      <title>Hao Chen</title>
       <url>https://guangchen811.github.io/papermod-cover.png</url>
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://guangchen811.github.io/tags/llms/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://guangchen811.github.io/tags/llms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Language &#43; Knowledge: The Mutual Reinforcement of Large Language Models and Knowledge Graphs</title>
       <link>https://guangchen811.github.io/llm/kg_and_llm/</link>
       <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://guangchen811.github.io/llm/kg_and_llm/</guid>
       <description>Large language models (LLMs) have shown great success in many NLP tasks, including question answering, text generation, and more. However, the accuracy, consistency, and explainability of LLMs still hinder their application in many real-world scenarios. To address these problems, researchers have proposed numerous methods to enhance these abilities in LLMs. One of the most promising methods involves combining LLMs with knowledge graphs (KGs), a high-quality, structured knowledge source known for its reasonable explainability.</description>
     </item>
-    
     <item>
       <title>Choosing the Right LLM: A Comparison of ChatGPT, GPT-4, New Bing, and Notion AI for Different Scenarios</title>
       <link>https://guangchen811.github.io/llm/prompt_comparation/</link>
       <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://guangchen811.github.io/llm/prompt_comparation/</guid>
       <description>Large language models (LLMs) have become increasingly popular and accessible to people without technical expertise. This has brought about a significant change not only in the AI industry but also in other fields of work. However, faced with so many different LLMs, how do we choose the proper one to maximize their help to our work and life? For example, when we want to polish an article, should we open a ChatGPT dialog box, or should we transfer it to Notion for processing by Notion AI?</description>
     </item>
-    
   </channel>
 </rss>

@@ -5,20 +5,20 @@
     <link>https://guangchen811.github.io/tags/recursion/</link>
     <description>Recent content in Recursion on Hao Chen</description>
     <image>
+      <title>Hao Chen</title>
       <url>https://guangchen811.github.io/papermod-cover.png</url>
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 16 Apr 2022 14:43:45 +0800</lastBuildDate><atom:link href="https://guangchen811.github.io/tags/recursion/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Apr 2022 14:43:45 +0800</lastBuildDate>
+    <atom:link href="https://guangchen811.github.io/tags/recursion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Convert BST to Greater Tree</title>
       <link>https://guangchen811.github.io/leetcode/convert-bst-to-greater-tree/</link>
       <pubDate>Sat, 16 Apr 2022 14:43:45 +0800</pubDate>
-      
       <guid>https://guangchen811.github.io/leetcode/convert-bst-to-greater-tree/</guid>
       <description>No.538</description>
     </item>
-    
   </channel>
 </rss>

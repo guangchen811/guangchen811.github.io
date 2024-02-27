@@ -70,7 +70,7 @@ params:
     ShowBreadCrumbs: true
     ShowCodeCopyButtons: true
     ShowToc: true
-    # comments: true
+    comments: true
     images: ["papermod-cover.png"]
 
     profileMode:

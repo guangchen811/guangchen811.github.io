@@ -2,6 +2,7 @@
 title: "Hao Chen"
 date: 2023-10-22-T14:00:00+08:00
 draft: false
+comments: false
 ---
 The [PDF Version](/CV/CV.pdf) is also available.
 # Education

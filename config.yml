@@ -22,13 +22,13 @@ languages:
     en:
         params:
             Title: "Welcome to my blog! \U0001F44B"
-            Content: Hi there, this is Hao.  I am currently documenting my acquired knowledge. It can't be better if my blogs are useful for you!
+            Content: Hi there, this is Hao Chen, a Master student at Beijing Normal University. I am currently doing research on the field of Knowledge Graph and Language Model. I am documenting my acquired knowledge here. It can't be better if they are useful for you! For more information about me, please visit my LinkedIn profile.
         languageName: "en"
         weight: 1
         menu:
             main:
                 - name: CV
-                  url: cv
+                  url: cv/
                   weight: 1
                 - name: Search
                   url: search/
@@ -37,7 +37,7 @@ languages:
                   url: archives/
                   weight: 5
                 - name: Recommended Blogs
-                  url: /Recommended/
+                  pageRef: /Recommended
                   weight: 6
                 - name: DescKGC
                   url: https://guangchen811.github.io/DescKGC/
@@ -69,8 +69,8 @@ params:
 
     profileMode:
         enabled: true
-        title: Welcome to my blog!
-        subtitle: Hi there, this is Hao. I am currently documenting my acquired knowledge. It can't be better if they are useful for you! For more information about me, please visit my LinkedIn profile.
+        title: "Welcome to my blog! \U0001F44B"
+        subtitle: Hi there, this is Hao Chen, a Master student at Beijing Normal University. I am currently doing research on the field of Knowledge Graph and Language Model. I am documenting my acquired knowledge here. It can't be better if they are useful for you! For more information about me, please visit my LinkedIn profile.
         imageUrl: "/images/avatar.jpg"
         imageTitle: avatar
         # imageWidth: 120

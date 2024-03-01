@@ -28,8 +28,8 @@ The [PDF Version](/CV/CV.pdf) is also available.
       - Plan to submit to [NAACL 2024](https://2024.naacl.org/).
 
 # Publications
-- **Hao Chen**, Lun Du, Yuxuan Lu, Qiang Fu, Xu Chen, Shi Han, Yanbin Kang, Guangming Lu and Zi Li, Professional Network Matters: Connections Empower Person-Job Fit (WSDM 2024)
-- Yihan Cao, Xu Chen, Lun Du, **Hao Chen**, Qiang Fu, Shi Han, Yushu Du, Yanbin Kang, Guangming Lu, Zi Li, TAROT: A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit, (ICASSP 2024)
+- **Hao Chen**, Lun Du, Yuxuan Lu, Qiang Fu, Xu Chen, Shi Han, Yanbin Kang, Guangming Lu and Zi Li, [Professional Network Matters: Connections Empower Person-Job Fit](https://arxiv.org/abs/2401.00010) (WSDM 2024)
+- Yihan Cao, Xu Chen, Lun Du, **Hao Chen**, Qiang Fu, Shi Han, Yushu Du, Yanbin Kang, Guangming Lu, Zi Li, [TAROT: A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit](https://arxiv.org/abs/2401.07525), (ICASSP 2024)
 
 # Open Source Projects
 - Creater and Matainer of [DescKGC](https://guangchen811.github.io/DescKGC/)

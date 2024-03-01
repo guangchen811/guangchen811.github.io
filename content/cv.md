@@ -1,10 +1,10 @@
 ---
-title: "Hao Chen"
+title: "CV"
 date: 2023-10-22-T14:00:00+08:00
 draft: false
 comments: false
 ---
-The [PDF Version](/CV/CV.pdf) is also available.
+<span style="color:blue">The <a href="/CV/CV.pdf" style="color:blue">PDF Version</a> is also available.</span>
 # Education
 - **B.S. in Applied Physics**, Beijing University of Posts and Telecommunications, 2017-2021
 - **M.S. in System Science**, Beijing Normal University, 2021-2024

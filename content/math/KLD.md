@@ -3,7 +3,6 @@ title: "KL Divergence"
 date: 2023-04-02
 draft: true
 summary: Explain KL Divergence and show some example of its application in ML.
-ismath: true
 tags:
 - MLE
 - Math

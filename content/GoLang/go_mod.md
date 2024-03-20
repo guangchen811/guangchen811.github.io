@@ -3,7 +3,6 @@ title: "Go Modules Reference中文翻译"
 date: 2022-09-03T16:20:27+08:00
 draft: true
 summary: No.2
-ismath: true
 tags:
 - go
 categories:

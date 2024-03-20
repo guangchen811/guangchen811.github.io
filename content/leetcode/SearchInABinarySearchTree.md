@@ -3,7 +3,6 @@ title: "Search in a Binary Seaerch Tree"
 date: 2022-04-10T19:26:27+08:00
 draft: false
 summary: No.700
-ismath: true
 tags:
 - Tree
 - BST

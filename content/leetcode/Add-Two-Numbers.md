@@ -3,7 +3,6 @@ title: "Add Two Numbers"
 date: 2022-04-09T19:26:27+08:00
 draft: false
 summary: No.2
-ismath: true
 tags:
 - Linked List
 - Easy

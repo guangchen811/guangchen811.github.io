@@ -3,7 +3,6 @@ title: "Minimum Swaps to Make Strings Equal"
 date: 2022-04-15T23:10:09+08:00
 draft: false
 summary: No.1247
-ismath: true
 tags:
 - Medium
 categories:

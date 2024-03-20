@@ -3,7 +3,6 @@ title: "Answering Machine Learning Interview Questions"
 date: 2022-07-22
 draft: true
 summary: Answers to questions from the "Machine Learning Interviews" book by Chip Huyen
-ismath: true
 tags:
 - MLE
 categories:

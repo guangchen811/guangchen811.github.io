@@ -3,7 +3,6 @@ title: "Minimum Size Subarray Sum"
 date: 2022-04-17T19:39:20+08:00
 draft: false
 summary: No.209
-ismath: true
 tags:
 - 2 pointers
 categories:

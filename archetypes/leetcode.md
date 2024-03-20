@@ -3,7 +3,6 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
 summary: No.
-ismath: true
 tags:
 -
 categories:

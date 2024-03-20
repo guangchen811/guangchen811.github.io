@@ -3,7 +3,6 @@ title: "Erect the Fence"
 date: 2022-04-23T23:53:26+08:00
 draft: false
 summary: No.587
-ismath: true
 tags:
 - Convex Hull
 - 

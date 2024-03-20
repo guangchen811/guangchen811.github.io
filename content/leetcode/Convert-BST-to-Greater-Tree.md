@@ -3,7 +3,6 @@ title: "Convert BST to Greater Tree"
 date: 2022-04-16T14:43:45+08:00
 draft: false
 summary: No.538
-ismath: true
 tags:
 - BST
 - Recursion

@@ -14,7 +14,6 @@ googleAnalytics: G-R12XP6LSRD
 
 minify:
   disableXML: true
-  # minifyOutput: true
 
 outputs:
   home:
@@ -62,16 +61,6 @@ params:
         url: categories/
         weight: 2
   ShowAllPagesInArchive: true
-  # homeInfoParams:
-  #     Title: "PaperMod"
-  #     Content: >
-  #         Welcome to demo of hugo's theme PaperMod.
-
-  #         - **PaperMod** is a simple but fast and responsive theme with useful feature-set that enhances UX.
-
-  #         - Do give a 🌟 on Github !
-
-  #         - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper).
 
   socialIcons:
     - name: github
@@ -91,7 +80,6 @@ params:
 taxonomies:
   category: categories
   tag: tags
-  # series: series
 
 markup:
   goldmark:
@@ -110,13 +98,28 @@ markup:
           - - \(
             - \)
         enable: true
-  # highlight:
-  #     # anchorLineNos: true
-  #     codeFences: true
-  #     guessSyntax: true
-  #     lineNos: true
-  #     # noClasses: false
-  #     style: monokai
+
+languages:
+    en:
+        languageName: "en"
+        weight: 1
+        menu:
+            main:
+                - name: CV
+                  url: cv/
+                  weight: 1
+                - name: Search
+                  url: search/
+                  weight: 4
+                - name: Archive
+                  url: archives/
+                  weight: 5
+                - name: Recommended Blogs
+                  pageRef: /Recommended
+                  weight: 6
+                - name: DescKGC
+                  url: https://guangchen811.github.io/DescKGC/
+                  weight: 7
 
 privacy:
   vimeo:

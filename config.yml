@@ -45,8 +45,6 @@ params:
     subtitle: Hi there, this is Hao Chen, a Master student at Beijing Normal University. I am currently doing research on the field of Knowledge Graph and Language Model. I am documenting my acquired knowledge here. It can't be better if they are useful for you! For more information about me, please visit my LinkedIn profile.
     imageUrl: "/images/avatar.jpg"
     imageTitle: avatar
-    # imageWidth: 120
-    # imageHeight: 120
     buttons:
       - name: Archive
         url: archives

@@ -2,4 +2,5 @@
 .hugo_build.lock
 publish*
 public*
+docs*
 ref*

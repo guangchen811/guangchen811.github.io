@@ -11,22 +11,8 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Apr 2022 15:15:57 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Apr 2022 19:26:27 +0800</lastBuildDate>
     <atom:link href="https://guangchen811.github.io/tags/bst/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Increasing Order Search Tree</title>
-      <link>https://guangchen811.github.io/leetcode/increasing-order-search-tree/</link>
-      <pubDate>Sun, 17 Apr 2022 15:15:57 +0800</pubDate>
-      <guid>https://guangchen811.github.io/leetcode/increasing-order-search-tree/</guid>
-      <description>No.897</description>
-    </item>
-    <item>
-      <title>Convert BST to Greater Tree</title>
-      <link>https://guangchen811.github.io/leetcode/convert-bst-to-greater-tree/</link>
-      <pubDate>Sat, 16 Apr 2022 14:43:45 +0800</pubDate>
-      <guid>https://guangchen811.github.io/leetcode/convert-bst-to-greater-tree/</guid>
-      <description>No.538</description>
-    </item>
     <item>
       <title>Search in a Binary Seaerch Tree</title>
       <link>https://guangchen811.github.io/leetcode/searchinabinarysearchtree/</link>

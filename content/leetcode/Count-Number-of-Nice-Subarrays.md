@@ -1,7 +1,7 @@
 ---
 title: "Count Number of Nice Subarrays"
 date: 2022-04-16T12:00:38+08:00
-draft: false
+draft: true
 summary: No.1248
 tags:
 - Prefix Sum

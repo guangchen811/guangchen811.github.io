@@ -1,7 +1,7 @@
 ---
 title: "Increasing Order Search Tree"
 date: 2022-04-17T15:15:57+08:00
-draft: false
+draft: true
 summary: No.897
 tags:
 - BST

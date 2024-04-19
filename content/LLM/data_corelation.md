@@ -20,7 +20,13 @@ The second way is to select some column pairs as the positive samples and select
 
 # Methods
 
+# PLM based
+
 The dataset mentioned in (Trummer, Immanuel) is very small. As shown in the Table 2, Number of data sets is 3952 and the Number of column pairs are 119384. Which means the average columns of each dataset is less than 6. This paper uses the second way to measure the performance of the Language Model. The input is the schema of the table and two column names, and the output is the correlation between the two columns.
+
+# LLM Prompting based
+
+Sui, Yuan, Mengyu Zhou, Mingjie Zhou, Shi Han, and Dongmei Zhang. “Table Meets LLM: Can Large Language Models Understand Structured Table Data? A Benchmark and Empirical Study.” In Proceedings of the 17th ACM International Conference on Web Search and Data Mining, 645–54. Merida Mexico: ACM, 2024. https://doi.org/10.1145/3616855.3635752.
 
 # Predicted relation types
 

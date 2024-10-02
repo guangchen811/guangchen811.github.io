@@ -1,6 +1,6 @@
 ---
 title: "CV"
-date: 2023-10-22-T14:00:00+08:00
+date: 2023-10-22
 draft: false
 comments: false
 ---

@@ -1,6 +1,6 @@
 ---
 title: "basic SDE knowledge"
-date: 2023-03-24-18T14:06:27+08:00
+date: 2023-03-24
 draft: true
 ---
 

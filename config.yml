@@ -42,7 +42,7 @@ params:
   profileMode:
     enabled: true
     title: "Welcome to my blog! \U0001F44B"
-    subtitle: Hi there, this is Hao Chen, a Master student at Beijing Normal University. I am currently doing research on the field of Knowledge Graph and Language Model. I am documenting my acquired knowledge here. It can't be better if they are useful for you! For more information about me, please visit my LinkedIn profile.
+    subtitle: Hi there, I’m Hao Chen, a Ph.D. student at [BIFOLD](https://www.bifold.berlin/) and [TU Berlin](https://www.tu.berlin/). I am part of the [DEEM lab](https://deem.berlin/), supervised by [Prof.Dr.-Ing. Sebastian Schelter](https://deem.berlin/#professor). My research focuses on Data Validation for AI System. I am documenting my acquired knowledge here. It can't be better if they are useful for you! For more information about me, please visit my [LinkedIn profile](https://www.linkedin.com/in/hao-chen-69b175203/).
     imageUrl: "/images/avatar.jpg"
     imageTitle: avatar
     buttons:

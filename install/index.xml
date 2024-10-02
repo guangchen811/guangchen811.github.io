@@ -18,18 +18,48 @@
       <link>https://guangchen811.github.io/install/oh-my-posh/</link>
       <pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate>
       <guid>https://guangchen811.github.io/install/oh-my-posh/</guid>
-      <description>If you&amp;rsquo;re a Windows user and looking for a way to customize your PowerShell prompt, then Oh My Posh might be just what you need. Oh My Posh is an open-source, community-driven framework for managing your PowerShell prompt configuration. In this tutorial, we will go through the steps to install and configure Oh My Posh.
-Prerequisites Windows 10 or above PowerShell 5 or above .NET Framework 4.7.2 or above Git Installation Open PowerShell with administrative privileges.</description>
+      <description>&lt;p&gt;If you&amp;rsquo;re a Windows user and looking for a way to customize your PowerShell prompt, then Oh My Posh might be just what you need. Oh My Posh is an open-source, community-driven framework for managing your PowerShell prompt configuration. In this tutorial, we will go through the steps to install and configure Oh My Posh.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 10 or above&lt;/li&gt;
+&lt;li&gt;PowerShell 5 or above&lt;/li&gt;
+&lt;li&gt;.NET Framework 4.7.2 or above&lt;/li&gt;
+&lt;li&gt;Git&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open PowerShell with administrative privileges.&lt;/li&gt;
+&lt;li&gt;Run the following command to install the required modules:&lt;/li&gt;
+&lt;li&gt;Close the PowerShell window.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open PowerShell with administrative privileges.&lt;/li&gt;
+&lt;li&gt;Run the following command to open your PowerShell profile in Notepad:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Close the PowerShell window.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;configuration-1&#34;&gt;Configuration&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Open PowerShell with administrative privileges.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Oh My Bash</title>
       <link>https://guangchen811.github.io/install/oh-my-bash/</link>
       <pubDate>Fri, 09 Sep 2022 23:10:16 +0800</pubDate>
       <guid>https://guangchen811.github.io/install/oh-my-bash/</guid>
-      <description>After using oh-my-zsh on my macbook for a few days, I feel the original bash theme not elegant enough. Thus, I start searching something like oh-my-zsh for bash, then I found oh my bash.
-Oh My Bash is an open source, community-driven framework for managing your bash configuration. Let&amp;rsquo;s get started.
-Oh My Bash is installed by running one of the following commands in your terminal.
-via curl bash -c &amp;#34;$(curl -fsSL https://raw.</description>
+      <description>&lt;p&gt;After using &lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;oh-my-zsh&lt;/a&gt; on my macbook for a few days, I feel the original bash theme not elegant enough. Thus, I start searching something like oh-my-zsh for bash, then I found oh my bash.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;Oh My Bash&lt;/a&gt; is an open source, community-driven framework for managing your bash configuration. Let&amp;rsquo;s get started.&lt;/p&gt;
+&lt;p&gt;Oh My Bash is installed by running one of the following commands in your terminal.&lt;/p&gt;
+&lt;h4 id=&#34;via-curl&#34;&gt;via curl&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;via-wget&#34;&gt;via wget&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The above command will execute the following commands line by line.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

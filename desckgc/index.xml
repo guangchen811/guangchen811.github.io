@@ -18,8 +18,8 @@
       <link>https://guangchen811.github.io/desckgc/introduction/</link>
       <pubDate>Wed, 25 Oct 2023 14:00:00 +0800</pubDate>
       <guid>https://guangchen811.github.io/desckgc/introduction/</guid>
-      <description>DescKGC is a python package for knowledge graph construction. It is designed to be a flexible and easy-to-use tool for domain-specific knowledge graph construction from domain knowledge or sentific keywords. The key feature which make DescKGC different from other knowledge graph construction tools is that it leverage LLM&amp;rsquo;s ability to generate description for each entity. The description will be used for cross text entity linking.
-For more information, please check out the official github repo and documentation.</description>
+      <description>&lt;p&gt;DescKGC is a python package for knowledge graph construction. It is designed to be a flexible and easy-to-use tool for &lt;strong&gt;domain-specific&lt;/strong&gt; knowledge graph construction from &lt;strong&gt;domain knowledge&lt;/strong&gt; or &lt;strong&gt;sentific keywords&lt;/strong&gt;. The key feature which make DescKGC different from other knowledge graph construction tools is that it leverage LLM&amp;rsquo;s ability to generate &lt;strong&gt;description&lt;/strong&gt; for each entity. The description will be used for cross text entity linking.&lt;/p&gt;
+&lt;p&gt;For more information, please check out the official &lt;a href=&#34;https://github.com/guangchen811/DescKGC&#34;&gt;github repo&lt;/a&gt; and &lt;a href=&#34;https://guangchen811.github.io/DescKGC&#34;&gt;documentation&lt;/a&gt;. If you have any questions, feel free to raise an issue in the github repo! Hope you enjoy DescKGC!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -118,6 +118,9 @@ languages:
                 - name: DescKGC
                   url: https://guangchen811.github.io/DescKGC/
                   weight: 7
+                - name: TADV
+                  url: https://github.com/guangchen811/tadv/
+                  weight: 8
 
 privacy:
   vimeo:

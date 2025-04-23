@@ -31,6 +31,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;B.S. in Applied Physics&lt;/strong&gt;, Beijing University of Posts and Telecommunications, 2017-2021&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;M.S. in System Science&lt;/strong&gt;, Beijing Normal University, 2021-2024&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ph.D. in Computer Science&lt;/strong&gt;, BIFOLD &amp;amp; TU Berlin, 2024-present&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;research-experience&#34;&gt;Research Experience&lt;/h1&gt;
 &lt;ul&gt;
@@ -47,7 +48,8 @@
 &lt;li&gt;A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit
 &lt;ul&gt;
 &lt;li&gt;Participated in Experiment Design and Implementation.&lt;/li&gt;
-&lt;li&gt;The corresponding paper has been &lt;strong&gt;accepted&lt;/strong&gt; by &lt;a href=&#34;https://2024.ieeeicassp.org/ojsp-icassp2024-submissions/&#34;&gt;ICASSP 2024&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The corresponding paper has been &lt;strong&gt;accepted&lt;/strong&gt;
+by &lt;a href=&#34;https://2024.ieeeicassp.org/ojsp-icassp2024-submissions/&#34;&gt;ICASSP 2024&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Skill dependency graph in LinkedIn scenario.
@@ -57,12 +59,13 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;June 2023 - Present: &lt;strong&gt;Research Intern&lt;/strong&gt;, &lt;a href=&#34;https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/&#34;&gt;Microsoft Research Asia&lt;/a&gt;, Beijing, China.
+&lt;li&gt;June 2023 - Jan. 2024: **Research Intern
+**, &lt;a href=&#34;https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/&#34;&gt;Microsoft Research Asia&lt;/a&gt;, Beijing, China.
 &lt;ul&gt;
 &lt;li&gt;Question Answer on Heterogeneous Information Network
 &lt;ul&gt;
 &lt;li&gt;Build a semantic parsing dataset to evaluate LLM&amp;rsquo;s ability to run graph algorithm.&lt;/li&gt;
-&lt;li&gt;Plan to submit to &lt;a href=&#34;https://2024.naacl.org/&#34;&gt;NAACL 2024&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The corresponding paper has been &lt;strong&gt;accepted&lt;/strong&gt; by &lt;a href=&#34;https://www2025.thewebconf.org/&#34;&gt;WWW 2025&lt;/a&gt; as a short paper.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -70,28 +73,30 @@
 &lt;/ul&gt;
 &lt;h1 id=&#34;publications&#34;&gt;Publications&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Hao Chen&lt;/strong&gt;, Lun Du, Yuxuan Lu, Qiang Fu, Xu Chen, Shi Han, Yanbin Kang, Guangming Lu and Zi Li, &lt;a href=&#34;https://arxiv.org/abs/2401.00010&#34;&gt;Professional Network Matters: Connections Empower Person-Job Fit&lt;/a&gt; (WSDM 2024)&lt;/li&gt;
-&lt;li&gt;Yihan Cao, Xu Chen, Lun Du, &lt;strong&gt;Hao Chen&lt;/strong&gt;, Qiang Fu, Shi Han, Yushu Du, Yanbin Kang, Guangming Lu, Zi Li, &lt;a href=&#34;https://arxiv.org/abs/2401.07525&#34;&gt;TAROT: A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit&lt;/a&gt;, (ICASSP 2024)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hao Chen&lt;/strong&gt;, Lun Du, Yuxuan Lu, Qiang Fu, Xu Chen, Shi Han, Yanbin Kang, Guangming Lu and Zi
+Li, &lt;a href=&#34;https://arxiv.org/abs/2401.00010&#34;&gt;Professional Network Matters: Connections Empower Person-Job Fit&lt;/a&gt; (WSDM 2024)&lt;/li&gt;
+&lt;li&gt;Yihan Cao, Xu Chen, Lun Du, &lt;strong&gt;Hao Chen&lt;/strong&gt;, Qiang Fu, Shi Han, Yushu Du, Yanbin Kang, Guangming Lu, Zi
+Li, &lt;a href=&#34;https://arxiv.org/abs/2401.07525&#34;&gt;TAROT: A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit&lt;/a&gt;, (
+ICASSP 2024)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;open-source-projects&#34;&gt;Open Source Projects&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;Creater and Matainer of &lt;a href=&#34;https://guangchen811.github.io/DescKGC/&#34;&gt;DescKGC&lt;/a&gt;
+&lt;li&gt;Maintainer of &lt;a href=&#34;https://guangchen811.github.io/DescKGC/&#34;&gt;DescKGC&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;A python package for knowledge graph completion which highlight the importance of descriptions of entities.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Made &lt;strong&gt;small&lt;/strong&gt; contributions to open source projects, like &lt;a href=&#34;https://langchain.com/&#34;&gt;Langchain&lt;/a&gt;, &lt;a href=&#34;https://github.com/TransformerOptimus/SuperAGI&#34;&gt;SuperAGI&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;awards&#34;&gt;Awards&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;First-Class Scholarship&lt;/strong&gt;, Beijing Normal University, 2022-2023&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;First-Class Scholarship&lt;/strong&gt;, Beijing Normal University, 2021-2022&lt;/li&gt;
+&lt;li&gt;Made &lt;strong&gt;small&lt;/strong&gt; contributions to open source projects,
+like &lt;a href=&#34;https://langchain.com/&#34;&gt;Langchain&lt;/a&gt;, &lt;a href=&#34;https://github.com/TransformerOptimus/SuperAGI&#34;&gt;SuperAGI&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;skills&#34;&gt;Skills&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Programming Languages&lt;/strong&gt;: Python, SQL, Spark, Cypher, MATLAB, LaTeX&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Machine Learning Frameworks&lt;/strong&gt;: PyTorch, PyTorch Geometric, TensorFlow, HuggingFace Transformers&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;/ul&gt;
+&lt;center&gt;
+&lt;script type=&#39;text/javascript&#39; id=&#39;clustrmaps&#39; src=&#39;//cdn.clustrmaps.com/map_v2.js?cl=ffffff&amp;w=300&amp;h=200&amp;t=tt&amp;d=W5zcQt09eiXCT7MSUXeRVUHqJrfT3K7tB0pDHkS34MQ&#39;&gt;&lt;/script&gt;
+&lt;/center&gt;</description>
     </item>
     <item>
       <title>Language &#43; Knowledge: The Mutual Reinforcement of Large Language Models and Knowledge Graphs</title>

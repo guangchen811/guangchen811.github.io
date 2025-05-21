@@ -11,8 +11,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Oct 2023 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 21 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zoom</title>
+      <link>https://guangchen811.github.io/zoom/</link>
+      <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://guangchen811.github.io/zoom/</guid>
+      <description>&lt;p&gt;Here is the link to my Zoom meeting room:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tu-berlin.zoom-x.de/j/3164917415?pwd=UDhq9KNLS5OQdbl37Tkz0O5EkC0eLZ.1&#34;&gt;https://tu-berlin.zoom-x.de/j/3164917415?pwd=UDhq9KNLS5OQdbl37Tkz0O5EkC0eLZ.1&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Introducing DescKGC!</title>
       <link>https://guangchen811.github.io/desckgc/introduction/</link>

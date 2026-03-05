@@ -3,7 +3,7 @@ title: "CV"
 date: 2023-10-22
 draft: false
 comments: false
-_build:
+build:
   list: never
 ---
 

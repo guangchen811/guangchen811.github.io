@@ -3,6 +3,8 @@ title: "CV"
 date: 2023-10-22
 draft: false
 comments: false
+_build:
+  list: never
 ---
 
 <span style="color:blue">The <a href="/CV/CV.pdf" style="color:blue">PDF Version</a> is also available.</span>

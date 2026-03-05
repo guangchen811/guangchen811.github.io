@@ -3,6 +3,8 @@ title: "Zoom"
 date: 2025-05-21
 draft: false
 comments: false
+_build:
+  list: never
 ---
 Here is the link to my Zoom meeting room:
 

@@ -9,18 +9,10 @@
       <url>https://guangchen811.github.io/papermod-cover.png</url>
       <link>https://guangchen811.github.io/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 21 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Oct 2023 14:00:00 +0800</lastBuildDate>
     <atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Zoom</title>
-      <link>https://guangchen811.github.io/zoom/</link>
-      <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://guangchen811.github.io/zoom/</guid>
-      <description>&lt;p&gt;Here is the link to my Zoom meeting room:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://tu-berlin.zoom-x.de/j/3164917415?pwd=UDhq9KNLS5OQdbl37Tkz0O5EkC0eLZ.1&#34;&gt;https://tu-berlin.zoom-x.de/j/3164917415?pwd=UDhq9KNLS5OQdbl37Tkz0O5EkC0eLZ.1&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Introducing DescKGC!</title>
       <link>https://guangchen811.github.io/desckgc/introduction/</link>
@@ -28,83 +20,6 @@
       <guid>https://guangchen811.github.io/desckgc/introduction/</guid>
       <description>&lt;p&gt;DescKGC is a python package for knowledge graph construction. It is designed to be a flexible and easy-to-use tool for &lt;strong&gt;domain-specific&lt;/strong&gt; knowledge graph construction from &lt;strong&gt;domain knowledge&lt;/strong&gt; or &lt;strong&gt;sentific keywords&lt;/strong&gt;. The key feature which make DescKGC different from other knowledge graph construction tools is that it leverage LLM&amp;rsquo;s ability to generate &lt;strong&gt;description&lt;/strong&gt; for each entity. The description will be used for cross text entity linking.&lt;/p&gt;
 &lt;p&gt;For more information, please check out the official &lt;a href=&#34;https://github.com/guangchen811/DescKGC&#34;&gt;github repo&lt;/a&gt; and &lt;a href=&#34;https://guangchen811.github.io/DescKGC&#34;&gt;documentation&lt;/a&gt;. If you have any questions, feel free to raise an issue in the github repo! Hope you enjoy DescKGC!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>CV</title>
-      <link>https://guangchen811.github.io/cv/</link>
-      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://guangchen811.github.io/cv/</guid>
-      <description>&lt;p&gt;&lt;span style=&#34;color:blue&#34;&gt;The &lt;a href=&#34;https://guangchen811.github.io/CV/CV.pdf&#34; style=&#34;color:blue&#34;&gt;PDF Version&lt;/a&gt; is also available.&lt;/span&gt;&lt;/p&gt;
-&lt;h1 id=&#34;education&#34;&gt;Education&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;B.S. in Applied Physics&lt;/strong&gt;, Beijing University of Posts and Telecommunications, 2017-2021&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;M.S. in System Science&lt;/strong&gt;, Beijing Normal University, 2021-2024&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Ph.D. in Computer Science&lt;/strong&gt;, BIFOLD &amp;amp; TU Berlin, 2024-present&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;research-experience&#34;&gt;Research Experience&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Feb. 2022 - May. 2023: &lt;strong&gt;Machine Learning Research Intern&lt;/strong&gt;, &lt;a href=&#34;https://www.linkedin.com/&#34;&gt;LinkedIn&lt;/a&gt; Beijing, China.
-&lt;ul&gt;
-&lt;li&gt;Professional Network Matters: Connections Empower Person-Job Fit
-&lt;ul&gt;
-&lt;li&gt;Perform data collection, data cleaning, and data analysis with Spark and SQL on LinkedIn&amp;rsquo;s internal database.&lt;/li&gt;
-&lt;li&gt;Literature review on Person-Job Fit and Heterogeneous Graph Neural Networks.&lt;/li&gt;
-&lt;li&gt;Design and implement a heterogeneous graph neural network model for Person-Job Fit.&lt;/li&gt;
-&lt;li&gt;The corresponding paper has been &lt;strong&gt;accepted&lt;/strong&gt; by &lt;a href=&#34;https://www.wsdm-conference.org/2024/&#34;&gt;WSDM 2024&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit
-&lt;ul&gt;
-&lt;li&gt;Participated in Experiment Design and Implementation.&lt;/li&gt;
-&lt;li&gt;The corresponding paper has been &lt;strong&gt;accepted&lt;/strong&gt;
-by &lt;a href=&#34;https://2024.ieeeicassp.org/ojsp-icassp2024-submissions/&#34;&gt;ICASSP 2024&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Skill dependency graph in LinkedIn scenario.
-&lt;ul&gt;
-&lt;li&gt;Build a Skill dependency graph with the common sense of LLM.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;June 2023 - Jan. 2024: **Research Intern
-**, &lt;a href=&#34;https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/&#34;&gt;Microsoft Research Asia&lt;/a&gt;, Beijing, China.
-&lt;ul&gt;
-&lt;li&gt;Question Answer on Heterogeneous Information Network
-&lt;ul&gt;
-&lt;li&gt;Build a semantic parsing dataset to evaluate LLM&amp;rsquo;s ability to run graph algorithm.&lt;/li&gt;
-&lt;li&gt;The corresponding paper has been &lt;strong&gt;accepted&lt;/strong&gt; by &lt;a href=&#34;https://www2025.thewebconf.org/&#34;&gt;WWW 2025&lt;/a&gt; as a short paper.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;publications&#34;&gt;Publications&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Hao Chen&lt;/strong&gt;, Lun Du, Yuxuan Lu, Qiang Fu, Xu Chen, Shi Han, Yanbin Kang, Guangming Lu and Zi
-Li, &lt;a href=&#34;https://arxiv.org/abs/2401.00010&#34;&gt;Professional Network Matters: Connections Empower Person-Job Fit&lt;/a&gt; (WSDM 2024)&lt;/li&gt;
-&lt;li&gt;Yihan Cao, Xu Chen, Lun Du, &lt;strong&gt;Hao Chen&lt;/strong&gt;, Qiang Fu, Shi Han, Yushu Du, Yanbin Kang, Guangming Lu, Zi
-Li, &lt;a href=&#34;https://arxiv.org/abs/2401.07525&#34;&gt;TAROT: A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit&lt;/a&gt;, (
-ICASSP 2024)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;open-source-projects&#34;&gt;Open Source Projects&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Maintainer of &lt;a href=&#34;https://guangchen811.github.io/DescKGC/&#34;&gt;DescKGC&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;A python package for knowledge graph completion which highlight the importance of descriptions of entities.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Made &lt;strong&gt;small&lt;/strong&gt; contributions to open source projects,
-like &lt;a href=&#34;https://langchain.com/&#34;&gt;Langchain&lt;/a&gt;, &lt;a href=&#34;https://github.com/TransformerOptimus/SuperAGI&#34;&gt;SuperAGI&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;skills&#34;&gt;Skills&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Programming Languages&lt;/strong&gt;: Python, SQL, Spark, Cypher, MATLAB, LaTeX&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Machine Learning Frameworks&lt;/strong&gt;: PyTorch, PyTorch Geometric, TensorFlow, HuggingFace Transformers&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;
-&lt;script type=&#39;text/javascript&#39; id=&#39;clustrmaps&#39; src=&#39;//cdn.clustrmaps.com/map_v2.js?cl=ffffff&amp;w=300&amp;h=200&amp;t=tt&amp;d=W5zcQt09eiXCT7MSUXeRVUHqJrfT3K7tB0pDHkS34MQ&#39;&gt;&lt;/script&gt;
-&lt;/center&gt;</description>
     </item>
     <item>
       <title>Language &#43; Knowledge: The Mutual Reinforcement of Large Language Models and Knowledge Graphs</title>

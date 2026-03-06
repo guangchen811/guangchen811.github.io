@@ -83,12 +83,5 @@ Install-Module oh-my-posh -Scope CurrentUser
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The above command will execute the following commands line by line.&lt;/p&gt;</description>
     </item>
-    <item>
-      <title>Search in a Binary Seaerch Tree</title>
-      <link>https://guangchen811.github.io/leetcode/searchinabinarysearchtree/</link>
-      <pubDate>Sun, 10 Apr 2022 19:26:27 +0800</pubDate>
-      <guid>https://guangchen811.github.io/leetcode/searchinabinarysearchtree/</guid>
-      <description>No.700</description>
-    </item>
   </channel>
 </rss>

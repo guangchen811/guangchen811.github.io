@@ -1,21 +1,18 @@
 ---
-title: "CV"
+title: "About"
 date: 2023-10-22
 draft: false
 comments: false
 build:
   list: never
+url: /about/
+aliases:
+  - /cv/
 ---
-
-# Education
-
-- **B.S. in Applied Physics**, Beijing University of Posts and Telecommunications, 2017-2021
-- **M.S. in System Science**, Beijing Normal University, 2021-2024
-- **Ph.D. in Computer Science**, BIFOLD & TU Berlin, 2024-present
 
 # Research Interests
 
-Data Validation, Large Language Models, Graph Analytics
+Data Validation, Large Language Models, Graph Analytics, Compound AI Systems
 
 # Research Experience
 
@@ -53,10 +50,11 @@ Data Validation, Large Language Models, Graph Analytics
     - A python package for knowledge graph completion which highlight the importance of descriptions of entities.
 - Made **small** contributions to open source projects, like [Langchain](https://langchain.com/), [SuperAGI](https://github.com/TransformerOptimus/SuperAGI).
 
-# Skills
+# Education
 
-- **Programming Languages**: Python, SQL, Spark, Cypher, MATLAB, LaTeX
-- **Machine Learning Frameworks**: PyTorch, PyTorch Geometric, TensorFlow, HuggingFace Transformers
+- **Ph.D. in Computer Science**, BIFOLD & TU Berlin, 2024-present
+- **M.S. in System Science**, Beijing Normal University, 2021-2024
+- **B.S. in Applied Physics**, Beijing University of Posts and Telecommunications, 2017-2021
 
 <center>
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&h=200&t=tt&d=W5zcQt09eiXCT7MSUXeRVUHqJrfT3K7tB0pDHkS34MQ'></script>

@@ -42,7 +42,7 @@ params:
   math: true
   profileMode:
     enabled: true
-    title: "Welcome to my blog! \U0001F44B"
+    title: "Better data, better AI."
     subtitle: Hi there, I’m Hao Chen, a Ph.D. candidate at [BIFOLD](https://www.bifold.berlin/) and [TU Berlin](https://www.tu.berlin/), supervised by [Prof. Sebastian Schelter](https://deem.berlin/#professor). My research focuses on data validation for AI systems. Here I share what I learn along the way.
     imageUrl: "/images/avatar.jpg"
     imageTitle: avatar

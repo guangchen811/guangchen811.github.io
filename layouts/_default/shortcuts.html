@@ -4,37 +4,76 @@
     <h1 class="post-title">Shortcuts</h1>
   </header>
   <div class="post-content">
-    <div id="password-gate">
-      <p>This page is password protected.</p>
-      <input type="password" id="pwd" placeholder="Enter password" style="padding: 8px; border: 1px solid var(--border); border-radius: 4px; background: var(--entry); color: var(--primary); margin-right: 8px;" />
-      <button onclick="unlock()" style="padding: 8px 16px; border: 1px solid var(--border); border-radius: 4px; background: var(--entry); color: var(--primary); cursor: pointer;">Unlock</button>
-      <p id="error" style="color: red; display: none;">Wrong password.</p>
+    <div id="password-gate" style="text-align: center; padding: 3rem 0;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; margin-bottom: 1rem;">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+      <p style="opacity: 0.7; margin-bottom: 1.5rem;">Enter password to view shortcuts</p>
+      <div style="display: flex; justify-content: center; gap: 0.5rem; max-width: 320px; margin: 0 auto;">
+        <input type="password" id="pwd" placeholder="Password"
+          style="flex: 1; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--entry); color: var(--primary); font-size: 1rem; outline: none;" />
+        <button onclick="unlock()"
+          style="padding: 10px 20px; border: none; border-radius: 8px; background: var(--primary); color: var(--theme); font-size: 1rem; cursor: pointer; font-weight: 500;">
+          Go
+        </button>
+      </div>
+      <p id="error" style="color: #e74c3c; margin-top: 0.8rem; display: none; font-size: 0.9rem;">Wrong password, try again.</p>
     </div>
-    <div id="content" style="display: none;">
-      <table>
-        <thead>
-          <tr><th>Name</th><th>Link</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Zoom</td><td><a href="/zoom/">hchen.io/zoom</a></td></tr>
-          <tr><td>ISIS (TU Berlin)</td><td><a href="/isis/">hchen.io/isis</a></td></tr>
-          <tr><td>TUPort (SAP)</td><td><a href="/tuport/">hchen.io/tuport</a></td></tr>
-        </tbody>
-      </table>
-    </div>
+    <div id="content" style="display: none;"></div>
   </div>
 </article>
 <script>
-function unlock() {
-  if (document.getElementById('pwd').value === 'itisme') {
+// AES-encrypted payload (password: "itisme")
+// To update shortcuts, run the encrypt script in the browser console
+var encData = "13+fJDZL//gecpV00lQ6art8QyjcTWESshsR6xVxZTouted0cUbyLY8nAAmniX67AABE54ib0tR/hdkR39YM/LOSlFasgOEw037tuQ7LL7lxqpkg6LNE3OhFSyKCHYRH7MAzaQCRVkKl6uZ6xn+TwV38JMBBF1sIN0ZtxpUEIlgDcoEZVUQkH7fErJds3XfmPJN1qxY3NXvdMuwIFS26VgO1M3BrfxMT2M3WjdzmrN6Yk21N9QLuobq0Rpy1Od4kycEdv9qr9zSIWmCvYlKJBqaj4ajPiug0fCWEzMG+ZMq/V5OMfP/2+SBefrX+x0QlAx9TZmboDXjF4TEW9gwmUlPE8CaDEWXaJ6irSLUzf5a4kL3yaZhjq8jFIoGG4uk7Y4ACjWrvTz0awcPbCEFKwjR5KnBAYi+i/UuLMN/BLymC8P7avqYtOJ0NCWxf41cW4tUjB1Gk7AS4coBf5NSwrYwjHIZJ/NHJwCNXckC51CYE2PfGtkT7QSFft0EPRdZODbbtL2Zi4PAQfOT/3BUnS6y46ex3yexy3BlJGCOXEtWV/u11B6+KHTc2RA33eKW9RswoXARkeyj+4dMmP+pZ8Ee2A4C86OXDPpq5NHeKe0Hnp5hpCV1qZI23z3A1pGzrMbJ2C6XcjDqoCFchGZNk4eg7U32Aoitpn3DhidlzdMg/NLjhyHnSLw8TQzOK+h+hgYk+jrLr5UNBMlvUQEy/cLJ346vrH99PXFud3eogKmLCaZlCxgsz6QfwhPkaskwoin6f6D4St7zratcN7MMd2LvEYqcVy2MMfqMeQC9U/xZTbp/wYbBOMIgNv2nK8d1xViaKLrl9TW0+x4jlPuIAt5VmWRmvQoN4nsUfLis+K+IPV7pTcZ50ZfLhfWxspc22pIGobF7DRCS4fDOxKiNsox1VePrZNGTPmrx7LsoQFs3oNVnWVvMbandeSTTAzxvJ7LSldDSDJ5ACbV3N/3mEtM6M4wJdwmZTuefzzRujnS0pgHWneIwM7b4Xw6+rvctnCIWiMytQfFAkmLID1CgBRXtQpswtp8s4p3gYsD4NFstk8ZQOL6IASMhyQGSjijcxNQdGeyHmJXBmjChsLT2/nF8N3YDnTkKZ60/3Wp2+4Wucr1gVo+NDaqhKUsW+NR5GeuzQHMo1+R17h+ZqW/iYYBwFwvUdQRXq1cACyP3kaMSqKRCP8i6I0vXWB06qFYXvroRAMzElqlB/jq0BTny1q66vM3ouobqoiYwcQiiDwj9mwtHaDLZMNAdsXODgFo2XSW5+1M2AnnbzpwmvnIc8C8iRxuSnOMgsikBWsesVNKmK234D4H8g1q/pEUYcDNb7wu6WAXP8rrdt7JshwOdiiWMZIEri7SZ/BmSJ03L02O2pPvUHcHFFwXPfj/HQ2gysvFHucNsH++zSlBTSKxh0dJTuHEl2spN7iAKPjUCH3N/ccCz9zBuvthynke7VzgGZzryZpl9gO/1GwU4P1tk6rnu6wWeg0HAnMPd6rJ1cOSWW+3xj7xU7qUXuZ7t+44usiENHI04SIoAqeYdAGLMuaP75fB/DwMcA4Sv2hBA7C547Z25+x+LRLHvpbmI8IdFJG9wjm0dMD3rig8bphDv4lQLNwRoHZnh/3YNGvPR4+2t1jFI2wpxJ/kA3G9dsBD0dkJaWcQuYCt2v2I3hEjIuqUe6W8f8JYvrd9jr0X+/qMyadCxaAuwDznbxMDoR3QVV5qq21DeKaqsLIGlVNEAu8oYWJLr2RR5kzbFiOI+tflUfP6/wa3EFwqo6rr0WisKlkhbhwU9Fpha6dTMrqg9V/jJsEVpeJkTtkPlekeH5HRC5dLOQbo810EL4oUJfv3VqNAk+H8UOIGSN0fglin+Wie/naLCjRk5b";
+
+async function deriveKey(password, salt) {
+  var enc = new TextEncoder();
+  var keyMaterial = await crypto.subtle.importKey('raw', enc.encode(password), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({name: 'PBKDF2', salt: salt, iterations: 100000, hash: 'SHA-256'}, keyMaterial, {name: 'AES-GCM', length: 256}, false, ['decrypt']);
+}
+
+async function encrypt(password, plaintext) {
+  var enc = new TextEncoder();
+  var salt = crypto.getRandomValues(new Uint8Array(16));
+  var iv = crypto.getRandomValues(new Uint8Array(12));
+  var key = await deriveKey(password, salt);
+  var ct = await crypto.subtle.encrypt({name: 'AES-GCM', iv: iv}, key, enc.encode(plaintext));
+  var buf = new Uint8Array(salt.length + iv.length + ct.byteLength);
+  buf.set(salt, 0);
+  buf.set(iv, salt.length);
+  buf.set(new Uint8Array(ct), salt.length + iv.length);
+  return btoa(String.fromCharCode.apply(null, buf));
+}
+
+async function decrypt(password, data) {
+  var raw = Uint8Array.from(atob(data), function(c) { return c.charCodeAt(0); });
+  var salt = raw.slice(0, 16);
+  var iv = raw.slice(16, 28);
+  var ct = raw.slice(28);
+  var key = await deriveKey(password, salt);
+  var dec = await crypto.subtle.decrypt({name: 'AES-GCM', iv: iv}, key, ct);
+  return new TextDecoder().decode(dec);
+}
+
+async function unlock() {
+  var pwd = document.getElementById('pwd').value;
+  try {
+    var html = await decrypt(pwd, encData);
+    document.getElementById('content').innerHTML = html;
     document.getElementById('password-gate').style.display = 'none';
     document.getElementById('content').style.display = 'block';
-  } else {
+  } catch(e) {
     document.getElementById('error').style.display = 'block';
+    document.getElementById('pwd').style.borderColor = '#e74c3c';
+    setTimeout(function() { document.getElementById('pwd').style.borderColor = ''; }, 1000);
   }
 }
+
 document.getElementById('pwd').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') unlock();
 });
+document.getElementById('pwd').focus();
 </script>
 {{- end }}

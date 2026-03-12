@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Oct 2023 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://guangchen811.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimizing Compound AI Systems: A Researcher&#39;s Map</title>
+      <link>https://guangchen811.github.io/compound-ai-optimization/</link>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://guangchen811.github.io/compound-ai-optimization/</guid>
+      <description>A narrative guide through the methods for automatically optimizing compound AI systems — from textual gradients and execution traces to evolutionary search and structure discovery.</description>
+    </item>
     <item>
       <title>Introducing DescKGC!</title>
       <link>https://guangchen811.github.io/desckgc/introduction/</link>

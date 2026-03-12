@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Compound-Ai on Hao Chen</title>
+    <link>https://guangchen811.github.io/tags/compound-ai/</link>
+    <description>Recent content in Compound-Ai on Hao Chen</description>
+    <image>
+      <title>Hao Chen</title>
+      <url>https://guangchen811.github.io/papermod-cover.png</url>
+      <link>https://guangchen811.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://guangchen811.github.io/tags/compound-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimizing Compound AI Systems: A Researcher&#39;s Map</title>
+      <link>https://guangchen811.github.io/compound-ai-optimization/</link>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://guangchen811.github.io/compound-ai-optimization/</guid>
+      <description>A narrative guide through the methods for automatically optimizing compound AI systems — from textual gradients and execution traces to evolutionary search and structure discovery.</description>
+    </item>
+  </channel>
+</rss>

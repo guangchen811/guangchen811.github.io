@@ -1,7 +1,7 @@
 ---
 title: "Optimizing Compound AI Systems: A Researcher's Map"
 date: 2026-03-11
-draft: false
+draft: true
 tags:
   - compound-ai
   - optimization

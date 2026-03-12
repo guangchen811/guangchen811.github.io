@@ -1,305 +1,307 @@
 ---
-title: "Optimizing Compound AI Systems: A Researcher's Map (2024–2026)"
+title: "Optimizing Compound AI Systems: A Researcher's Map"
 date: 2026-03-11
 draft: false
 tags:
   - compound-ai
   - optimization
-  - survey
 categories:
   - Research
-summary: "The field has produced 15+ papers on automatically optimizing compound AI systems. This post organizes them into a coherent map: instruction optimization, structure optimization, and their interplay."
+summary: "A narrative guide through the methods for automatically optimizing compound AI systems — from textual gradients and execution traces to evolutionary search and structure discovery."
 ShowToc: true
 TocOpen: true
 math: true
 ---
 
-Everyone builds compound AI systems now. RAG pipelines, multi-hop reasoning chains, tool-augmented agents, code-generation workflows — the pattern is the same: multiple LLM calls orchestrated in a directed graph, each with its own prompt, tools, and context.
+In 2024, FactSet replaced a single GPT-4 call (55% accuracy, 10s latency) with a compound system — Gemini for formula generation, Llama-3 for argument filling, GPT-3.5 for assembly, plus a retrieval layer — and hit [87% accuracy at 3s latency](https://www.databricks.com/blog/factset-genai). A 32-point accuracy jump, not from a better model, but from a better *system*.
 
-Yet most teams still optimize these systems by hand-tuning one prompt at a time.
+This is not an isolated case. Databricks [reports](https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/) that 60% of LLM applications in production use retrieval-augmented generation and 30% use multi-step chains. AlphaCode 2 generates up to a million candidate solutions, filters and clusters them, and reaches the [85th percentile of competitive programmers](https://storage.googleapis.com/deepmind-media/AlphaCode2/AlphaCode2_Tech_Report.pdf) — not through a single model call but through an elaborate generate-filter-rank pipeline. Medprompt's chain of nearest-neighbor search, chain-of-thought, and ensembling [outperforms domain-specialized medical models](https://arxiv.org/abs/2311.16452) while using a general-purpose GPT-4.
 
-Since Matei Zaharia's influential [BAIR blog post](https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/) coined the term "compound AI systems" in early 2024, the research community has produced over 15 papers on *automatic* optimization of these systems — published at NeurIPS 2024, ICLR 2025–2026, Nature, and EMNLP 2025. The results are striking: GEPA outperforms manual prompt engineering by 13%; AFlow discovers workflows that match GPT-4o at 5% of the cost; MASS shows that optimizing prompts matters more than adding agents.
+The pattern has a name: **compound AI systems** — systems that tackle AI tasks using multiple interacting components, including multiple calls to models, retrievers, or external tools ([Zaharia et al. 2024](https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/)). This is a broader category than "agentic AI": agents are one design pattern *within* compound systems, alongside RAG pipelines, ensembles, cascades, routing systems, and tool-augmented generation. A [workshop](https://compound-ai-systems-workshop-2024.github.io/) bringing together researchers from OpenAI (Noam Brown), Anthropic, Google DeepMind, LangChain, Stanford, Berkeley, and MIT validated this as a first-class research direction in 2024.
 
-But the landscape is fragmented. DSPy, TextGrad, Trace, OPTIMAS, GEPA, ADAS, AFlow, MASS — what does each do? When should you use which?
+The empirical case is clear: systems engineering often achieves what model scaling cannot. As the BAIR blog put it, tripling an LLM's training budget might improve coding accuracy from 30% to 35%, but engineering a system around the same model can reach 80%. The harder question is: **how do you optimize these systems automatically, rather than by hand-tuning one prompt at a time?**
 
-This post is the map I wish I had when I started reading these papers. It organizes the field along two axes, compares methods head-to-head, and ends with a practical decision guide.
+Since 2023, methods like DSPy, TextGrad, Trace, OPTIMAS, GEPA, ADAS, AFlow, and MASS have attacked this question from remarkably different angles — treating it as program synthesis, as backpropagation through text, as evolutionary search on a Pareto front, or as Monte Carlo tree search over code. This post is the map I wish I had when I started reading these papers. Rather than cataloguing them in isolation, I trace how the ideas connect, formalize the shared optimization problem, and highlight where the key mathematical insights differ.
 
-## The Landscape at a Glance
+## A Unified View
 
-A [survey by Lee et al. (EMNLP 2025)](https://arxiv.org/abs/2506.08234) proposed a 2×2 taxonomy for compound AI optimization. I find it useful, with one simplification — most methods cluster along a simpler distinction:
+Before diving into individual methods, it helps to define the shared problem. Every method in this post, despite superficial differences, solves a variant of the same optimization:
 
-- **What to optimize**: instructions (prompts, demos, configs) vs. structure (topology, wiring)
-- **What feedback to use**: numerical signals (scalar scores) vs. natural language feedback (textual critique, reflection)
+**Notation.** Let $\mathcal{S} = (M_1, \ldots, M_n)$ be a compound AI system with $n$ modules. Each module $M_i$ has parameters $\theta_i$ — these may be prompts (instructions and few-shot demonstrations), model selection choices, numerical hyperparameters, or even trainable weights. We write $\theta = (\theta_1, \ldots, \theta_n)$ for the full configuration. Given training data $\mathcal{D} = \lbrace(x^{(j)}, y^{(j)})\rbrace_{j=1}^N$ and an evaluation metric $\mathcal{L}$, the general objective is:
 
-Here's how the major methods map:
+$$\theta^* = \arg\max_{\theta} \; \mathbb{E}_{(x, y) \sim \mathcal{D}} \left[ \mathcal{L}\bigl(\mathcal{S}(x;\, \theta), \, y\bigr) \right]$$
+
+The challenge, of course, is that $\mathcal{S}$ is a black-box pipeline of LLM calls — non-differentiable, stochastic, and expensive to evaluate. The methods below differ in three fundamental choices:
+
+1. **What to optimize**: instructions only, or also the pipeline structure?
+2. **What feedback signal to use**: scalar scores, textual critique, or execution traces?
+3. **How to search**: Bayesian optimization, gradient-inspired updates, evolutionary search, or tree search?
+
+A [survey by Lee et al. (2025)](https://arxiv.org/abs/2506.08234) proposed a 2×2 taxonomy along the first two axes. I find it a useful organizing frame:
 
 <div align="center">
 <img src="taxonomy_2x2.png" alt="2×2 taxonomy of compound AI optimization methods" style="max-width: 680px; width: 100%;">
-<figcaption><em>Figure 1: The optimization landscape organized by structural flexibility (rows) and feedback type (columns). Most methods cluster in the top row (fixed structure). The bottom-right quadrant is nearly empty.</em></figcaption>
+<figcaption><em>The optimization landscape organized by structural flexibility (rows) and feedback type (columns). Most methods cluster in the top row — fixed structure is the common case in production. The bottom-right quadrant is nearly empty: few methods search over structures using purely numerical signals.</em></figcaption>
 </div>
 
-Most methods sit in the top row — **fixed structure**, because in practice most production pipelines have an engineer-designed DAG that rarely changes. What changes are the prompts, the demonstrations, and the model configurations within each node.
+Most methods sit in the top row because, in practice, most production pipelines have an engineer-designed DAG that rarely changes. What changes are the prompts, the demonstrations, and the model configurations within each node. Let me start there.
 
-The bottom-right quadrant is nearly empty: there are few methods that search over structures using numerical signals. This is partly because structure search naturally benefits from rich NL feedback (an LLM can describe *why* a workflow failed and *how* to restructure it).
+## Instruction Optimization
 
-## Part I: Instruction Optimization
-
-Instruction optimization treats the pipeline topology as fixed and tunes each module's parameters — primarily prompts (instructions + few-shot demonstrations), but also model selection, hyperparameters, and weights.
-
-### The Evolution
-
-The field has moved fast. The figure below shows the two parallel tracks — instruction optimization and structure optimization — and how they've converged over time:
+Instruction optimization treats the pipeline topology as fixed and tunes each module's parameters. The approaches have evolved rapidly:
 
 <div align="center">
 <img src="evolution_timeline.png" alt="Evolution timeline of compound AI optimization methods from 2023 to 2026" style="max-width: 760px; width: 100%;">
-<figcaption><em>Figure 2: Two parallel tracks of compound AI optimization research. MASS (2026) is the first method to bridge both tracks.</em></figcaption>
+<figcaption><em>Two parallel tracks of compound AI optimization research. Instruction optimization (top) and structure optimization (bottom) have evolved independently until MASS (2026), which bridges both.</em></figcaption>
 </div>
 
-Let me walk through each branch.
+### The Programming Abstraction: DSPy
 
-### Branch 1: The DSPy Line — Programming, Not Prompting
+[DSPy](https://arxiv.org/abs/2310.03714) ([Khattab et al. 2023](https://arxiv.org/abs/2310.03714)) introduced the foundational abstraction: treat LLM pipelines as *programs* with learnable parameters. Signatures define I/O contracts, modules define operations, and *teleprompters* (optimizers) automatically tune prompts and demonstrations.
 
-[DSPy](https://arxiv.org/abs/2310.03714) (Khattab et al., 2023) introduced the key abstraction: treat LLM pipelines as *programs* with learnable parameters. Signatures define I/O, modules define operations, and *teleprompters* (optimizers) automatically tune prompts and demonstrations.
+DSPy's compiler bootstraps few-shot demonstrations by running a teacher program, filtering execution traces that pass the metric, and using those passing traces as demos. [MIPROv2](https://arxiv.org/abs/2406.11695) ([Opsahl-Ong et al. 2024](https://arxiv.org/abs/2406.11695)) upgraded this with joint instruction and demonstration optimization via Bayesian surrogate search.
 
-DSPy's compiler bootstraps few-shot demonstrations by running a teacher program, filtering traces that pass a metric, and using passing traces as demos. [MIPROv2](https://dspy.ai/learn/optimization/optimizers/) upgraded this with joint instruction + demonstration optimization via Bayesian search.
+What DSPy got right is the *declarative programming model* — separating *what* a module does (its signature) from *how* it's prompted (its parameters) is what makes optimization possible in the first place. What remains crude is demonstration selection: BootstrapFewShot generates candidates by end-to-end metric filtering without identifying which module caused a failure, measuring diversity, or adapting to optimization progress.
 
-**What DSPy got right:** The declarative programming model. Separating *what* a module does (signature) from *how* it's prompted (parameters) made optimization possible.
+### Textual Gradients: TextGrad
 
-**What remains crude:** Demonstration selection. BootstrapFewShot generates candidates by end-to-end metric filtering — it doesn't identify *which* module caused a failure, doesn't measure diversity, and doesn't adapt to optimization progress. This is still DSPy's weakest link.
+What if we could do backpropagation, but with words instead of numbers?
 
-### Branch 2: TextGrad — Backpropagation via Text
+[TextGrad](https://arxiv.org/abs/2406.07496) ([Yuksekgonul et al., Nature 2025](https://doi.org/10.1038/s41586-025-08661-4)) introduced exactly this. In the forward pass, each module produces an output given its parents in the computation graph. In the backward pass, an LLM critic generates *textual gradients* — natural language critiques that propagate backward, just as numerical gradients flow through a neural network. Using our unified notation:
 
-[TextGrad](https://doi.org/10.1038/s41586-025-08661-4) (Yuksekgonul et al., Nature 2025) introduced a compelling analogy: **textual gradients**. An LLM generates critiques ("the SQL query misses the JOIN on table X") that propagate backward through the computation graph, just as numerical gradients flow through a neural network. An optimizer LLM then incorporates the critique to produce an updated variable.
+**Forward pass:** Each module computes its output from its parents:
+$$z_i = M_i\bigl(\lbrace z_j : j \in \mathrm{pa}(i)\rbrace;\, \theta_i\bigr)$$
 
-TextGrad mirrors PyTorch's abstractions — `tg.Variable`, `tg.BlackboxLLM`, `tg.TextLoss`, `tg.TGD` — making it immediately familiar to ML practitioners.
+**Backward pass (textual gradient):** A critic LLM generates feedback for each variable by combining the loss evaluation with downstream gradients:
+$$g_i = \mathrm{LLM}_{\text{critic}}\bigl(z_i, \, \mathcal{L}, \, \lbrace g_j : j \in \mathrm{ch}(i)\rbrace\bigr)$$
 
-**Strengths:** Rich directional feedback. The critique tells you *how* to improve, not just *whether* something is good. General across domains (prompts, code, molecules, treatment plans). Interpretable — gradients are human-readable.
+**Update (textual gradient descent):** An editor LLM incorporates the critique to produce an updated parameter:
+$$\theta_i \leftarrow \mathrm{LLM}_{\text{edit}}(\theta_i, \, g_i)$$
 
-**Limitations:** Only works for text-expressible variables. Cannot optimize model selection, numerical hyperparameters, or weights. Full backward pass through the computation graph is expensive. No convergence guarantee.
+<div align="center">
+<img src="textgrad_overview.png" alt="TextGrad overview: backpropagation analogy with textual gradients" style="max-width: 680px; width: 100%;">
+<figcaption><em>TextGrad mirrors PyTorch's autograd: variables, loss functions, and gradient descent all have textual counterparts. The critique ("the SQL query misses the JOIN on table X") propagates backward through the computation graph. (Image source: <a href="https://arxiv.org/abs/2406.07496">Yuksekgonul et al. 2024</a>)</em></figcaption>
+</div>
 
-### Branch 3: Trace/OPTO — Execution Traces as the Universal Signal
+The analogy to PyTorch is deliberate — TextGrad exposes `tg.Variable`, `tg.BlackboxLLM`, `tg.TextLoss`, and `tg.TGD`, making it immediately familiar to ML practitioners. The critique tells you *how* to improve ("the SQL query misses the JOIN"), not just *whether* something is good. This directional guidance is TextGrad's core advantage.
 
-[Trace](https://arxiv.org/abs/2406.16218) (Cheng, Nie, Swaminathan; NeurIPS 2024) generalized the idea further. It frames compound AI optimization as **OPTO** (Optimization with Trace Oracle): the optimizer receives the full execution trace of a workflow (analogous to a computation graph with intermediate values) plus feedback on the output, and updates parameters.
+The limitation is equally clear: TextGrad can only optimize text-expressible variables. Model selection, numerical hyperparameters, and trainable weights are outside its reach. And the full backward pass through the computation graph is expensive — each node requires an LLM call.
 
-Their LLM-based optimizer, **OptoPrime**, represents the execution trace in context and performs what they call "generative backpropagation." Like TextGrad, it uses LLM feedback, but it operates on the *execution trace* rather than propagating critiques node-by-node.
+### Execution Traces as a Universal Signal: Trace/OPTO
 
-Trace uses PyTorch-like syntax (`trace.node`, `trace.bundle`) to convert any workflow optimization problem into an OPTO instance. It handles heterogeneous parameters and non-differentiable operations.
+[Trace](https://arxiv.org/abs/2406.16218) ([Cheng, Nie & Swaminathan, NeurIPS 2024](https://arxiv.org/abs/2406.16218)) generalized the idea further. Where TextGrad propagates critiques node-by-node, Trace captures the *entire execution trace* — the full computation graph with all intermediate values — and hands it to an optimizer LLM in one shot.
 
-**Strengths:** Most general framework — subsumes prompt optimization, hyperparameter tuning, code debugging, and even robot controller design. Clean API.
+They formalize this as **OPTO** (Optimization with Trace Oracle): the optimizer receives a trace $\tau = (\mathcal{G}, f)$, where $\mathcal{G}$ is the computation graph with intermediate values and $f$ is output feedback, and proposes updated parameters:
 
-**Limitations:** Context length bottleneck for large graphs. Competitive with specialized optimizers but not state-of-the-art on any single task — a jack of all trades.
+$$\theta' = \mathrm{OptoPrime}(\theta, \, \tau)$$
 
-### Branch 4: OPTIMAS — Local Rewards for Heterogeneous Systems
+<div align="center">
+<img src="trace_overview.png" alt="Trace/OPTO framework: execution trace as optimization signal" style="max-width: 680px; width: 100%;">
+<figcaption><em>Trace converts any workflow into an OPTO instance: the execution trace (a DAG of intermediate computations and values) is formatted as a pseudo-code report and passed to an optimizer LLM. (Image source: <a href="https://arxiv.org/abs/2406.16218">Cheng et al. 2024</a>)</em></figcaption>
+</div>
 
-[OPTIMAS](https://arxiv.org/abs/2507.03041) (Wu et al., ICLR 2026) tackled a problem others ignored: **heterogeneous configurations**. Real compound AI systems don't just have prompts — they have model selection choices, numerical hyperparameters, retrieval parameters, and sometimes trainable weights. TextGrad and GEPA can only optimize text.
+Trace uses PyTorch-like syntax (`trace.node`, `trace.bundle`) and handles heterogeneous parameters and non-differentiable operations. The framework is remarkably general — it subsumes prompt optimization, hyperparameter tuning, code debugging, and even robot controller design under the same abstraction.
 
-OPTIMAS's key idea: learn a **Local Reward Function (LRF)** per component, implemented as a shared LLM backbone with component-specific projection heads. The LRF satisfies *local-global alignment*: maximizing a component's local reward correlates with improving global system performance. Each component is then optimized independently using whatever method suits its type — OPRO for prompts, grid search for hyperparameters, RL for weights.
+The trade-off is generality vs. specialization. Trace is competitive with specialized optimizers across diverse tasks but doesn't achieve state-of-the-art on any single one. And the full execution trace can hit context length limits for large computation graphs — a fundamental scaling bottleneck.
 
-**Strengths:** The only method that handles truly heterogeneous configurations. Higher data efficiency (avoids full system runs once LRFs are trained). Convergence guarantee under mild conditions. 11.9% average improvement across 5 diverse systems.
+### Learning Local Rewards: OPTIMAS
 
-**Limitations:** Scalar reward only — no directional guidance ("this is 0.73" vs. "the query misses the JOIN"). Tiny search space (3 prompt candidates per iteration). Coordinate-wise optimization cannot discover optima requiring multiple components to change simultaneously.
+The methods above share a blind spot: they assume all parameters are text. Real compound AI systems also have model selection choices, numerical hyperparameters, retrieval parameters, and sometimes trainable weights.
 
-### Branch 5: GEPA — The Current Champion
+[OPTIMAS](https://arxiv.org/abs/2507.03041) ([Wu et al., ICLR 2026](https://arxiv.org/abs/2507.03041)) tackles this head-on with a **Local Reward Function (LRF)** for each component. The key insight: if you can learn a reward function that scores each module's output *locally* while correlating with the *global* system metric, you can decouple the optimization — tuning each component independently with whatever method suits its parameter type.
 
-[GEPA](https://arxiv.org/abs/2507.19457) (Agrawal et al., **ICLR 2026 Oral**) combines trajectory-level reflection with evolutionary search. The algorithm:
+Formally, the LRF for module $i$ is:
 
-1. **Sample** execution trajectories (both successes and failures)
-2. **Reflect** on them in natural language — diagnose problems, attribute failures to specific modules
-3. **Propose** prompt updates based on the diagnosis
-4. **Maintain** a Pareto front of best prompts across multiple objectives
+$$r_i(x_i, z_i) = h_i \cdot \phi([x_i, z_i])$$
 
-The Pareto front is what makes GEPA escape local optima that plague greedy optimizers. Instead of a single "best prompt," GEPA maintains a diverse set of prompts that trade off different objectives.
+where $\phi$ is a shared LLM backbone and $h_i$ is a component-specific linear projection head. The critical property is **local-global alignment**:
 
-**Results:** +13% over MIPROv2, +6% over GRPO (reinforcement learning) with 35× fewer rollouts. Works on frozen LLMs — no fine-tuning needed. Now integrated into DSPy 3.0 as a first-class optimizer.
+$$r_i(x_i, z_i^+) \geq r_i(x_i, z_i^-) \implies \mathbb{E}\bigl[\mathcal{L}(\mathcal{S}(x;\, \theta) \mid z_i^+)\bigr] \geq \mathbb{E}\bigl[\mathcal{L}(\mathcal{S}(x;\, \theta) \mid z_i^-)\bigr]$$
 
-**Why it's the current champion for instruction optimization:** It combines the richness of NL reflection (like TextGrad) with structured search (Pareto front), and it's dramatically more sample-efficient than RL approaches.
+In words: if the local reward prefers output $z_i^+$ over $z_i^-$, then using $z_i^+$ should also lead to better global performance. The LRF is trained with a Bradley-Terry preference loss:
 
-### Branch 6: The RL Branch — mmGRPO and BetterTogether
+$$\ell_i = -\mathbb{E}_{(x_i, z_i^+, z_i^-)} \left[\log \sigma\bigl(r_i(x_i, z_i^+) - r_i(x_i, z_i^-)\bigr)\right]$$
 
-The newest direction composing RL with prompt optimization:
+<div align="center">
+<img src="optimas_overview.png" alt="OPTIMAS framework: heterogeneous configs with local reward functions" style="max-width: 680px; width: 100%;">
+<figcaption><em>OPTIMAS learns a Local Reward Function per component, enabling independent optimization of heterogeneous parameters — prompts via OPRO, hyperparameters via grid search, weights via RL. (Image source: <a href="https://arxiv.org/abs/2507.03041">Wu et al. 2026</a>)</em></figcaption>
+</div>
 
-- [**BetterTogether**](https://arxiv.org/abs/2407.10930) (EMNLP 2024, now in DSPy 3.0): A meta-optimizer that alternates prompt optimization and weight fine-tuning in configurable sequences.
-- [**mmGRPO / Arbor**](https://arxiv.org/abs/2508.04660) (Ziems et al., 2025): Generalizes GRPO (Group Relative Policy Optimization) to multi-module LM programs. Groups LM calls by module across rollouts, handles variable-length trajectories. "BetterTogether(PO, mmGRPO)" alternates prompt optimization and RL fine-tuning.
+Once LRFs are trained, each component is optimized independently: OPRO for prompts, grid search for hyperparameters, RL for weights. This decoupling brings both efficiency (no full system runs once LRFs are trained) and a convergence guarantee under mild conditions.
 
-This branch matters because it bridges the gap between *prompt-only* optimization and *weight-level* fine-tuning. When you have access to model weights (open models like Llama, Qwen), you can optimize at both levels simultaneously.
+The cost of decoupling is the loss of directional guidance. A scalar reward tells you "this is 0.73" but not "the query misses the JOIN on table X." And coordinate-wise optimization cannot discover optima that require multiple components to change simultaneously.
 
-### Head-to-Head: Comparing the Approaches
+### Evolutionary Search on a Pareto Front: GEPA
 
-Here is how the major instruction optimizers compare along key dimensions:
+[GEPA](https://arxiv.org/abs/2507.19457) ([Agrawal et al., ICLR 2026 Oral](https://arxiv.org/abs/2507.19457)) takes a different approach entirely: combine trajectory-level reflection with evolutionary search. The algorithm iteratively:
 
-| | OPTIMAS | TextGrad | GEPA | Trace/OPTO | DSPy/MIPROv2 |
+1. **Samples** execution trajectories (both successes and failures)
+2. **Reflects** on them in natural language — diagnosing failures and attributing them to specific modules
+3. **Proposes** prompt updates based on the diagnosis
+4. **Maintains** a Pareto front of the best prompt configurations
+
+The Pareto front is what makes GEPA escape local optima. Rather than keeping a single "best prompt," GEPA maintains a diverse set of non-dominated configurations. Formally, a candidate $\theta_k$ dominates $\theta_l$ if it performs at least as well on every training instance:
+
+$$\theta_k \succ \theta_l \iff \mathcal{L}^{(j)}(\theta_k) \geq \mathcal{L}^{(j)}(\theta_l) \quad \forall\, j \in \lbrace 1, \ldots, |\mathcal{D}_{\text{pareto}}|\rbrace$$
+
+The Pareto front $\mathcal{F}$ consists of all non-dominated candidates:
+
+$$\mathcal{F} = \bigl\lbrace\theta_k : \nexists\, \theta_l \text{ s.t. } \theta_l \succ \theta_k\bigr\rbrace$$
+
+New candidates are sampled proportionally to how frequently they appear in the instance-wise Pareto frontier, biasing search toward configurations that are uniquely good at solving specific types of inputs.
+
+<div align="center">
+<img src="gepa_overview.png" alt="GEPA: trajectory reflection and Pareto front search" style="max-width: 680px; width: 100%;">
+<figcaption><em>GEPA combines natural language reflection on execution trajectories with evolutionary search over a Pareto front of prompt candidates. (Image source: <a href="https://arxiv.org/abs/2507.19457">Agrawal et al. 2026</a>)</em></figcaption>
+</div>
+
+The results are striking: +13% over MIPROv2, +6% over GRPO with 35× fewer rollouts, all on frozen LLMs without fine-tuning. GEPA is now integrated into DSPy 3.0 as a first-class optimizer. Its strength lies in combining the richness of natural language reflection (like TextGrad) with structured search (the Pareto front), achieving dramatic sample efficiency over RL approaches.
+
+### When Weights Are Available: RL Approaches
+
+When you have access to model weights — open models like Llama or Qwen — you can optimize at both the prompt level and the weight level simultaneously.
+
+[BetterTogether](https://arxiv.org/abs/2407.10930) ([Paria et al., EMNLP 2024](https://arxiv.org/abs/2407.10930)) is a meta-optimizer that alternates prompt optimization and weight fine-tuning in configurable sequences, now integrated into DSPy 3.0. [mmGRPO / Arbor](https://arxiv.org/abs/2508.04660) ([Ziems et al. 2025](https://arxiv.org/abs/2508.04660)) generalizes Group Relative Policy Optimization to multi-module LM programs, grouping LM calls by module across rollouts and handling variable-length trajectories. The combination "BetterTogether(PO, mmGRPO)" alternates prompt optimization and RL fine-tuning.
+
+This direction matters because it bridges prompt-only optimization and weight-level learning. For teams running open models, the question is no longer "prompt engineering or fine-tuning?" but "how to orchestrate both?"
+
+### Comparing the Approaches
+
+To make the relationships concrete, here is how the major instruction optimizers compare:
+
+| | DSPy/MIPROv2 | TextGrad | Trace/OPTO | OPTIMAS | GEPA |
 |---|---|---|---|---|---|
-| **Feedback type** | Scalar (learned LRF) | Textual critique | NL reflection on trajectories | Execution trace + feedback | Metric score |
-| **What it optimizes** | Prompts, weights, hyperparams, model selection | Text-expressible variables | Instructions (prompts) | Any parameterized workflow | Instructions + demonstrations |
-| **Search strategy** | Coordinate descent + LRF scoring | Critique-guided rewrite | Evolutionary + Pareto front | Graph-level generative update | Bootstrap + Bayesian search |
-| **Sample efficiency** | Moderate (needs LRF training data) | Low (full backward pass) | High (35× fewer than RL) | Moderate | Moderate |
-| **Heterogeneous configs** | Yes (key strength) | No (text only) | No (text only) | Yes | Partial |
-| **Convergence guarantee** | Yes (under assumptions) | No | No | No | No |
-| **Best result reported** | +11.9% avg (5 systems) | Nature publication, diverse domains | +13% over MIPROv2 (ICLR Oral) | Competitive across domains | Baseline for most comparisons |
-| **Code** | [optimas](https://optimas.stanford.edu/) | [textgrad](https://github.com/zou-group/textgrad) | [gepa](https://github.com/gepa-ai/gepa) | [Trace](https://github.com/microsoft/Trace) | [dspy](https://github.com/stanfordnlp/dspy) |
+| **Feedback** | Metric score | Textual critique | Execution trace | Learned LRF (scalar) | NL reflection on trajectories |
+| **Parameters** | Instructions + demos | Text variables | Any parameterized workflow | Prompts, weights, hyperparams | Instructions (prompts) |
+| **Search** | Bootstrap + Bayesian | Critique-guided rewrite | Graph-level generative update | Coordinate descent + LRF | Evolutionary + Pareto front |
+| **Sample efficiency** | Moderate | Low (full backward pass) | Moderate | Moderate (LRF training) | High (35× fewer than RL) |
+| **Heterogeneous configs** | Partial | No (text only) | Yes | Yes (key strength) | No (text only) |
+| **Convergence guarantee** | No | No | No | Yes (under assumptions) | No |
 
-A critical gap: **TextGrad, GEPA, and OPTIMAS have never been compared on the same benchmarks.** Each paper uses different tasks. The field badly needs a unified benchmark — this is one of the most important open problems.
+A critical gap remains: **TextGrad, GEPA, and OPTIMAS have never been evaluated on the same benchmarks.** Each paper uses different tasks and models. The field needs a unified evaluation suite — perhaps the most impactful contribution someone could make right now.
 
 ### The Hybrid Opportunity
 
-These approaches have complementary strengths. Some natural combinations that haven't been built yet:
+These approaches have complementary strengths, and natural combinations remain unexplored:
 
-- **OPTIMAS's LRF + TextGrad's critique**: LRF answers "which candidate is better" (fast scoring), critique answers "how to generate better candidates" (directional guidance). This could address OPTIMAS's blind 3-candidate search.
-- **GEPA's trajectory reflection + OPTIMAS's heterogeneous support**: GEPA currently only optimizes text prompts. Extending its reflection mechanism to score non-text configurations would broaden its applicability.
-- **Trace's execution graph + GEPA's Pareto search**: Trace provides a principled way to extract optimization signals from execution traces; GEPA provides a principled way to search over prompt candidates.
+- **OPTIMAS's LRF + TextGrad's critique**: The LRF answers "which candidate is better" (fast scoring), while the critique answers "how to generate better candidates" (directional guidance). This could address OPTIMAS's blind 3-candidate search.
+- **GEPA's trajectory reflection + OPTIMAS's heterogeneous support**: GEPA currently only optimizes text prompts. Extending its reflection to score non-text configurations would broaden its reach.
+- **Trace's execution graph + GEPA's Pareto search**: Trace provides a principled way to extract signals from execution traces; GEPA provides a principled way to search over candidates. Combining them could yield both coverage and efficiency.
 
-## Part II: Structure Optimization
+## Structure Optimization
 
-Structure optimization goes beyond tuning parameters within a fixed topology — it also searches over the topology itself: which modules to include, how to wire them, how many copies to run.
+Structure optimization goes beyond tuning parameters within a fixed topology — it searches over the topology itself: which modules to include, how to wire them, how many copies to run.
 
-### The Evolution
+### Code as Search Space: ADAS
 
-The structure optimization track (teal in Figure 2) evolved from ADAS's pioneering code-as-search-space idea through AFlow's MCTS-based refinement to MASS's joint optimization with prompts.
+[ADAS](https://arxiv.org/abs/2408.08435) ([Hu et al., ICLR 2025](https://arxiv.org/abs/2408.08435)) proposed a striking idea: define the search space as *arbitrary Python code*. A meta-agent (LLM) iteratively writes new agent implementations, evaluates them, and adds them to an ever-growing archive. The code-based search space is Turing-complete — it can theoretically discover any possible agentic system.
 
-### ADAS: Code as Search Space
+ADAS's historical significance is as the first method to propose code-as-search-space for agentic systems. It directly inspired both AFlow and MASS. Its limitation is the flat archive: a linear list of (agent, score) pairs with no structure, leading to context bloat as the archive grows.
 
-[ADAS](https://arxiv.org/abs/2408.08435) (Hu et al., ICLR 2025) proposed a striking idea: define the search space as *arbitrary Python code*. A meta-agent (LLM) iteratively writes new agent implementations, evaluates them, and adds them to an ever-growing archive. The code-based search space is Turing-complete — it can theoretically discover any possible agentic system.
+### MCTS over Workflows: AFlow
 
-**Historical significance:** First to propose code-as-search-space for agentic systems. Directly inspired AFlow and MASS.
+[AFlow](https://arxiv.org/abs/2410.10762) ([Zhang et al., ICLR 2025](https://arxiv.org/abs/2410.10762)) replaced ADAS's flat archive with **Monte Carlo Tree Search**. Tree nodes represent complete workflows; expansion means asking an LLM to modify code. The tree structure tracks which modifications helped on which branch — structured experience management.
 
-**Limitation:** Linear search. The archive is a flat list of (agent, score) pairs with no structure. The meta-agent sees the full archive each iteration, leading to context bloat. AFlow's tree structure directly addressed this.
+AFlow introduced reusable **operators** (Ensemble, Review & Revise, etc.) as building blocks and uses a soft mixed probability for node selection that balances exploration and exploitation:
 
-### AFlow: MCTS over Workflows
+$$P_{\text{select}}(i) = \lambda \cdot \frac{1}{n} + (1 - \lambda) \cdot \frac{\exp\bigl(\alpha \cdot (s_i - s_{\max})\bigr)}{\sum_j \exp\bigl(\alpha \cdot (s_j - s_{\max})\bigr)}$$
 
-[AFlow](https://arxiv.org/abs/2410.10762) (Zhang et al., ICLR 2025) replaced ADAS's flat archive with **Monte Carlo Tree Search (MCTS)**. Tree nodes represent complete workflows; expansion means asking an LLM to modify code. The tree structure tracks which modifications helped on which branch — structured experience management.
+where $s_i$ is workflow $i$'s score, $\alpha = 0.4$ controls score sensitivity, and $\lambda = 0.2$ balances uniform exploration against exploitation.
 
-AFlow introduced reusable **operators** (Ensemble, Review & Revise, etc.) as building blocks, constraining the search space without eliminating expressiveness.
+<div align="center">
+<img src="aflow_mcts.png" alt="AFlow: MCTS-based workflow search" style="max-width: 680px; width: 100%;">
+<figcaption><em>AFlow applies Monte Carlo Tree Search to workflow discovery. Each node is a complete workflow; expansion creates modified variants. The tree structure provides principled exploration-exploitation trade-off. (Image source: <a href="https://arxiv.org/abs/2410.10762">Zhang et al. 2024</a>)</em></figcaption>
+</div>
 
-**Results:** 80.3% average across 6 benchmarks, +19.5% over ADAS. Workflows found with GPT-4o-mini transfer to other models, and small models with AFlow-found workflows reach GPT-4o performance at 4.55% of inference cost.
+The results are compelling: 80.3% average across 6 benchmarks (+19.5% over ADAS), and workflows discovered with GPT-4o-mini transfer to other models — small models with AFlow-discovered workflows match GPT-4o performance at 4.55% of the inference cost. The limitation: AFlow searches structure but uses default prompts, leaving significant performance on the table.
 
-**Limitation:** No prompt optimization — searches structure but uses default prompts. As MASS later showed, this leaves significant performance on the table.
+### Prompts Matter More Than Topology: MASS
 
-### MASS: Prompts Matter More Than Topology
-
-[MASS](https://arxiv.org/abs/2502.02533) (Zhou et al., ICLR 2026) is the most important paper for understanding the interplay between instruction and structure optimization. Its key finding is counter-intuitive:
+[MASS](https://arxiv.org/abs/2502.02533) ([Zhou et al., ICLR 2026](https://arxiv.org/abs/2502.02533)) delivers what may be the most important empirical finding in this space:
 
 > **A single prompt-optimized CoT agent outperforms multi-agent topologies with default prompts at comparable token budgets.**
 
-On MATH with Gemini 1.5 Pro, optimizing the prompt of a single agent (via MIPRO) and then scaling with self-consistency dominates all multi-agent configurations (self-refine, debate, ensemble) that use default prompts. *Prompt quality trumps agent quantity.*
+On MATH with Gemini 1.5 Pro, optimizing the prompt of a single agent and then scaling with self-consistency dominates all multi-agent configurations — self-refine, debate, ensemble — that use default prompts. *Prompt quality trumps agent quantity.*
 
-MASS's 3-stage pipeline operationalizes this insight:
+MASS operationalizes this insight with a 3-stage pipeline:
 
 1. **Stage 1 (Local Prompt Warmup):** Optimize prompts for each topology block independently
-2. **Stage 2 (Topology Search):** Search over a pruned set of influential topologies using influence-weighted sampling
-3. **Stage 3 (Global Prompt Re-optimization):** Re-optimize all prompts jointly for the best topology — because locally-optimized prompts aren't globally optimal when composed
+2. **Stage 2 (Topology Search):** Search over a pruned topology space using **influence scores**: $I_i = \mathcal{L}^*(\mathcal{S}_i) / \mathcal{L}^*(\mathcal{S}_0)$, measuring the relative gain from each topology dimension. Block selection follows $p_i = \mathrm{Softmax}(I_i, \, t)$.
+3. **Stage 3 (Global Prompt Re-optimization):** Re-optimize all prompts jointly for the best topology — because locally-optimized prompts are not globally optimal when composed
 
-**Results:** 78.8% average on 8 tasks with Gemini 1.5 Pro, outperforming both manually crafted and auto-generated baselines.
+<div align="center">
+<img src="mass_pipeline.png" alt="MASS 3-stage pipeline: local prompt warmup, topology search, global re-optimization" style="max-width: 680px; width: 100%;">
+<figcaption><em>MASS's 3-stage framework: first optimize prompts locally per block (Stage 1), then search over topologies using influence-weighted pruning (Stage 2), then re-optimize prompts globally for the best topology (Stage 3). (Image source: <a href="https://arxiv.org/abs/2502.02533">Zhou et al. 2026</a>)</em></figcaption>
+</div>
 
-**Important caveats:**
-- The "topology search" is constrained: a fixed ordering `[summarize, reflect, debate, aggregate]` where the search decides which blocks to include and their scale parameters. This is block selection, not arbitrary graph search like AFlow.
-- MASS uses MIPRO as its plug-in prompt optimizer — gains may largely come from MIPRO itself.
-- Influence scores are measured independently per block, missing interaction effects.
-
-### Comparison: Structure Optimizers
-
-| | ADAS | AFlow | MASS |
-|---|---|---|---|
-| **Search space** | Arbitrary Python code | Code with predefined operators | Fixed block ordering (constrained) |
-| **Search method** | Flat archive + meta-LLM | MCTS with tree-structured experience | Influence-weighted pruning + 3-stage |
-| **Prompt optimization** | None | None | Yes (MIPRO plug-in) |
-| **Key strength** | Maximum expressiveness | Structured search, cost-efficient | Joint optimization, best overall results |
-| **Key weakness** | Linear search, context bloat | No prompt optimization | Constrained topology space |
-| **Avg. performance** | 67.2 (6 tasks) | 80.3 (6 tasks) | 78.8 (8 tasks) |
+Important caveats: the "topology search" is constrained to a fixed block ordering `[summarize, reflect, debate, aggregate]` where the search decides which blocks to include and their scale. This is block selection, not arbitrary graph search like AFlow. And MASS uses MIPROv2 as its plug-in prompt optimizer — gains may largely stem from MIPROv2 itself.
 
 ### When Does Structure Actually Matter?
 
-MASS and the concurrent work ["Rethinking Multi-Agent Workflows"](https://arxiv.org/abs/2601.12307) (ICLR 2026) converge on a nuanced answer:
+MASS and the concurrent ["Rethinking Multi-Agent Workflows"](https://arxiv.org/abs/2601.12307) ([ICLR 2026](https://arxiv.org/abs/2601.12307)) converge on a nuanced answer:
 
-**Structure matters less than you think** for homogeneous systems (same LLM in every role). A single well-prompted agent with self-consistency often suffices. Multi-turn conversation within one agent can approximate multi-agent debate, with better KV cache efficiency.
+**Structure matters less than expected** for homogeneous systems (same LLM in every role). A single well-prompted agent with self-consistency often suffices. Multi-turn conversation within one agent can approximate multi-agent debate, with better KV cache efficiency.
 
-**Structure matters more than you think** when:
-- Modules are **heterogeneous** — different LLMs, tools, retrievers, or code executors play genuinely different roles
-- The task requires **tool integration** — retrieval, code execution, API calls add capabilities a single LLM doesn't have
-- Specific topologies are **task-dependent** — debate helps on HotpotQA (+3%) but hurts on LiveCodeBench (−15%); tool-use helps on LiveCodeBench (+10%)
+**Structure matters more than expected** when modules are **heterogeneous** (different LLMs, tools, retrievers, or code executors play genuinely different roles), when the task requires **tool integration** (retrieval, code execution, API calls), or when specific topologies are **task-dependent** (debate helps on HotpotQA but hurts on LiveCodeBench).
 
 The practical takeaway: **optimize prompts first, then consider adding structure.**
 
-## Part III: The Credit Assignment Problem
+## The Credit Assignment Problem
 
-Underlying both instruction and structure optimization is a shared challenge: **credit assignment**. When a compound AI system produces a wrong answer, which module caused the failure?
+Underlying both instruction and structure optimization is a shared challenge: **credit assignment**. When a compound AI system produces a wrong answer, which module caused the failure? The quality of optimization depends directly on the quality of this attribution.
 
-This problem is fundamental because the quality of your optimization depends on the quality of your feedback signal. If you can't tell whether the retriever or the generator failed, you can't optimize either one effectively.
+The methods reviewed above handle credit assignment very differently:
 
-### How Different Methods Handle Credit Assignment
-
-| Method | Approach | Signal type |
+| Method | Approach | Granularity |
 |---|---|---|
 | DSPy/MIPROv2 | End-to-end metric filtering | Binary (pass/fail) |
-| TextGrad | Backward propagation of critique through graph | Textual per-variable |
-| OPTIMAS | Learned LRF per component with local-global alignment | Scalar per-component |
-| GEPA | NL reflection on full execution trajectories | Textual per-module (implicit) |
+| TextGrad | Backward propagation of critique through graph | Per-variable (textual) |
+| OPTIMAS | Learned LRF per component with local-global alignment | Per-component (scalar) |
+| GEPA | NL reflection on full execution trajectories | Per-module (implicit) |
 | Trace/OPTO | Full execution trace passed to optimizer | Structured (trace + feedback) |
-| JudgeFlow | Dedicated judge module inspects traces, assigns rank-based responsibility scores | Scalar per-block (explicit) |
 
-The trend is clear: methods are moving from coarse signals (end-to-end pass/fail) toward fine-grained, per-module attribution. This mirrors the lesson from [PRM](https://arxiv.org/abs/2305.20050) (Lightman et al., ICLR 2024): **process supervision dramatically outperforms outcome supervision** — 78.2% vs. 72.4% on MATH. The same principle applies to compound AI: per-module feedback should outperform end-to-end feedback.
+The trend is clear: methods are moving from coarse signals (end-to-end pass/fail) toward fine-grained, per-module attribution. This mirrors the lesson from process reward models ([Lightman et al. 2023](https://arxiv.org/abs/2305.20050)): **process supervision dramatically outperforms outcome supervision** — 78.2% vs. 72.4% on MATH. The same principle should hold for compound AI: per-module feedback should outperform end-to-end feedback.
 
-## Practical Guide: Which Method Should You Use?
+## Looking Ahead
 
-Here is a decision framework based on your system's characteristics:
+Despite rapid progress, several fundamental questions remain open:
 
-**Start with your constraints:**
+**Unified evaluation.** GEPA, OPTIMAS, and TextGrad are each evaluated on different tasks with different models. The most impactful near-term contribution may not be a new method but a standardized benchmark enabling apples-to-apples comparison.
 
-1. **Is your pipeline structure fixed?**
-   - **Yes** → instruction optimization only (most common case)
-   - **No** → consider structure optimization (Section II)
+**Scaling to production.** Every method discussed here has been validated on systems with $\leq 5$ components. Real production pipelines can have 10–20+ modules. Whether coordinate descent (OPTIMAS), backward propagation (TextGrad), or evolutionary search (GEPA) scale to this regime is an open empirical question.
 
-2. **Do you have heterogeneous configs?** (not just prompts — also model selection, hyperparams, weights)
-   - **Yes** → **OPTIMAS** (the only method that handles all config types)
-   - **No** → next question
+**True co-optimization.** MASS's 3-stage pipeline is the only attempt at joint instruction + structure optimization, and its topology search is constrained. A principled co-optimizer that combines AFlow's structural expressiveness with GEPA's instruction optimization does not yet exist.
 
-3. **Do you have access to model weights?** (open-source models like Llama, Qwen)
-   - **Yes** → **BetterTogether / mmGRPO** (combine prompt + weight optimization)
-   - **No** → next question
+**Data selection.** Instruction optimization has matured rapidly (OPRO → MIPROv2 → GEPA). But *which examples each module learns from* — demonstration selection — is still handled by DSPy's 2023-era bootstrap and random search. Principled, system-aware example selection remains wide open.
 
-4. **Is sample efficiency critical?** (expensive API calls, limited budget)
-   - **Yes** → **GEPA** (35× fewer rollouts than RL, +13% over MIPROv2)
-   - **No** → next question
+**Deployment cost.** Optimization requires hundreds of system runs. [Databricks Agent Bricks](https://www.databricks.com/blog/introducing-agent-bricks) is the first production deployment of these ideas, reporting 2× accuracy improvements. But for most teams, compound AI optimization remains a research tool, not a production practice.
 
-5. **Do you want interpretable optimization?** (need to understand *why* prompts changed)
-   - **Yes** → **TextGrad** (human-readable critiques as gradients)
-   - **No** → **DSPy/MIPROv2** (battle-tested, widest ecosystem, production-ready with Databricks Agent Bricks)
+## References
 
-6. **Do you also need structure search?**
-   - **With prompt optimization** → **MASS** (joint, but constrained topology)
-   - **Without prompt optimization** → **AFlow** (most expressive structural search)
-   - **General-purpose framework** → **Trace/OPTO** (handles anything, excels at nothing specifically)
+[1] Omar Khattab, Arnav Singhvi, Paridhi Maheshwari, et al. ["DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines."](https://arxiv.org/abs/2310.03714) arXiv preprint, 2023.
 
-## Open Problems
+[2] Chengrun Yang, Xuezhi Wang, Yifeng Lu, et al. ["Large Language Models as Optimizers."](https://arxiv.org/abs/2309.03409) ICLR, 2024.
 
-Despite rapid progress, several fundamental problems remain:
+[3] Hunter Lightman, Vineet Kosaraju, Yura Burda, et al. ["Let's Verify Step by Step."](https://arxiv.org/abs/2305.20050) ICLR, 2024.
 
-**1. No unified benchmark.** GEPA, OPTIMAS, and TextGrad are each evaluated on different tasks with different models. The field's most needed contribution isn't a new method — it's a standardized benchmark that enables apples-to-apples comparison.
+[4] Ching-An Cheng, Allen Nie, and Adith Swaminathan. ["Trace is the Next AutoDiff: Generative Optimization with Rich Feedback, Execution Traces, and LLMs."](https://arxiv.org/abs/2406.16218) NeurIPS, 2024.
 
-**2. Scalability ceiling.** Every method in this survey has been validated on systems with ≤5 components. Real production pipelines can have 10–20+ modules. Whether coordinate descent (OPTIMAS), backward propagation (TextGrad), or evolutionary search (GEPA) scale to this regime is unknown.
+[5] Mert Yuksekgonul, Federico Bianchi, Joseph Boen, et al. ["TextGrad: Automatic 'Differentiation' via Text."](https://arxiv.org/abs/2406.07496) Nature, 2025.
 
-**3. Co-optimization is primitive.** MASS's 3-stage pipeline is the only attempt at joint instruction + structure optimization, and its topology search is constrained. A principled co-optimizer that combines AFlow's structural expressiveness with GEPA's instruction optimization does not exist yet.
+[6] Krista Opsahl-Ong, Michael J Ryan, Josh Purtell, et al. ["Optimizing Instructions and Demonstrations for Multi-Stage Language Model Programs."](https://arxiv.org/abs/2406.11695) arXiv preprint, 2024.
 
-**4. Data selection is the weakest link.** Instruction optimization has matured rapidly (OPRO → MIPROv2 → GEPA in three years). But *which examples each module learns from* — demonstration selection — is still handled by DSPy's 2023-era bootstrap + random search. Principled, system-aware example selection remains wide open.
+[7] Shengran Hu, Cong Lu, and Jeff Clune. ["Automated Design of Agentic Systems."](https://arxiv.org/abs/2408.08435) ICLR, 2025.
 
-**5. Production gap.** Optimization requires hundreds of system runs, making it expensive. [Databricks Agent Bricks](https://www.databricks.com/blog/introducing-agent-bricks) is the first production deployment of these ideas, reporting 2× accuracy improvements and development time reduction from weeks to one day. But for most teams, compound AI optimization remains a research tool, not a production practice.
+[8] Jiayi Zhang, Jinyu Xiang, Zhaoyang Yu, et al. ["AFlow: Automating Agentic Workflow Generation."](https://arxiv.org/abs/2410.10762) ICLR, 2025.
 
-## Reference Table
+[9] Biswajit Paria, Barnabas Poczos, Pradeep Dasigi, et al. ["BetterTogether: Alternating between Prompt Optimization and Fine-Tuning for LM Programs."](https://arxiv.org/abs/2407.10930) EMNLP, 2024.
 
-| Method | Venue | Optimizes | Feedback | Code |
-|---|---|---|---|---|
-| [DSPy](https://arxiv.org/abs/2310.03714) | arXiv 2023 | Instructions + demos | Metric score | [github](https://github.com/stanfordnlp/dspy) |
-| [OPRO](https://arxiv.org/abs/2309.03409) | ICLR 2024 | Instructions | Metric score | — |
-| [PRM](https://arxiv.org/abs/2305.20050) | ICLR 2024 | Reward models | Step-level labels | — |
-| [Trace/OPTO](https://arxiv.org/abs/2406.16218) | NeurIPS 2024 | Any parameter | Execution trace | [github](https://github.com/microsoft/Trace) |
-| [TextGrad](https://doi.org/10.1038/s41586-025-08661-4) | Nature 2025 | Text variables | Textual critique | [github](https://github.com/zou-group/textgrad) |
-| [ADAS](https://arxiv.org/abs/2408.08435) | ICLR 2025 | Topology (code) | NL feedback | [github](https://github.com/ShengranHu/ADAS) |
-| [AFlow](https://arxiv.org/abs/2410.10762) | ICLR 2025 | Topology (code) | NL feedback | [github](https://github.com/FoundationAgents/AFlow) |
-| [BetterTogether](https://arxiv.org/abs/2407.10930) | EMNLP 2024 | Prompts + weights | Metric score | [dspy](https://github.com/stanfordnlp/dspy) |
-| [OPTIMAS](https://arxiv.org/abs/2507.03041) | ICLR 2026 | Heterogeneous configs | Learned LRF (scalar) | [project](https://optimas.stanford.edu/) |
-| [GEPA](https://arxiv.org/abs/2507.19457) | ICLR 2026 (Oral) | Instructions | NL reflection | [github](https://github.com/gepa-ai/gepa) |
-| [MASS](https://arxiv.org/abs/2502.02533) | ICLR 2026 | Prompts + topology | NL feedback + metric | — |
-| [mmGRPO](https://arxiv.org/abs/2508.04660) | arXiv 2025 | Prompts + weights (RL) | Policy gradient | [github](https://github.com/Ziems/arbor) |
+[10] Shirley Wu, Parth Sarthi, Shiyu Zhao, et al. ["OPTIMAS: Optimizing Compound AI Systems with Globally Aligned Local Rewards."](https://arxiv.org/abs/2507.03041) ICLR, 2026.
 
----
+[11] Lakshya A Agrawal, Shang-lin Tan, Dilara Soylu, et al. ["GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning."](https://arxiv.org/abs/2507.19457) ICLR, 2026 (Oral).
 
-*This post surveys the optimization landscape as of March 2026. The field is moving fast — I expect several of the "open problems" listed above to have initial solutions by the end of the year. If I missed a relevant paper or got something wrong, please let me know.*
+[12] Xiangru Zhou, Tianyu Liu, Haolin Chen, et al. ["Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies."](https://arxiv.org/abs/2502.02533) ICLR, 2026.
+
+[13] Caleb Ziems, William Held, Omar Khattab, and Diyi Yang. ["Arbor: Training LM Agents with Multi-Module RL."](https://arxiv.org/abs/2508.04660) arXiv preprint, 2025.
+
+[14] Hyunwoo Lee, Haoran Zhao, and Jack Parker-Holder. ["A Survey on Automatic Optimization of Compound AI Systems."](https://arxiv.org/abs/2506.08234) EMNLP, 2025.

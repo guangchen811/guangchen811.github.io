@@ -2,26 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://guangchen811.github.io/categories/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://guangchen811.github.io/tags/compound-ai/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://guangchen811.github.io/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://guangchen811.github.io/tags/optimization/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://guangchen811.github.io/compound-ai-optimization/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://guangchen811.github.io/categories/research/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://guangchen811.github.io/tags/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://guangchen811.github.io/desckgc/</loc>
     <lastmod>2023-10-25T14:00:00+08:00</lastmod>
@@ -41,10 +23,15 @@
     <loc>https://guangchen811.github.io/tags/llms/</loc>
     <lastmod>2023-05-21T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://guangchen811.github.io/tags/</loc>
+    <lastmod>2023-05-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://guangchen811.github.io/llm/prompt_comparation/</loc>
     <lastmod>2023-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://guangchen811.github.io/archives/</loc>
+  </url><url>
+    <loc>https://guangchen811.github.io/categories/</loc>
   </url><url>
     <loc>https://guangchen811.github.io/difussion/</loc>
   </url><url>

@@ -2,10 +2,8 @@
 <section class="error-404">
   <div class="error-404__copy">
     <p class="error-404__eyebrow">Lost in the archive</p>
-    <h1 class="error-404__title">
-      <span class="error-404__code">404</span>
-      This page is off the map.
-    </h1>
+    <h1 class="error-404__code">404</h1>
+    <p class="error-404__headline">This page is off the map.</p>
     <p class="error-404__lede">
       The link may be outdated, the post may have moved, or this URL was never part of the site.
     </p>
@@ -23,30 +21,16 @@
     <div class="error-404__radar">
       <div class="error-404__ring error-404__ring--outer"></div>
       <div class="error-404__ring error-404__ring--inner"></div>
+      <div class="error-404__axis error-404__axis--horizontal"></div>
+      <div class="error-404__axis error-404__axis--vertical"></div>
       <div class="error-404__sweep"></div>
       <div class="error-404__dot error-404__dot--one"></div>
       <div class="error-404__dot error-404__dot--two"></div>
       <div class="error-404__dot error-404__dot--three"></div>
-      <div class="error-404__center">404</div>
+      <div class="error-404__center">
+        <span class="error-404__needle"></span>
+      </div>
     </div>
   </div>
-
-  <aside class="error-404__panel">
-    <p class="error-404__panel-label">Good places to restart</p>
-    <ul class="error-404__panel-list">
-      <li>
-        <a href="{{ "/" | relLangURL }}">Read the latest posts</a>
-        <span>Start from the homepage and featured writing.</span>
-      </li>
-      <li>
-        <a href="{{ "search/" | relLangURL }}">Search the blog</a>
-        <span>Jump directly to topics, papers, and notes.</span>
-      </li>
-      <li>
-        <a href="{{ "tags/" | relLangURL }}">Browse by tag</a>
-        <span>Follow themes across data validation and AI systems.</span>
-      </li>
-    </ul>
-  </aside>
 </section>
 {{- end }}{{/* end main */ -}}

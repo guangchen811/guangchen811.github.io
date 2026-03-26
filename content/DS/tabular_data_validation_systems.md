@@ -8,6 +8,8 @@ tags:
 - Data Management
 ---
 
+Data pipelines fail quietly. A column that was always populated starts arriving with nulls. An identifier that was supposed to be unique now has duplicates. A categorical field that encoded status codes now contains free-form text. These problems rarely cause immediate crashes — they propagate silently, corrupt downstream aggregations, and surface as hard-to-diagnose inconsistencies weeks later. Tabular data validation systems exist to make these problems explicit before they spread. This post examines how two widely used frameworks — Deequ and Great Expectations — approach the problem, focusing not on their feature lists but on the systems design decisions that give each its character.
+
 ## What Is Tabular Data Validation?
 
 Tabular data validation is the task of checking whether a dataset satisfies a set of expected structural and semantic properties before the data is consumed downstream. In practice, these properties are often simple to state but costly to enforce consistently at scale: a key column should be unique, required attributes should not be missing, numerical values should stay within an acceptable range, and categorical values should come from a known domain.

@@ -58,7 +58,26 @@ Deequ is a good example of this split design. At the API level, it looks asserti
 
 Great Expectations is more consistently expectation-oriented in the way it presents validation to users. Its core semantic unit is the Expectation, and Expectation Suites organize multiple expectations into reusable validation contracts. This makes the DSL read like a specification language for dataset properties. Internally, Great Expectations still requires a dependency resolution and metric computation layer, but that machinery is largely hidden behind the validator and checkpoint workflow. As a result, its user-facing DSL feels closer to a contract language than to a metric query language.
 
-Conditional validation provides a concrete way to compare the two DSL styles. Suppose we want to express the rule that `order_id` must be unique only for rows with `status = 'PAID'`. In Deequ, the natural form is to write the uniqueness constraint and attach a `.where(...)` clause to it. In Great Expectations, the analogous form is to write an expectation with a `row_condition`. Both formulations express the same validation intent and are therefore similarly expressive for this case. The difference is again one of interface: Deequ presents the condition as a filter on the rule, while Great Expectations presents it as a parameter of the expectation. This is a small syntactic distinction, but it reflects the larger design difference between a system centered on filtered metric computation and a system centered on reusable expectations.
+Conditional validation provides a concrete way to compare the two DSL styles. Suppose we want to express the rule that `order_id` must be unique only for rows with `status = 'PAID'`. In Deequ, the natural form is to write the uniqueness constraint and attach a `.where(...)` clause to it. In Great Expectations, the analogous form is to write an expectation with a `row_condition`.
+
+```scala
+// Deequ (Scala): condition as a filter on the constraint
+Check(CheckLevel.Error, "order uniqueness")
+  .isUnique("order_id", where = Some("status = 'PAID'"))
+```
+
+```python
+# Great Expectations (Python): condition as a parameter of the expectation
+suite.add_expectation(
+    gx.expectations.ExpectColumnValuesToBeUnique(
+        column="order_id",
+        row_condition="status == 'PAID'",
+        condition_parser="pandas",
+    )
+)
+```
+
+Both formulations express the same validation intent and are therefore similarly expressive for this case. The difference is again one of interface: Deequ presents the condition as a filter on the rule, while Great Expectations presents it as a parameter of the expectation. This is a small syntactic distinction, but it reflects the larger design difference between a system centered on filtered metric computation and a system centered on reusable expectations.
 
 For a systems-oriented discussion, the most useful conclusion is that assertion-oriented and metric-oriented DSLs should not be treated as mutually exclusive categories. A mature validation system often needs both: an assertion-oriented surface language for usability and a metric-oriented internal form for execution. The most interesting design question is not which style is universally better, but how well the system connects the two.
 

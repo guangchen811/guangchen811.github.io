@@ -12,7 +12,7 @@ aliases:
 
 # Research Interests
 
-Data Validation, Large Language Models, Graph Analytics, Compound AI Systems
+Data Validation, Large Language Models, Graph Analytics, Compound Systems
 
 # Research Experience
 

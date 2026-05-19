@@ -19,7 +19,7 @@ Data Validation, Large Language Models, Graph Analytics, Compound Systems
 - Feb. 2022 - May. 2023: **Software Engineer Intern**, [LinkedIn](https://www.linkedin.com/), Beijing, China.
     - Professional Network Matters: Connections Empower Person-Job Fit
         - Perform data collection, data cleaning, and data analysis with Spark and SQL on LinkedIn's internal database.
-        - Literature review on Person-Job Fit and Heterogeneous Graph Neural Networks.
+        - Literature review on Person-Job Fit and HGNN.
         - Design and implement a heterogeneous graph neural network model for Person-Job Fit.
         - The corresponding paper has been **accepted** by [WSDM 2024](https://www.wsdm-conference.org/2024/).
     - A Hierarchical Framework with Multitask Co-Pretraining on Semi-Structured Data towards Effective Person-Job Fit

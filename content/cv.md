@@ -50,6 +50,11 @@ Data Validation, Large Language Models, Graph Analytics, Compound Systems
     - A python package for knowledge graph completion which highlight the importance of descriptions of entities.
 - Made **small** contributions to open source projects, like [Langchain](https://langchain.com/), [SuperAGI](https://github.com/TransformerOptimus/SuperAGI).
 
+# Academic Service
+
+- Journal Reviewer: ACM Transactions on Knowledge Discovery from Data (TKDD)
+- Conference Reviewer: WWW 2027, CIKM 2026 (Demo Track)
+
 # Education
 
 - **Ph.D. in Computer Science**, BIFOLD & TU Berlin, 2024-present

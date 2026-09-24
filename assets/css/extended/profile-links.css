@@ -1,0 +1,24 @@
+/* Make links in the profile subtitle visibly clickable, so a click is never
+   a silent redirect to an external site. */
+:root {
+    --link: #0F6F7A;
+    --link-hover: #0B565E;
+}
+
+:root[data-theme="dark"] {
+    --link: #5FC8D4;
+    --link-hover: #8FDCE5;
+}
+
+.profile .profile_inner span a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.profile .profile_inner span a:hover,
+.profile .profile_inner span a:focus-visible {
+    color: var(--link-hover);
+    text-decoration-thickness: 2px;
+}

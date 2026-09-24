@@ -42,14 +42,6 @@ Data Validation, Large Language Models, Graph Analytics, Compound Systems
 - Pierre Lubitzsch, Olga Ovcharenko, **Hao Chen**, Maarten de Rijke, Sebastian Schelter, [Towards a Real-World Aligned Benchmark for Unlearning in Recommender Systems](https://doi.org/10.48550/arXiv.2508.17076) (FAccTRec Workshop @ RecSys 2025)
 - Yuchen Tian, Kaixin Li, **Hao Chen**, Ziyang Luo, Hongzhan Lin, Sebastian Schelter, Lun Du, Jing Ma, [AmbiGraph-Eval: Can LLMs Effectively Handle Ambiguous Graph Queries?](https://doi.org/10.48550/arXiv.2508.09631) (arXiv 2025)
 
-# Open Source Projects
-
-- Maintainer of [TADV](https://github.com/guangchen811/tadv)
-    - A framework for task-aware data validation that leverages language models to generate data validation rules.
-- Maintainer of [DescKGC](https://guangchen811.github.io/DescKGC/)
-    - A python package for knowledge graph completion which highlight the importance of descriptions of entities.
-- Made **small** contributions to open source projects, like [Langchain](https://langchain.com/), [SuperAGI](https://github.com/TransformerOptimus/SuperAGI).
-
 # Academic Service
 
 - Journal Reviewer: ACM Transactions on Knowledge Discovery from Data (TKDD)
